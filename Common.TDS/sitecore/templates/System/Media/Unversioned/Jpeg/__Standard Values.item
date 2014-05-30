@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {46712903-1A2A-4ADD-A5A0-1CCA30D9DC25}
+database: master
+path: /sitecore/templates/System/Media/Unversioned/Jpeg/__Standard Values
+parent: {DAF085E8-602E-43A6-8299-038FF171349F}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {DAF085E8-602E-43A6-8299-038FF171349F}
+templatekey: Jpeg
+
+----field----
+field: {C9283D9E-7C29-4419-9C28-5A5C8FF53E84}
+name: __Bucketable
+key: __bucketable
+content-length: 1
+
+1
+----version----
+language: en
+version: 1
+revision: f2f49619-f294-4e44-9dd5-0a8e3179a777
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140524T112240
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f2f49619-f294-4e44-9dd5-0a8e3179a777
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140524T112249:635365273699952892
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

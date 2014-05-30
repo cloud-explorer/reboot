@@ -1,0 +1,93 @@
+----item----
+version: 1
+id: {D8C3A8C3-7977-4E65-8535-4B8D3ED02A7C}
+database: master
+path: /sitecore/content/Reboot/Home/People
+parent: {C8E9ADF9-0DBF-4BDA-9AD1-EAB37883AB25}
+name: People
+master: {00000000-0000-0000-0000-000000000000}
+template: {9F93DE1E-DF45-457A-9B00-18B2A64EB597}
+templatekey: People
+
+----version----
+language: en
+version: 1
+revision: f1c96eea-fd15-498d-a622-c770820580a5
+
+----field----
+field: {F3479F8E-7FEA-494D-80AB-7AD75EE4D94A}
+name: Title
+key: title
+content-length: 6
+
+People
+----field----
+field: {ACA2A76A-21F1-4798-9B69-C87764E9CEEE}
+name: Description
+key: description
+content-length: 28
+
+<p>Enter text for People</p>
+----field----
+field: {F5DE556A-3C9C-4B42-94F3-3AC3A30FA788}
+name: BreadcrumbTitle
+key: breadcrumbtitle
+content-length: 6
+
+People
+----field----
+field: {799C85C3-1CB0-40CF-B594-86B438F4192D}
+name: Keywords
+key: keywords
+content-length: 6
+
+People
+----field----
+field: {1E432DBE-FA95-4B94-B538-BCF52C80C5BA}
+name: MetaDescription
+key: metadescription
+content-length: 6
+
+People
+----field----
+field: {2F0521A1-2A3F-491D-BC54-7DABAC85E6D6}
+name: MenuTitle
+key: menutitle
+content-length: 6
+
+People
+----field----
+field: {13C86A65-F308-438E-BB44-D3AB9C80B0E5}
+name: MenuHoverText
+key: menuhovertext
+content-length: 6
+
+People
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140521T124245
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+f1c96eea-fd15-498d-a622-c770820580a5
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140521T130537:635362743376876309
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

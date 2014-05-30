@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {EDDE51A8-7902-431E-8E6B-56ABC438968A}
+database: master
+path: /sitecore/templates/User Defined/Reboot/Containers/Genres/__Standard Values
+parent: {FDC9C146-761C-4573-AF1A-B4C9AE7E36E7}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {FDC9C146-761C-4573-AF1A-B4C9AE7E36E7}
+templatekey: Genres
+
+----field----
+field: {A0CB3965-8884-4C7A-8815-B6B2E5CED162}
+name: __Editors
+key: __editors
+content-length: 38
+
+{A0C460F4-DBAE-4A5A-8F3A-C4ADFCDACEEA}
+----field----
+field: {39C4902E-9960-4469-AEEF-E878E9C8218F}
+name: __Hidden
+key: __hidden
+content-length: 1
+
+0
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 38
+
+{B3F31EE6-1262-4EF1-B64C-79B7E7CD8EBB}
+----field----
+field: {D312103C-B36C-4CA5-864A-C85F9ABDA503}
+name: __Is Bucket
+key: __is bucket
+content-length: 1
+
+0
+----version----
+language: en
+version: 1
+revision: 7b5ef7ad-7b80-492d-9058-4bfaca634010
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140520T213418
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7b5ef7ad-7b80-492d-9058-4bfaca634010
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140522T002510:635363151102367254
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

@@ -1,0 +1,58 @@
+----item----
+version: 1
+id: {669A3B5B-30D2-4D57-9EC3-2AE632C91580}
+database: master
+path: /sitecore/templates/User Defined/Reboot/Items/Person/Information/Deathday
+parent: {DAF8DEBC-43C5-441A-92F3-B1670E9D28B8}
+name: Deathday
+master: {00000000-0000-0000-0000-000000000000}
+template: {455A3E98-A627-4B40-8035-E683A0331AC7}
+templatekey: Template field
+
+----field----
+field: {AB162CC0-DC80-4ABF-8871-998EE5D7BA32}
+name: Type
+key: type
+content-length: 4
+
+Date
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+500
+----version----
+language: en
+version: 1
+revision: 46d2741c-3697-46ce-8a3d-021f8f89db78
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140520T215435
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+46d2741c-3697-46ce-8a3d-021f8f89db78
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140523T171205:635364619250060499
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

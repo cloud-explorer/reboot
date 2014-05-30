@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {563B6C96-139C-44E9-9593-4ADC6A4D34F0}
+database: master
+path: /sitecore/templates/User Defined/Common/FieldSections/HasMetadata/__Standard Values
+parent: {FB728D23-DCF8-497C-B28E-1F0D91458A35}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {FB728D23-DCF8-497C-B28E-1F0D91458A35}
+templatekey: HasMetadata
+
+----version----
+language: en
+version: 1
+revision: 2f4d9125-4071-477d-a9f7-79adf070e99c
+
+----field----
+field: {799C85C3-1CB0-40CF-B594-86B438F4192D}
+name: Keywords
+key: keywords
+content-length: 5
+
+$name
+----field----
+field: {1E432DBE-FA95-4B94-B538-BCF52C80C5BA}
+name: MetaDescription
+key: metadescription
+content-length: 5
+
+$name
+----field----
+field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
+name: __Owner
+key: __owner
+content-length: 14
+
+sitecore\admin
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140520T211308
+----field----
+field: {5DD74568-4D4B-44C1-B513-0AF5F4CDA34F}
+name: __Created by
+key: __created by
+content-length: 14
+
+sitecore\admin
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2f4d9125-4071-477d-a9f7-79adf070e99c
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140520T211315:635362171951765153
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

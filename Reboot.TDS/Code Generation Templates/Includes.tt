@@ -1,0 +1,9 @@
+<#@ import namespace="System.Collections.Generic" #>
+<#@ import namespace="HedgehogDevelopment.SitecoreProject.VSIP.CodeGeneration.Models" #>
+<#+
+void doSome(){
+#>
+    //This text is comming from an included function!
+<#+
+}
+#>

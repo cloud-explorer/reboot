@@ -1,0 +1,72 @@
+----item----
+version: 1
+id: {3FB137B6-191D-4F8E-8A28-EF702208C618}
+database: master
+path: /sitecore/templates/User Defined/Reboot/Items/Movie/__Standard Values
+parent: {962BE8E9-7201-4D6A-B7B1-F07BDFC8B107}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {962BE8E9-7201-4D6A-B7B1-F07BDFC8B107}
+templatekey: Movie
+
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 0
+
+
+----field----
+field: {C9283D9E-7C29-4419-9C28-5A5C8FF53E84}
+name: __Bucketable
+key: __bucketable
+content-length: 1
+
+1
+----field----
+field: {F7B94D8C-A842-49F8-AB7A-2169D00426B0}
+name: __Should Not Organize In Bucket
+key: __should not organize in bucket
+content-length: 1
+
+1
+----version----
+language: en
+version: 1
+revision: 9d563aad-fd05-46ff-989d-c65612debf22
+
+----field----
+field: {ACA2A76A-21F1-4798-9B69-C87764E9CEEE}
+name: Description
+key: description
+content-length: 38
+
+<p>No overview was found for $name</p>
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140520T213022
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+9d563aad-fd05-46ff-989d-c65612debf22
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140522T195508:635363853080158087
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

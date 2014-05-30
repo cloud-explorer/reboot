@@ -1,0 +1,39 @@
+﻿@using Projects.Models.Glass
+@using Sitecore.Mvc.Analytics.Extensions
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<PageBase>
+<!DOCTYPE html>
+
+<html lang="@Model.Language.CultureInfo.TwoLetterISOLanguageName">
+    <head>
+        
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta name="description" content="@Model.Description.Truncate(150)">
+        <title>@Model.Title</title>
+        @*Any other metadata that the editor wants to include can be placed here*@
+        @Html.Sitecore().Placeholder("meta")
+        @Styles.Render("~/sc_ignore_bundles/rebootstyles")
+        @*Any page specific style can be include here*@
+        @Html.Sitecore().Placeholder("styles")
+        @Html.Sitecore().VisitorIdentification()
+    </head>
+<body>
+    <nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
+        @Html.Sitecore().Placeholder("header")
+    </nav>
+    <div class="container">
+        @Html.Sitecore().Placeholder("body")
+    </div>
+    <footer>
+        <hr />
+        @Html.Sitecore().Placeholder("footer")
+    </footer>
+    <!-- Placed at the end of the document so the pages load faster -->
+    @Scripts.Render("~/sc_ignore_bundles/rebootscripts")
+    @if (!Sitecore.Context.PageMode.IsPageEditor)
+    {
+        //Any Page specific script can be placed here
+        @Html.Sitecore().Placeholder("scripts")
+    }
+</body>
+</html>

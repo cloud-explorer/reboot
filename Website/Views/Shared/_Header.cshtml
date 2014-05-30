@@ -1,0 +1,34 @@
+﻿@using Glass.Mapper.Sc
+@using Projects.Common.Glass
+@using Sitecore.Mvc.Presentation
+@using Sitecore.Mvc
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Projects.Models.ViewModels.HeaderVM>
+
+
+
+<div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-ex1-collapse">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
+                <a class="navbar-brand" href="">@Editable(Model, m => m.LinkToHome)</a>
+            </div>
+
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse navbar-ex1-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    @foreach (var item in Model.Navigationitems)
+                    {
+                        <li @if (item.IsCurrentItem()) { <text> class="active" </text>   }>
+                            @Editable(item, i => i.GetInternalLink())
+                        </li>
+                    }
+                 </ul>
+            </div>
+            <!-- /.navbar-collapse -->
+        </div>
+        <!-- /.container -->

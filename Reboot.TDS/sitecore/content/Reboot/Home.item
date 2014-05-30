@@ -1,0 +1,100 @@
+----item----
+version: 1
+id: {C8E9ADF9-0DBF-4BDA-9AD1-EAB37883AB25}
+database: master
+path: /sitecore/content/Reboot/Home
+parent: {585F9633-C761-42C6-8598-15027D680537}
+name: Home
+master: {00000000-0000-0000-0000-000000000000}
+template: {31987DB3-30DC-4BBE-A66D-9853C4AEF189}
+templatekey: Site Home
+
+----field----
+field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
+name: __Masters
+key: __masters
+content-length: 272
+
+{4A639AEF-2585-41E3-93A6-8F1A1D4A667A}|{FDC9C146-761C-4573-AF1A-B4C9AE7E36E7}|{E240F310-1855-4C97-B009-36C1E48909EB}|{364AF857-ABDF-4259-8487-8E7F4FB1E99F}|{9F93DE1E-DF45-457A-9B00-18B2A64EB597}|{60773833-F7E6-4F24-8C24-6665A3EA612C}|{14259F3E-088B-4F2E-9B21-9DFF3C539134}
+----version----
+language: en
+version: 1
+revision: bc4cf333-a3f7-42f2-acdd-43e8d88c06ab
+
+----field----
+field: {F3479F8E-7FEA-494D-80AB-7AD75EE4D94A}
+name: Title
+key: title
+content-length: 4
+
+Home
+----field----
+field: {ACA2A76A-21F1-4798-9B69-C87764E9CEEE}
+name: Description
+key: description
+content-length: 26
+
+<p>Enter text for Home</p>
+----field----
+field: {F5DE556A-3C9C-4B42-94F3-3AC3A30FA788}
+name: BreadcrumbTitle
+key: breadcrumbtitle
+content-length: 4
+
+Home
+----field----
+field: {799C85C3-1CB0-40CF-B594-86B438F4192D}
+name: Keywords
+key: keywords
+content-length: 4
+
+Home
+----field----
+field: {1E432DBE-FA95-4B94-B538-BCF52C80C5BA}
+name: MetaDescription
+key: metadescription
+content-length: 4
+
+Home
+----field----
+field: {2F0521A1-2A3F-491D-BC54-7DABAC85E6D6}
+name: MenuTitle
+key: menutitle
+content-length: 4
+
+Home
+----field----
+field: {13C86A65-F308-438E-BB44-D3AB9C80B0E5}
+name: MenuHoverText
+key: menuhovertext
+content-length: 4
+
+Home
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140521T130526
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+bc4cf333-a3f7-42f2-acdd-43e8d88c06ab
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140521T130613:635362743736472265
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

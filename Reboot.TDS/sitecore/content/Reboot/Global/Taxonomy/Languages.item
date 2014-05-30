@@ -1,0 +1,100 @@
+----item----
+version: 1
+id: {8BFBBF9D-678C-45EB-89A4-A22D6758624C}
+database: master
+path: /sitecore/content/Reboot/Global/Taxonomy/Languages
+parent: {7EBF60D5-FD7B-45DD-9D66-D6267393FB65}
+name: Languages
+master: {00000000-0000-0000-0000-000000000000}
+template: {E240F310-1855-4C97-B009-36C1E48909EB}
+templatekey: Languages
+
+----field----
+field: {D312103C-B36C-4CA5-864A-C85F9ABDA503}
+name: __Is Bucket
+key: __is bucket
+content-length: 0
+
+
+----version----
+language: en
+version: 1
+revision: 7b3f6354-40f1-4bc4-a81e-d3691d045b65
+
+----field----
+field: {F3479F8E-7FEA-494D-80AB-7AD75EE4D94A}
+name: Title
+key: title
+content-length: 9
+
+Languages
+----field----
+field: {ACA2A76A-21F1-4798-9B69-C87764E9CEEE}
+name: Description
+key: description
+content-length: 31
+
+<p>Enter text for Languages</p>
+----field----
+field: {F5DE556A-3C9C-4B42-94F3-3AC3A30FA788}
+name: BreadcrumbTitle
+key: breadcrumbtitle
+content-length: 9
+
+Languages
+----field----
+field: {799C85C3-1CB0-40CF-B594-86B438F4192D}
+name: Keywords
+key: keywords
+content-length: 9
+
+Languages
+----field----
+field: {1E432DBE-FA95-4B94-B538-BCF52C80C5BA}
+name: MetaDescription
+key: metadescription
+content-length: 9
+
+Languages
+----field----
+field: {2F0521A1-2A3F-491D-BC54-7DABAC85E6D6}
+name: MenuTitle
+key: menutitle
+content-length: 9
+
+Languages
+----field----
+field: {13C86A65-F308-438E-BB44-D3AB9C80B0E5}
+name: MenuHoverText
+key: menuhovertext
+content-length: 9
+
+Languages
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140521T130810
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+7b3f6354-40f1-4bc4-a81e-d3691d045b65
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140524T180703:635365516230594242
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
