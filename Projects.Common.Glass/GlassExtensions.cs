@@ -9,14 +9,22 @@ namespace Projects.Common.Glass
     {
         public static Link GetInternalLink<T>(this T item) where T : class, IGlassBase, IHasTitle
         {
+            return GetInternalLink<T>(item, "", "_self");
+        }
+
+        public static Link GetInternalLink<T>(this T item, string cssClass="", string target="_self") where T : class, IGlassBase, IHasTitle
+        {
             if(item == null) return null;
             Link linkField = new Link
                 {
                     TargetId = item.Id,
                     Text = item.Title,
                     Title = item.Title,
-                    Type = LinkType.Internal
+                    Type = LinkType.Internal,
+                    Target = target,
+                    Url = item.Url
                 };
+            if (!string.IsNullOrEmpty(cssClass)) linkField.Class = cssClass;
             return linkField;
         }
 

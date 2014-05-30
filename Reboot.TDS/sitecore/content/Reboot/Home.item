@@ -7,7 +7,7 @@ parent: {585F9633-C761-42C6-8598-15027D680537}
 name: Home
 master: {00000000-0000-0000-0000-000000000000}
 template: {31987DB3-30DC-4BBE-A66D-9853C4AEF189}
-templatekey: Site Home
+templatekey: SiteHome
 
 ----field----
 field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
@@ -16,10 +16,17 @@ key: __masters
 content-length: 272
 
 {4A639AEF-2585-41E3-93A6-8F1A1D4A667A}|{FDC9C146-761C-4573-AF1A-B4C9AE7E36E7}|{E240F310-1855-4C97-B009-36C1E48909EB}|{364AF857-ABDF-4259-8487-8E7F4FB1E99F}|{9F93DE1E-DF45-457A-9B00-18B2A64EB597}|{60773833-F7E6-4F24-8C24-6665A3EA612C}|{14259F3E-088B-4F2E-9B21-9DFF3C539134}
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 200
+
+<r xmlns:p="p" xmlns:s="s" p:p="1"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}"><r uid="{2D8CA470-3F27-494C-AAEE-E7F6F61E2D57}" s:id="{A1EF02CD-F210-40AB-BB6B-ECDB990DD93A}" s:ph="header" /></d></r>
 ----version----
 language: en
 version: 1
-revision: bc4cf333-a3f7-42f2-acdd-43e8d88c06ab
+revision: 24c73c81-099c-445a-aed5-7cb1116a7c5a
 
 ----field----
 field: {F3479F8E-7FEA-494D-80AB-7AD75EE4D94A}
@@ -42,6 +49,13 @@ key: breadcrumbtitle
 content-length: 4
 
 Home
+----field----
+field: {C978E4F3-E816-4000-8845-04E6CC2E8609}
+name: Image
+key: image
+content-length: 227
+
+<image mediapath="/Images/Reboot/reboot-small-opt1" alt="" width="" height="" hspace="" vspace="" showineditor="" usethumbnail="" src="~/media/Images/Reboot/reboot-small-opt1" mediaid="{5A6CF192-B951-4CD1-B786-E7F5E7EDFBE8}" />
 ----field----
 field: {799C85C3-1CB0-40CF-B594-86B438F4192D}
 name: Keywords
@@ -83,14 +97,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-bc4cf333-a3f7-42f2-acdd-43e8d88c06ab
+24c73c81-099c-445a-aed5-7cb1116a7c5a
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 34
 
-20140521T130613:635362743736472265
+20140530T155619:635370621797514292
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -378,6 +378,9 @@
     <Content Include="Areas\Movie\Views\web.config" />
     <Content Include="App_Config\Include\Z.Reboot.Custom.config" />
     <Content Include="App_Config\Include\Z.Reboot.DataImport.config" />
+    <Content Include="css\reboot.css.map">
+      <DependentUpon>reboot.css</DependentUpon>
+    </Content>
     <None Include="Properties\PublishProfiles\Reboot.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
@@ -393,7 +396,7 @@
     <Content Include="web.config" />
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
-    <Content Include="Views\Shared\_Header.cshtml" />
+    <Content Include="Views\Shared\Header.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Movie\Controllers\" />

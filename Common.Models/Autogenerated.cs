@@ -63,15 +63,20 @@ namespace Projects.Models.Glass
         Guid TemplateId { get; }
 
         [SitecoreInfo(SitecoreInfoType.Url)]
-        string URL { get; }
+        string Url { get; }
 		
 		[SitecoreChildren(IsLazy = true)]
-        IEnumerable<GlassBase> Children { get; set; }
+        IEnumerable<IGlassBase> Children { get; set; }
+
+        [SitecoreParent]
+        IGlassBase Parent { get; set; }
 
 		ISitecoreContext Context { get; }
-	
 
-   }
+		    T GetParent<T>() where T : class, IGlassBase;
+		    bool HasChildren<T>() where T : class, IGlassBase;
+		    IEnumerable<T> GetChildren<T>() where T : class, IGlassBase;
+		}
 
 	public abstract class GlassBase : IGlassBase{
 		
@@ -104,18 +109,46 @@ namespace Projects.Models.Glass
         public Guid TemplateId { get; private set; }
 
         [SitecoreInfo(SitecoreInfoType.Url)]
-        public string URL { get; private set; }
+        public string Url { get; private set; }
 
 		[SitecoreChildren(IsLazy = true)]
-        public virtual IEnumerable<GlassBase> Children { get; set; }
+        public virtual IEnumerable<IGlassBase> Children { get; set; }
+
+        [SitecoreParent]
+	    public IGlassBase Parent { get; set; }
 
 	    public ISitecoreContext Context
 	    {
 	        get { return _context; }
 	    }
+
+	    public T GetParent<T>() where T : class, IGlassBase
+	    {
+	        T parent = Context.GetItem<T>(Parent.Id);
+	        return parent;
+	    }
+
+	    public bool HasChildren<T>() where T : class, IGlassBase
+	    {
+            Guid templateId = Helper.GetTemplateIdFromType<T>();
+	        return Children.Any(item => item.BaseTemplates.Contains(templateId));
+	    }
+
+        public IEnumerable<T> GetChildren<T>() where T : class, IGlassBase
+        {
+            Guid templateId = Helper.GetTemplateIdFromType<T>();
+            var items = new List<T>();
+            if (Children != null)
+            {
+                items.AddRange(
+                    Children.Where(item => item.BaseTemplates.Contains(templateId))
+                        .Select(item => Context.GetItem<T>(item.Id)));
+            }
+               
+            return items;
+        }
 	}
 }
-
 
 
 namespace Projects.Models.Glass.Common
@@ -297,7 +330,6 @@ namespace Projects.Models.Glass.Common
 }
 
 
-
 namespace Projects.Models.Glass.Common.FieldSections
 {
 
@@ -460,7 +492,6 @@ namespace Projects.Models.Glass.Common.FieldSections
 }
 
 
-
 namespace Projects.Models.Glass.Common
 {
 
@@ -474,16 +505,6 @@ namespace Projects.Models.Glass.Common
 	[SitecoreType(TemplateId=ISiteHomeConstants.TemplateIdString)]
 	public partial interface ISiteHome : IGlassBase , global::Projects.Models.Glass.Common.IPageBase
 	{
-								/// <summary>
-					/// The SiteLogo field.
-					/// <para></para>
-					/// <para>Field Type: Image</para>		
-					/// <para>Field ID: 08a97178-4920-4e6e-9dcc-ab1f861de0ee</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(ISiteHomeConstants.SiteLogoFieldName)]
-					Image SiteLogo  {get; set;}
-			
 				}
 
 
@@ -493,10 +514,6 @@ namespace Projects.Models.Glass.Common
 			public static readonly ID TemplateId = new ID(TemplateIdString);
 			public const string TemplateName = "SiteHome";
 
-					
-			public static readonly ID SiteLogoFieldId = new ID("08a97178-4920-4e6e-9dcc-ab1f861de0ee");
-			public const string SiteLogoFieldName = "SiteLogo";
-			
 					
 			public static readonly ID TitleFieldId = new ID("f3479f8e-7fea-494d-80ab-7ad75ee4d94a");
 			public const string TitleFieldName = "Title";
@@ -550,17 +567,6 @@ namespace Projects.Models.Glass.Common
 	 public SiteHome(ISitecoreContext context) : base(context)
 	    {
 	    }
-						/// <summary>
-				/// The SiteLogo field.
-				/// <para></para>
-				/// <para>Field Type: Image</para>		
-				/// <para>Field ID: 08a97178-4920-4e6e-9dcc-ab1f861de0ee</para>
-				/// <para>Custom Data: </para>
-				/// </summary>
-				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISiteHomeConstants.SiteLogoFieldName)]
-				public virtual Image SiteLogo  {get; set;}
-					
 						/// <summary>
 				/// The Title field.
 				/// <para></para>

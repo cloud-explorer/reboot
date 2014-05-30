@@ -2,9 +2,7 @@
 @using Projects.Common.Glass
 @using Sitecore.Mvc.Presentation
 @using Sitecore.Mvc
-@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Projects.Models.ViewModels.HeaderVM>
-
-
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<SiteHome>
 
 <div class="container">
             <div class="navbar-header">
@@ -14,14 +12,19 @@
                     <span class="icon-bar"></span>
                     <span class="icon-bar"></span>
                 </button>
-                <!-- You'll want to use a responsive image option so this logo looks good on devices - I recommend using something like retina.js (do a quick Google search for it and you'll find it) -->
-                <a class="navbar-brand" href="">@Editable(Model, m => m.LinkToHome)</a>
+                <!-- You'll want to use a responsive image option so this logo looks good on devices 
+                    - something like retina.js (do a quick Google search for it and you'll find it) -->
+                @using (BeginRenderLink(m => m.GetInternalLink("navbar-brand brand-icon", "_self")))
+                {
+                    @Editable(Model, m => m.Image)
+                }
+                
             </div>
 
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    @foreach (var item in Model.Navigationitems)
+                    @foreach (var item in Model.GetChildren<PageBase>())
                     {
                         <li @if (item.IsCurrentItem()) { <text> class="active" </text>   }>
                             @Editable(item, i => i.GetInternalLink())

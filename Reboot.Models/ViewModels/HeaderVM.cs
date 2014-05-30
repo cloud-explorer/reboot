@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Glass.Mapper.Sc.Fields;
+using Projects.Models.Glass;
 using Projects.Models.Glass.Common;
 
 namespace Projects.Models.ViewModels
@@ -14,6 +15,6 @@ namespace Projects.Models.ViewModels
 
         public Link LinkToHome { get; set; }
 
-        public IEnumerable<PageBase> Navigationitems { get; set; } 
+        public IEnumerable<IPageBase> Navigationitems { get; set; } 
     }
 }

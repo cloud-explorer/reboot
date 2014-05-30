@@ -78,15 +78,20 @@ namespace <#=fullNamespace #>
         Guid TemplateId { get; }
 
         [SitecoreInfo(SitecoreInfoType.Url)]
-        string URL { get; }
+        string Url { get; }
 		
 		[SitecoreChildren(IsLazy = true)]
-        IEnumerable<GlassBase> Children { get; set; }
+        IEnumerable<IGlassBase> Children { get; set; }
+
+        [SitecoreParent]
+        IGlassBase Parent { get; set; }
 
 		ISitecoreContext Context { get; }
-	
 
-   }
+		    T GetParent<T>() where T : class, IGlassBase;
+		    bool HasChildren<T>() where T : class, IGlassBase;
+		    IEnumerable<T> GetChildren<T>() where T : class, IGlassBase;
+		}
 
 	public abstract class GlassBase : IGlassBase{
 		
@@ -119,15 +124,43 @@ namespace <#=fullNamespace #>
         public Guid TemplateId { get; private set; }
 
         [SitecoreInfo(SitecoreInfoType.Url)]
-        public string URL { get; private set; }
+        public string Url { get; private set; }
 
 		[SitecoreChildren(IsLazy = true)]
-        public virtual IEnumerable<GlassBase> Children { get; set; }
+        public virtual IEnumerable<IGlassBase> Children { get; set; }
+
+        [SitecoreParent]
+	    public IGlassBase Parent { get; set; }
 
 	    public ISitecoreContext Context
 	    {
 	        get { return _context; }
 	    }
+
+	    public T GetParent<T>() where T : class, IGlassBase
+	    {
+	        T parent = Context.GetItem<T>(Parent.Id);
+	        return parent;
+	    }
+
+	    public bool HasChildren<T>() where T : class, IGlassBase
+	    {
+            Guid templateId = Helper.GetTemplateIdFromType<T>();
+	        return Children.Any(item => item.BaseTemplates.Contains(templateId));
+	    }
+
+        public IEnumerable<T> GetChildren<T>() where T : class, IGlassBase
+        {
+            Guid templateId = Helper.GetTemplateIdFromType<T>();
+            var items = new List<T>();
+            if (Children != null)
+            {
+                items.AddRange(
+                    Children.Where(item => item.BaseTemplates.Contains(templateId))
+                        .Select(item => Context.GetItem<T>(item.Id)));
+            }
+               
+            return items;
+        }
 	}
 }
-

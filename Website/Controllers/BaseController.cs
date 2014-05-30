@@ -11,12 +11,6 @@ namespace Projects.Website.Controllers
 {
     public abstract class BaseController : GlassController
     {
-        protected readonly ISitecoreContext Context;
-
-        protected BaseController(ISitecoreContext context)
-        {
-            Context = context;
-        }
 
         ///// <summary>
         ///// Redirect to Knowledge Gateway Home Page
@@ -24,8 +18,8 @@ namespace Projects.Website.Controllers
         ///// <returns></returns>
         public ActionResult RedirectToHomePage()
         {
-            PageBase homeItem = Context.GetHomeItem<PageBase>();
-            string homePageUrl = homeItem.URL;
+            PageBase homeItem = SitecoreContext.GetHomeItem<PageBase>();
+            string homePageUrl = homeItem.Url;
             return Redirect(homePageUrl);
         }        
 	}
