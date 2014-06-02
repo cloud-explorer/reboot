@@ -17,13 +17,6 @@ content-length: 38
 
 {F1828A2C-7E5D-4BBD-98CA-320474871548}
 ----field----
-field: {F7D48A55-2158-4F02-9356-756654404F73}
-name: __Standard values
-key: __standard values
-content-length: 38
-
-{46712903-1A2A-4ADD-A5A0-1CCA30D9DC25}
-----field----
 field: {06D5295C-ED2F-4A54-9BF2-26228D113318}
 name: __Icon
 key: __icon
@@ -148,7 +141,7 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: 9f5c9dde-b715-40c9-bb18-33ccc07b8a0c
+revision: 9c536ec8-ad7d-48e5-9ac7-068c3226bad2
 
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
@@ -177,21 +170,21 @@ name: __Revision
 key: __revision
 content-length: 36
 
-9f5c9dde-b715-40c9-bb18-33ccc07b8a0c
+9c536ec8-ad7d-48e5-9ac7-068c3226bad2
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
-content-length: 34
+content-length: 15
 
-20140524T112240:635365273601047234
+20060905T100829
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
 content-length: 14
 
-sitecore\admin
+sitecore\Admin
 ----version----
 language: ja-JP
 version: 1

@@ -7,6 +7,7 @@ using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Fields;
 using Projects.Models.Glass;
 using Projects.Models.Glass.Common;
+using Projects.Models.Glass.Common.Components;
 using Projects.Models.ViewModels;
 
 namespace Projects.Website.Controllers
@@ -17,6 +18,13 @@ namespace Projects.Website.Controllers
         {
             SiteHome homeItem = SitecoreContext.GetHomeItem<SiteHome>();
             return View(homeItem);
+        }
+
+        public ActionResult Carousel()
+        {
+            Carousel carousel = GetControllerItem<Carousel>();
+            List<Slide> slides = carousel.GetChildren<Slide>().ToList();
+            return View(slides);
         }
     }
 }

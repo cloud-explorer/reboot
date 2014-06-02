@@ -141,7 +141,8 @@ namespace Projects.Models.Glass
             if (Children != null)
             {
                 items.AddRange(
-                    Children.Where(item => item.BaseTemplates.Contains(templateId))
+                    Children.Where(item => item.TemplateId.Equals(templateId) 
+										|| item.BaseTemplates.Contains(templateId))
                         .Select(item => Context.GetItem<T>(item.Id)));
             }
                
@@ -156,22 +157,22 @@ namespace Projects.Models.Glass.Common
 
 
  	/// <summary>
-	/// ISite_Container Interface
+	/// ISiteContainer Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Common/Site Container</para>	
+	/// <para>Path: /sitecore/templates/User Defined/Common/SiteContainer</para>	
 	/// <para>ID: 07dc0852-0942-4e73-bc8e-5bb2e44e7df8</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=ISite_ContainerConstants.TemplateIdString)]
-	public partial interface ISite_Container : IGlassBase , global::Projects.Models.Glass.Common.ISiteSectionBase
+	[SitecoreType(TemplateId=ISiteContainerConstants.TemplateIdString)]
+	public partial interface ISiteContainer : IGlassBase , global::Projects.Models.Glass.Common.ISiteSection
 	{
 				}
 
 
-	public static partial class ISite_ContainerConstants{
+	public static partial class ISiteContainerConstants{
 
 			public const string TemplateIdString = "07dc0852-0942-4e73-bc8e-5bb2e44e7df8";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Site Container";
+			public const string TemplateName = "SiteContainer";
 
 					
 			public static readonly ID TitleFieldId = new ID("f3479f8e-7fea-494d-80ab-7ad75ee4d94a");
@@ -215,15 +216,15 @@ namespace Projects.Models.Glass.Common
 
 	
 	/// <summary>
-	/// Site_Container
+	/// SiteContainer
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Common/Site Container</para>	
+	/// <para>Path: /sitecore/templates/User Defined/Common/SiteContainer</para>	
 	/// <para>ID: 07dc0852-0942-4e73-bc8e-5bb2e44e7df8</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=ISite_ContainerConstants.TemplateIdString)]
-	public partial class Site_Container  : GlassBase, ISite_Container 
+	[SitecoreType(TemplateId=ISiteContainerConstants.TemplateIdString)]
+	public partial class SiteContainer  : GlassBase, ISiteContainer 
 	{
-	 public Site_Container(ISitecoreContext context) : base(context)
+	 public SiteContainer(ISitecoreContext context) : base(context)
 	    {
 	    }
 						/// <summary>
@@ -234,7 +235,7 @@ namespace Projects.Models.Glass.Common
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISite_ContainerConstants.TitleFieldName)]
+				[SitecoreField(ISiteContainerConstants.TitleFieldName)]
 				public virtual string Title  {get; set;}
 					
 						/// <summary>
@@ -245,7 +246,7 @@ namespace Projects.Models.Glass.Common
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISite_ContainerConstants.DescriptionFieldName)]
+				[SitecoreField(ISiteContainerConstants.DescriptionFieldName)]
 				public virtual string Description  {get; set;}
 					
 						/// <summary>
@@ -256,7 +257,7 @@ namespace Projects.Models.Glass.Common
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISite_ContainerConstants.BreadcrumbTitleFieldName)]
+				[SitecoreField(ISiteContainerConstants.BreadcrumbTitleFieldName)]
 				public virtual string BreadcrumbTitle  {get; set;}
 					
 						/// <summary>
@@ -267,7 +268,7 @@ namespace Projects.Models.Glass.Common
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISite_ContainerConstants.KeywordsFieldName)]
+				[SitecoreField(ISiteContainerConstants.KeywordsFieldName)]
 				public virtual string Keywords  {get; set;}
 					
 						/// <summary>
@@ -278,7 +279,7 @@ namespace Projects.Models.Glass.Common
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISite_ContainerConstants.MetaDescriptionFieldName)]
+				[SitecoreField(ISiteContainerConstants.MetaDescriptionFieldName)]
 				public virtual string MetaDescription  {get; set;}
 					
 						/// <summary>
@@ -289,7 +290,7 @@ namespace Projects.Models.Glass.Common
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISite_ContainerConstants.ExternalIdFieldName)]
+				[SitecoreField(ISiteContainerConstants.ExternalIdFieldName)]
 				public virtual string ExternalId  {get; set;}
 					
 						/// <summary>
@@ -300,7 +301,7 @@ namespace Projects.Models.Glass.Common
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISite_ContainerConstants.ImageFieldName)]
+				[SitecoreField(ISiteContainerConstants.ImageFieldName)]
 				public virtual Image Image  {get; set;}
 					
 						/// <summary>
@@ -311,7 +312,7 @@ namespace Projects.Models.Glass.Common
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISite_ContainerConstants.MenuHoverTextFieldName)]
+				[SitecoreField(ISiteContainerConstants.MenuHoverTextFieldName)]
 				public virtual string MenuHoverText  {get; set;}
 					
 						/// <summary>
@@ -322,7 +323,7 @@ namespace Projects.Models.Glass.Common
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISite_ContainerConstants.MenuTitleFieldName)]
+				[SitecoreField(ISiteContainerConstants.MenuTitleFieldName)]
 				public virtual string MenuTitle  {get; set;}
 					
 			
@@ -490,6 +491,7 @@ namespace Projects.Models.Glass.Common.FieldSections
 			
 	}
 }
+
 
 
 namespace Projects.Models.Glass.Common
@@ -670,6 +672,118 @@ namespace Projects.Models.Glass.Common
 	}
 }
 
+namespace Projects.Models.Glass.Common.FieldSections
+{
+
+
+ 	/// <summary>
+	/// IHasLinkToItem Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Common/FieldSections/HasLinkToItem</para>	
+	/// <para>ID: 3a6d9f1b-de92-4156-84a7-445c72d68699</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IHasLinkToItemConstants.TemplateIdString)]
+	public partial interface IHasLinkToItem : IGlassBase 
+	{
+								/// <summary>
+					/// The LinkToItem field.
+					/// <para></para>
+					/// <para>Field Type: General Link</para>		
+					/// <para>Field ID: 6af0a270-2f22-4791-bdd4-2e90cd441364</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IHasLinkToItemConstants.LinkToItemFieldName)]
+					Link LinkToItem  {get; set;}
+			
+				}
+
+
+	public static partial class IHasLinkToItemConstants{
+
+			public const string TemplateIdString = "3a6d9f1b-de92-4156-84a7-445c72d68699";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "HasLinkToItem";
+
+					
+			public static readonly ID LinkToItemFieldId = new ID("6af0a270-2f22-4791-bdd4-2e90cd441364");
+			public const string LinkToItemFieldName = "LinkToItem";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// HasLinkToItem
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Common/FieldSections/HasLinkToItem</para>	
+	/// <para>ID: 3a6d9f1b-de92-4156-84a7-445c72d68699</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IHasLinkToItemConstants.TemplateIdString)]
+	public partial class HasLinkToItem  : GlassBase, IHasLinkToItem 
+	{
+	 public HasLinkToItem(ISitecoreContext context) : base(context)
+	    {
+	    }
+						/// <summary>
+				/// The LinkToItem field.
+				/// <para></para>
+				/// <para>Field Type: General Link</para>		
+				/// <para>Field ID: 6af0a270-2f22-4791-bdd4-2e90cd441364</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHasLinkToItemConstants.LinkToItemFieldName)]
+				public virtual Link LinkToItem  {get; set;}
+					
+			
+	}
+}
+
+
+
+namespace Projects.Models.Glass.Common
+{
+
+
+ 	/// <summary>
+	/// IContent_Section Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Common/Content Section</para>	
+	/// <para>ID: 47618e20-b728-41fd-a065-392802d1ba49</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IContent_SectionConstants.TemplateIdString)]
+	public partial interface IContent_Section : IGlassBase 
+	{
+				}
+
+
+	public static partial class IContent_SectionConstants{
+
+			public const string TemplateIdString = "47618e20-b728-41fd-a065-392802d1ba49";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Content Section";
+
+			
+
+	}
+
+	
+	/// <summary>
+	/// Content_Section
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Common/Content Section</para>	
+	/// <para>ID: 47618e20-b728-41fd-a065-392802d1ba49</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IContent_SectionConstants.TemplateIdString)]
+	public partial class Content_Section  : GlassBase, IContent_Section 
+	{
+	 public Content_Section(ISitecoreContext context) : base(context)
+	    {
+	    }
+			
+	}
+}
 
 
 
@@ -741,6 +855,48 @@ namespace Projects.Models.Glass.Common.FieldSections
 				[SitecoreField(IHasDescriptionConstants.DescriptionFieldName)]
 				public virtual string Description  {get; set;}
 					
+			
+	}
+}
+namespace Projects.Models.Glass.Common.Components
+{
+
+
+ 	/// <summary>
+	/// ICarousel Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Common/Components/Carousel</para>	
+	/// <para>ID: 8cc6e1ff-d1c9-46ee-9f55-a58dadb03e84</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ICarouselConstants.TemplateIdString)]
+	public partial interface ICarousel : IGlassBase 
+	{
+				}
+
+
+	public static partial class ICarouselConstants{
+
+			public const string TemplateIdString = "8cc6e1ff-d1c9-46ee-9f55-a58dadb03e84";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Carousel";
+
+			
+
+	}
+
+	
+	/// <summary>
+	/// Carousel
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Common/Components/Carousel</para>	
+	/// <para>ID: 8cc6e1ff-d1c9-46ee-9f55-a58dadb03e84</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ICarouselConstants.TemplateIdString)]
+	public partial class Carousel  : GlassBase, ICarousel 
+	{
+	 public Carousel(ISitecoreContext context) : base(context)
+	    {
+	    }
 			
 	}
 }
@@ -1057,28 +1213,130 @@ namespace Projects.Models.Glass.Common.FieldSections
 }
 
 
+namespace Projects.Models.Glass.Common.Components
+{
+
+
+ 	/// <summary>
+	/// ISlide Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Common/Components/Slide</para>	
+	/// <para>ID: 9f24a886-a36d-4c27-8f9a-f844bf34f710</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISlideConstants.TemplateIdString)]
+	public partial interface ISlide : IGlassBase , global::Projects.Models.Glass.Common.FieldSections.IHasImage, global::Projects.Models.Glass.Common.FieldSections.IHasTitle, global::Projects.Models.Glass.Common.FieldSections.IHasDescription, global::Projects.Models.Glass.Common.FieldSections.IHasLinkToItem
+	{
+				}
+
+
+	public static partial class ISlideConstants{
+
+			public const string TemplateIdString = "9f24a886-a36d-4c27-8f9a-f844bf34f710";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Slide";
+
+					
+			public static readonly ID ImageFieldId = new ID("c978e4f3-e816-4000-8845-04e6cc2e8609");
+			public const string ImageFieldName = "Image";
+			
+					
+			public static readonly ID TitleFieldId = new ID("f3479f8e-7fea-494d-80ab-7ad75ee4d94a");
+			public const string TitleFieldName = "Title";
+			
+					
+			public static readonly ID DescriptionFieldId = new ID("aca2a76a-21f1-4798-9b69-c87764e9ceee");
+			public const string DescriptionFieldName = "Description";
+			
+					
+			public static readonly ID LinkToItemFieldId = new ID("6af0a270-2f22-4791-bdd4-2e90cd441364");
+			public const string LinkToItemFieldName = "LinkToItem";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// Slide
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Common/Components/Slide</para>	
+	/// <para>ID: 9f24a886-a36d-4c27-8f9a-f844bf34f710</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISlideConstants.TemplateIdString)]
+	public partial class Slide  : GlassBase, ISlide 
+	{
+	 public Slide(ISitecoreContext context) : base(context)
+	    {
+	    }
+						/// <summary>
+				/// The Image field.
+				/// <para></para>
+				/// <para>Field Type: Image</para>		
+				/// <para>Field ID: c978e4f3-e816-4000-8845-04e6cc2e8609</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISlideConstants.ImageFieldName)]
+				public virtual Image Image  {get; set;}
+					
+						/// <summary>
+				/// The Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: f3479f8e-7fea-494d-80ab-7ad75ee4d94a</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISlideConstants.TitleFieldName)]
+				public virtual string Title  {get; set;}
+					
+						/// <summary>
+				/// The Description field.
+				/// <para></para>
+				/// <para>Field Type: Rich Text</para>		
+				/// <para>Field ID: aca2a76a-21f1-4798-9b69-c87764e9ceee</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISlideConstants.DescriptionFieldName)]
+				public virtual string Description  {get; set;}
+					
+						/// <summary>
+				/// The LinkToItem field.
+				/// <para></para>
+				/// <para>Field Type: General Link</para>		
+				/// <para>Field ID: 6af0a270-2f22-4791-bdd4-2e90cd441364</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISlideConstants.LinkToItemFieldName)]
+				public virtual Link LinkToItem  {get; set;}
+					
+			
+	}
+}
 
 namespace Projects.Models.Glass.Common
 {
 
 
  	/// <summary>
-	/// ISiteSectionBase Interface
+	/// ISiteSection Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Common/SiteSectionBase</para>	
+	/// <para>Path: /sitecore/templates/User Defined/Common/SiteSection</para>	
 	/// <para>ID: add81fbd-f1f5-45e0-93a1-26a899526ce4</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=ISiteSectionBaseConstants.TemplateIdString)]
-	public partial interface ISiteSectionBase : IGlassBase , global::Projects.Models.Glass.Common.IPageBase
+	[SitecoreType(TemplateId=ISiteSectionConstants.TemplateIdString)]
+	public partial interface ISiteSection : IGlassBase , global::Projects.Models.Glass.Common.IPageBase
 	{
 				}
 
 
-	public static partial class ISiteSectionBaseConstants{
+	public static partial class ISiteSectionConstants{
 
 			public const string TemplateIdString = "add81fbd-f1f5-45e0-93a1-26a899526ce4";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "SiteSectionBase";
+			public const string TemplateName = "SiteSection";
 
 					
 			public static readonly ID TitleFieldId = new ID("f3479f8e-7fea-494d-80ab-7ad75ee4d94a");
@@ -1122,15 +1380,15 @@ namespace Projects.Models.Glass.Common
 
 	
 	/// <summary>
-	/// SiteSectionBase
+	/// SiteSection
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Common/SiteSectionBase</para>	
+	/// <para>Path: /sitecore/templates/User Defined/Common/SiteSection</para>	
 	/// <para>ID: add81fbd-f1f5-45e0-93a1-26a899526ce4</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=ISiteSectionBaseConstants.TemplateIdString)]
-	public partial class SiteSectionBase  : GlassBase, ISiteSectionBase 
+	[SitecoreType(TemplateId=ISiteSectionConstants.TemplateIdString)]
+	public partial class SiteSection  : GlassBase, ISiteSection 
 	{
-	 public SiteSectionBase(ISitecoreContext context) : base(context)
+	 public SiteSection(ISitecoreContext context) : base(context)
 	    {
 	    }
 						/// <summary>
@@ -1141,7 +1399,7 @@ namespace Projects.Models.Glass.Common
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISiteSectionBaseConstants.TitleFieldName)]
+				[SitecoreField(ISiteSectionConstants.TitleFieldName)]
 				public virtual string Title  {get; set;}
 					
 						/// <summary>
@@ -1152,7 +1410,7 @@ namespace Projects.Models.Glass.Common
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISiteSectionBaseConstants.DescriptionFieldName)]
+				[SitecoreField(ISiteSectionConstants.DescriptionFieldName)]
 				public virtual string Description  {get; set;}
 					
 						/// <summary>
@@ -1163,7 +1421,7 @@ namespace Projects.Models.Glass.Common
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISiteSectionBaseConstants.BreadcrumbTitleFieldName)]
+				[SitecoreField(ISiteSectionConstants.BreadcrumbTitleFieldName)]
 				public virtual string BreadcrumbTitle  {get; set;}
 					
 						/// <summary>
@@ -1174,7 +1432,7 @@ namespace Projects.Models.Glass.Common
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISiteSectionBaseConstants.KeywordsFieldName)]
+				[SitecoreField(ISiteSectionConstants.KeywordsFieldName)]
 				public virtual string Keywords  {get; set;}
 					
 						/// <summary>
@@ -1185,7 +1443,7 @@ namespace Projects.Models.Glass.Common
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISiteSectionBaseConstants.MetaDescriptionFieldName)]
+				[SitecoreField(ISiteSectionConstants.MetaDescriptionFieldName)]
 				public virtual string MetaDescription  {get; set;}
 					
 						/// <summary>
@@ -1196,7 +1454,7 @@ namespace Projects.Models.Glass.Common
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISiteSectionBaseConstants.ExternalIdFieldName)]
+				[SitecoreField(ISiteSectionConstants.ExternalIdFieldName)]
 				public virtual string ExternalId  {get; set;}
 					
 						/// <summary>
@@ -1207,7 +1465,7 @@ namespace Projects.Models.Glass.Common
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISiteSectionBaseConstants.ImageFieldName)]
+				[SitecoreField(ISiteSectionConstants.ImageFieldName)]
 				public virtual Image Image  {get; set;}
 					
 						/// <summary>
@@ -1218,7 +1476,7 @@ namespace Projects.Models.Glass.Common
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISiteSectionBaseConstants.MenuHoverTextFieldName)]
+				[SitecoreField(ISiteSectionConstants.MenuHoverTextFieldName)]
 				public virtual string MenuHoverText  {get; set;}
 					
 						/// <summary>
@@ -1229,7 +1487,7 @@ namespace Projects.Models.Glass.Common
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(ISiteSectionBaseConstants.MenuTitleFieldName)]
+				[SitecoreField(ISiteSectionConstants.MenuTitleFieldName)]
 				public virtual string MenuTitle  {get; set;}
 					
 			
@@ -1309,6 +1567,7 @@ namespace Projects.Models.Glass.Common
 			
 	}
 }
+
 
 
 

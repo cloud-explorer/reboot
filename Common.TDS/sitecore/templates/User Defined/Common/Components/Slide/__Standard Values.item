@@ -1,0 +1,65 @@
+----item----
+version: 1
+id: {290399C2-E2BB-4F6D-BE73-8734F77972C5}
+database: master
+path: /sitecore/templates/User Defined/Common/Components/Slide/__Standard Values
+parent: {9F24A886-A36D-4C27-8F9A-F844BF34F710}
+name: __Standard Values
+master: {00000000-0000-0000-0000-000000000000}
+template: {9F24A886-A36D-4C27-8F9A-F844BF34F710}
+templatekey: Slide
+
+----version----
+language: en
+version: 1
+revision: cb32e2e7-46dc-4ec5-a6d3-1112dad2839e
+
+----field----
+field: {F3479F8E-7FEA-494D-80AB-7AD75EE4D94A}
+name: Title
+key: title
+content-length: 0
+
+
+----field----
+field: {ACA2A76A-21F1-4798-9B69-C87764E9CEEE}
+name: Description
+key: description
+content-length: 0
+
+
+----field----
+field: {C978E4F3-E816-4000-8845-04E6CC2E8609}
+name: Image
+key: image
+content-length: 58
+
+<image mediaid="{1EF8A2DB-F453-475A-8B7E-68372D9F2063}" />
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140530T184110
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+cb32e2e7-46dc-4ec5-a6d3-1112dad2839e
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140530T222412:635370854520025258
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

@@ -1,7 +1,4 @@
-﻿@using Glass.Mapper.Sc
-@using Projects.Common.Glass
-@using Sitecore.Mvc.Presentation
-@using Sitecore.Mvc
+﻿@using Projects.Common.Glass
 @inherits Glass.Mapper.Sc.Web.Mvc.GlassView<SiteHome>
 
 <div class="container">
@@ -30,7 +27,13 @@
                             @Editable(item, i => i.GetInternalLink())
                         </li>
                     }
-                 </ul>
+                    <li>
+                        <form class="navbar-form">
+                            <input type="text" class="form-control col-lg-8" placeholder="Search">
+                        </form>
+                    </li>
+                </ul>
+                
             </div>
             <!-- /.navbar-collapse -->
         </div>

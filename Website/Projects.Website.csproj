@@ -397,6 +397,7 @@
     <Content Include="Global.asax" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Shared\Header.cshtml" />
+    <Content Include="Views\Shared\Carousel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Movie\Controllers\" />

@@ -91,7 +91,7 @@ namespace Projects.Models.Glass.Reboot.Containers
 	/// <para>ID: 364af857-abdf-4259-8487-8e7f4fb1e99f</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IMoviesConstants.TemplateIdString)]
-	public partial interface IMovies : IGlassBase , global::Projects.Models.Glass.Common.ISiteSectionBase
+	public partial interface IMovies : IGlassBase , global::Projects.Models.Glass.Common.ISiteSection
 	{
 				}
 
@@ -1206,7 +1206,7 @@ namespace Projects.Models.Glass.Reboot.Containers
 	/// <para>ID: 9f93de1e-df45-457a-9b00-18b2a64eb597</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IPeopleConstants.TemplateIdString)]
-	public partial interface IPeople : IGlassBase , global::Projects.Models.Glass.Common.ISiteSectionBase
+	public partial interface IPeople : IGlassBase , global::Projects.Models.Glass.Common.ISiteSection
 	{
 				}
 
@@ -1636,7 +1636,7 @@ namespace Projects.Models.Glass.Reboot.Containers
 	/// <para>ID: e240f310-1855-4c97-b009-36c1e48909eb</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=ILanguagesConstants.TemplateIdString)]
-	public partial interface ILanguages : IGlassBase , global::Projects.Models.Glass.Common.ISiteSectionBase
+	public partial interface ILanguages : IGlassBase , global::Projects.Models.Glass.Common.ISiteSection
 	{
 				}
 

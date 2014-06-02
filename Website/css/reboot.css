@@ -1,4 +1,10 @@
 ﻿.navbar-header .brand-icon {
   padding-top: 8px;
 }
+.carousel.slide {
+  width: 100%;
+}
+.carousel.slide img {
+  width: 100%;
+}
 /*# sourceMappingURL=reboot.css.map */

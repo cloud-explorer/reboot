@@ -156,7 +156,8 @@ namespace <#=fullNamespace #>
             if (Children != null)
             {
                 items.AddRange(
-                    Children.Where(item => item.BaseTemplates.Contains(templateId))
+                    Children.Where(item => item.TemplateId.Equals(templateId) 
+										|| item.BaseTemplates.Contains(templateId))
                         .Select(item => Context.GetItem<T>(item.Id)));
             }
                

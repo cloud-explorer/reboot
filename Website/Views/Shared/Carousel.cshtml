@@ -1,0 +1,42 @@
+﻿@using Projects.Common.Glass
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<List<Projects.Models.Glass.Common.Components.Slide>>
+<div id="rebootCarousel" class="carousel slide">
+    <!-- Indicators -->
+    <ol class="carousel-indicators">
+        <li data-target="#rebootCarousel" data-slide-to="0" class="active"></li>
+        <li data-target="#rebootCarousel" data-slide-to="1"></li>
+        <li data-target="#rebootCarousel" data-slide-to="2"></li>
+    </ol>
+
+    <!-- Wrapper for slides -->
+    <div class="carousel-inner">
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+            var slide = Model[i];
+            <div class="item @if (i == 0)
+                             {
+                                 <text> active </text>
+                             }">
+                @using (BeginRenderLink(slide, s => s.LinkToItem, new {@class = "slide-link"}))
+                {
+                        <div class="fill" style="background-image:url('@slide.Image.Src');"></div>
+
+                    <div class="carousel-caption">
+                        <h1>@Editable(slide, s => s.Title)</h1>
+                        <p>
+                            @Editable(slide, s => s.Description)
+                        </p>
+                    </div>
+                }
+            </div>
+        }
+    </div>
+
+    <!-- Controls -->
+    <a class="left carousel-control" href="#rebootCarousel" data-slide="prev">
+        <span class="icon-prev"></span>
+    </a>
+    <a class="right carousel-control" href="#rebootCarousel" data-slide="next">
+        <span class="icon-next"></span>
+    </a>
+</div>
