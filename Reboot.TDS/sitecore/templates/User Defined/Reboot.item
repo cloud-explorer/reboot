@@ -9,10 +9,17 @@ master: {00000000-0000-0000-0000-000000000000}
 template: {0437FEE2-44C9-46A6-ABE9-28858D9FEE8C}
 templatekey: Template Folder
 
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 523
+
+<r><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{46D8E219-BEBC-42FA-9807-D99271764200}"><r id="{A1EF02CD-F210-40AB-BB6B-ECDB990DD93A}" ph="header" uid="{2D8CA470-3F27-494C-AAEE-E7F6F61E2D57}" /><r id="{4B5BE64A-D753-4A0D-A31B-387CC50478C3}" ph="body" uid="{C5CD2875-254B-4034-BD22-46DD58C13A86}" /><r id="{F0262C1D-FB92-40BB-B05D-449F4C1A5662}" ph="center" uid="{243242E0-90D4-41FA-B399-05228AFC125E}" /><r id="{EEE682C2-6D83-4756-87E2-0EA100C814E8}" ph="center" uid="{26D1F475-B7B9-4083-AF76-5A61F7B2BAC3}" /></d></r>
 ----version----
 language: en
 version: 1
-revision: f94edfa9-da78-44d5-9382-5dc3b2025173
+revision: fcce8a63-e86e-434e-836d-5ef9e3c6c505
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -34,14 +41,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-f94edfa9-da78-44d5-9382-5dc3b2025173
+fcce8a63-e86e-434e-836d-5ef9e3c6c505
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 34
 
-20140520T211826:635362175063763149
+20140605T072822:635375501020629317
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

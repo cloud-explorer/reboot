@@ -1,0 +1,124 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{08CF64D6-4798-46AA-BF88-19AA65C34672}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Projects.Reboot.Services</RootNamespace>
+    <AssemblyName>Projects.Reboot.Services</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">..\Website\</SolutionDir>
+    <RestorePackages>true</RestorePackages>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Castle.Core">
+      <HintPath>..\Website\packages\Castle.Core.3.3.0\lib\net45\Castle.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="Glass.Mapper">
+      <HintPath>..\Website\packages\Glass.Mapper.3.0.10.23\lib\net45\Glass.Mapper.dll</HintPath>
+    </Reference>
+    <Reference Include="Glass.Mapper.Sc">
+      <HintPath>..\Website\packages\Glass.Mapper.Sc.3.1.10.31\lib\net45\Glass.Mapper.Sc.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch">
+      <HintPath>..\Packages\Sitecore\Sitecore.ContentSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq">
+      <HintPath>E:\One Drive\OneDrive\work\Reboot\Packages\Sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq.Solr">
+      <HintPath>E:\One Drive\OneDrive\work\Reboot\Packages\Sitecore\Sitecore.ContentSearch.Linq.Solr.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.Kernel">
+      <HintPath>..\Packages\Sitecore\Sitecore.Kernel.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommonTextService.cs" />
+    <Compile Include="MovieSearchService.cs" />
+    <Compile Include="SearchService.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Common.Contracts\Projects.Common.Contracts.csproj">
+      <Project>{d2a136da-97a9-4c46-8100-2727b3970af9}</Project>
+      <Name>Projects.Common.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.Models\Projects.Common.Models.csproj">
+      <Project>{a22add22-d533-4cde-a405-50621aa4a253}</Project>
+      <Name>Projects.Common.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Common.Utils\Projects.Common.Utils.csproj">
+      <Project>{5a8b0c0d-1533-404f-bda6-73627a3b008f}</Project>
+      <Name>Projects.Common.Utils</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Projects.Common.Glass\Projects.Common.Glass.csproj">
+      <Project>{6f9d0a8d-1a19-486b-973c-e60b73b9664f}</Project>
+      <Name>Projects.Common.Glass</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Projects.Reboot.Contracts\Projects.Reboot.Contracts.csproj">
+      <Project>{145E43A6-541D-45FA-AA4A-762586FFB28A}</Project>
+      <Name>Projects.Reboot.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reboot.Core\Projects.Reboot.Core.csproj">
+      <Project>{794116f3-d034-4856-b896-8c95cf9b0cda}</Project>
+      <Name>Projects.Reboot.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reboot.Models\Projects.Reboot.Models.csproj">
+      <Project>{7cc97693-c9c8-4bdd-8911-50d69069c545}</Project>
+      <Name>Projects.Reboot.Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Reboot.Services\Projects.Reboot.Common.csproj">
+      <Project>{cf715d87-db60-42fa-a4ed-352e37d81c9b}</Project>
+      <Name>Projects.Reboot.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(SolutionDir)\.nuget\NuGet.targets" Condition="Exists('$(SolutionDir)\.nuget\NuGet.targets')" />
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105. The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('$(SolutionDir)\.nuget\NuGet.targets')" Text="$([System.String]::Format('$(ErrorText)', '$(SolutionDir)\.nuget\NuGet.targets'))" />
+  </Target>
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -13,7 +13,7 @@
                     - something like retina.js (do a quick Google search for it and you'll find it) -->
                 @using (BeginRenderLink(m => m.GetInternalLink("navbar-brand brand-icon", "_self")))
                 {
-                    @Editable(Model, m => m.Image)
+                    @RenderImage(Model, m => m.Image)
                 }
                 
             </div>
@@ -21,10 +21,10 @@
             <!-- Collect the nav links, forms, and other content for toggling -->
             <div class="collapse navbar-collapse navbar-ex1-collapse">
                 <ul class="nav navbar-nav navbar-right">
-                    @foreach (var item in Model.GetChildren<PageBase>())
+                    @foreach (var item in Model.GetChildren<PageBase>().Where(c => c.ShowInMenu))
                     {
                         <li @if (item.IsCurrentItem()) { <text> class="active" </text>   }>
-                            @Editable(item, i => i.GetInternalLink())
+                            @RenderLink(item, i => i.GetInternalLink())
                         </li>
                     }
                     <li>

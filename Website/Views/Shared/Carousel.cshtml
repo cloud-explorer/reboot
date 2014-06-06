@@ -19,7 +19,14 @@
                              }">
                 @using (BeginRenderLink(slide, s => s.LinkToItem, new {@class = "slide-link"}))
                 {
-                        <div class="fill" style="background-image:url('@slide.Image.Src');"></div>
+                    if (Sitecore.Context.PageMode.IsPageEditor)
+                    {
+                        @Editable(slide , s => s.Image)
+                    }
+                    else
+                    {
+                        <div class="fill" style="background-image: url('@slide.Image.Src');"></div>
+                    }
 
                     <div class="carousel-caption">
                         <h1>@Editable(slide, s => s.Title)</h1>

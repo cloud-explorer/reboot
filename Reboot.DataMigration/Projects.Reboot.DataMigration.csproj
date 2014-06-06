@@ -129,7 +129,7 @@
       <Project>{7cc97693-c9c8-4bdd-8911-50d69069c545}</Project>
       <Name>Projects.Reboot.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Website\Reboot.Services\Projects.Reboot.Common.csproj">
+    <ProjectReference Include="..\Reboot.Services\Projects.Reboot.Common.csproj">
       <Project>{cf715d87-db60-42fa-a4ed-352e37d81c9b}</Project>
       <Name>Projects.Reboot.Common</Name>
     </ProjectReference>

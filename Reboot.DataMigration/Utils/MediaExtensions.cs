@@ -51,7 +51,7 @@ namespace Projects.Reboot.DataMigration.Utils
             return mediaItem;
         }
 
-        public static Guid AddMovieDBImage(TMDbClient client, string fileName, string size = "w500")
+        public static Guid AddMovieDBImage(TMDbClient client, string fileName, string size = "original")
         {
             ID id = IDTableExtesions.GetItemIdFromIDTableEntry(RebootConstants.ImageItemPrefix, fileName);
             if (!id.IsNull) return id.Guid;

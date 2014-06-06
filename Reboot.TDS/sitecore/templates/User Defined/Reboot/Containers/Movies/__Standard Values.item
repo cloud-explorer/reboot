@@ -30,11 +30,25 @@ key: __is bucket
 content-length: 1
 
 1
+----field----
+field: {F1A1FE9E-A60C-4DDB-A3A0-BB5B29FE732E}
+name: __Renderings
+key: __renderings
+content-length: 568
+
+<r xmlns:xsd="http://www.w3.org/2001/XMLSchema"><d id="{FE5D7FDF-89C0-4D99-9AA3-B5FBD009C9F3}" l="{46D8E219-BEBC-42FA-9807-D99271764200}"><r id="{A1EF02CD-F210-40AB-BB6B-ECDB990DD93A}" ph="header" uid="{2D8CA470-3F27-494C-AAEE-E7F6F61E2D57}" /><r id="{4B5BE64A-D753-4A0D-A31B-387CC50478C3}" ph="body" uid="{C5CD2875-254B-4034-BD22-46DD58C13A86}" /><r id="{F0262C1D-FB92-40BB-B05D-449F4C1A5662}" ph="center" uid="{243242E0-90D4-41FA-B399-05228AFC125E}" /><r id="{EEE682C2-6D83-4756-87E2-0EA100C814E8}" ph="center" uid="{26D1F475-B7B9-4083-AF76-5A61F7B2BAC3}" /></d></r>
 ----version----
 language: en
 version: 1
-revision: 7e9c5ee7-4c40-4039-bee5-248aceeee4e8
+revision: dcabb1b4-1e30-463d-bb2f-5895cfacfbc3
 
+----field----
+field: {B36F38D6-F0E4-413E-8EC9-DC6DE5D34BF3}
+name: CssClassName
+key: cssclassname
+content-length: 18
+
+fa fa-video-camera
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
 name: __Created
@@ -48,18 +62,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-7e9c5ee7-4c40-4039-bee5-248aceeee4e8
+dcabb1b4-1e30-463d-bb2f-5895cfacfbc3
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 34
 
-20140520T212952:635362181927275720
+20140605T072836:635375501164707558
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 18
+content-length: 14
 
-sitecore\Anonymous
+sitecore\admin

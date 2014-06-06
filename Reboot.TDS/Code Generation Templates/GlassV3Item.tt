@@ -109,6 +109,9 @@ if (!template.Name.IsInterfaceWord()){ #>
 	   public <#= template.Name.AsClassName() #>(ISitecoreContext context) : base(context)
 	    {
 	    }
+		public <#= template.Name.AsClassName() #>() : base()
+	    {
+	    }
 		<#foreach(SitecoreField field in GetFieldsForTemplate(template, true)){#>
 				/// <summary>
 				/// The <#=field.Name#> field.

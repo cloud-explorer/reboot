@@ -41,6 +41,7 @@
     <DefineConstants>DEBUG;TRACE</DefineConstants>
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
+    <UseVSHostingProcess>true</UseVSHostingProcess>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
     <DebugType>pdbonly</DebugType>
@@ -107,6 +108,10 @@
     <Reference Include="Newtonsoft.Json, Version=4.5.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="Projects.Reboot.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Projects.Reboot.Contracts\bin\Debug\Projects.Reboot.Contracts.dll</HintPath>
     </Reference>
     <Reference Include="RadEditor.Net2, Version=7.2.0.0, Culture=neutral, PublicKeyToken=852c9eb6525c1b53, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -356,6 +361,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\SiteDefinition.config" />
+    <Content Include="content\delete.gif" />
+    <Content Include="css\rateit.css" />
+    <Content Include="content\star.gif" />
     <Content Include="css\bootstrap.css" />
     <Content Include="css\bootstrap.min.css" />
     <Content Include="css\modern-business.css" />
@@ -385,6 +393,9 @@
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
+    <Content Include="Scripts\jquery.rateit.js" />
+    <Content Include="js\jquery.rateit.min.js" />
+    <Content Include="Scripts\jquery.rateit.min.js.map" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
@@ -398,6 +409,21 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Shared\Header.cshtml" />
     <Content Include="Views\Shared\Carousel.cshtml" />
+    <Content Include="Views\Movie\NowRunningMovies.cshtml" />
+    <Content Include="Views\Shared\SingleColumn.cshtml" />
+    <Content Include="Views\Shared\TwoColumn.cshtml" />
+    <Content Include="Views\Shared\ThreeColumn.cshtml" />
+    <Content Include="Views\Shared\TwoColumnWithLeftRail.cshtml" />
+    <Content Include="Views\Movie\ComingSoonMovies.cshtml" />
+    <Content Include="Views\Shared\RenderItemList.cshtml" />
+    <Content Include="Views\Movie\MovieDetails.cshtml" />
+    <Content Include="Views\Page\Breadcrumb.cshtml" />
+    <Content Include="Views\Page\Title.cshtml" />
+    <Content Include="Views\Page\ImageAndDescription.cshtml" />
+    <Content Include="Views\Page\RateIt.cshtml" />
+    <Content Include="Views\Movie\Cast.cshtml" />
+    <Content Include="Views\Movie\Crew.cshtml" />
+    <Content Include="Views\Shared\YouTube.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Movie\Controllers\" />
@@ -407,7 +433,6 @@
     <Folder Include="sitecore modules\debug\" />
     <Folder Include="sitecore modules\Web\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Page\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Sitecore.AntiCsrf.config" />
@@ -459,6 +484,14 @@
       <Project>{5a8b0c0d-1533-404f-bda6-73627a3b008f}</Project>
       <Name>Projects.Common.Utils</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Projects.Common.Glass\Projects.Common.Glass.csproj">
+      <Project>{6f9d0a8d-1a19-486b-973c-e60b73b9664f}</Project>
+      <Name>Projects.Common.Glass</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Projects.Reboot.Services\Projects.Reboot.Services.csproj">
+      <Project>{08cf64d6-4798-46aa-bf88-19aa65c34672}</Project>
+      <Name>Projects.Reboot.Services</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Reboot.DataMigration\Projects.Reboot.DataMigration.csproj">
       <Project>{602fbf8e-e0a1-4835-bcd7-833cedf58c3a}</Project>
       <Name>Projects.Reboot.DataMigration</Name>
@@ -471,7 +504,7 @@
       <Project>{794116f3-d034-4856-b896-8c95cf9b0cda}</Project>
       <Name>Projects.Reboot.Core</Name>
     </ProjectReference>
-    <ProjectReference Include="Reboot.Services\Projects.Reboot.Common.csproj">
+    <ProjectReference Include="..\Reboot.Services\Projects.Reboot.Common.csproj">
       <Project>{CF715D87-DB60-42FA-A4ED-352E37D81C9B}</Project>
       <Name>Projects.Reboot.Common</Name>
     </ProjectReference>
@@ -529,6 +562,7 @@
     <Compile Include="App_Start\GlassMapperScCustom.cs" />
     <Compile Include="Areas\Movie\MovieAreaRegistration.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\MovieController.cs" />
     <Compile Include="Controllers\PageController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

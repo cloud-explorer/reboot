@@ -1,0 +1,27 @@
+﻿@using Glass.Mapper.Sc.RenderField
+@using Projects.Common.Glass
+@using Projects.Models.Glass.Reboot.Items
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<IEnumerable<Projects.Models.Glass.Reboot.Items.Movie>>
+@*This View is not being used. This is here only as an example*@
+<div>
+    @*TODO: This needs to be replaced with a common text item *@
+    <h3><i class="fa fa-clock-o"></i> Now Running</h3>
+    @foreach (Movie mov in Model)
+    {
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4  text-center">
+
+            @using (BeginRenderLink(mov, m => m.GetInternalLink(string.Empty, "_self")))
+            {
+                <div class="row">@RenderImage(mov, m => m.Image, new ImageParameters { Height = 135 })</div>
+
+                <small>
+                    @Editable(mov, m => m.Title)
+                </small>
+
+            }
+
+
+        </div>
+    }
+
+</div>

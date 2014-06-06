@@ -1,0 +1,30 @@
+﻿@using System.Collections.Specialized
+@using Glass.Mapper.Sc.RenderField
+@using Projects.Common.Glass
+@using Projects.Models.Glass.Reboot.Items
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<PageBase>
+
+<div class="row">
+    <div class="col-md-2 col-xs-4 text-center">
+        <a href="#" data-toggle="modal" data-target="#imageModel">
+            @Editable(Model, m => m.Image, new ImageParameters { Class = "img-responsive", MaxWidth = 200})
+        </a>
+        <div id="imageModel" class="modal fade" tabindex="-1" role="dialog">
+            <div class="modal-dialog">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                        <h4 class="modal-title">@Model.Title</h4>
+                    </div>
+                    <div class="modal-body">
+                        @RenderImage(Model, m => m.Image, new ImageParameters { Class = "img-responsive" })
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-10">
+        @Editable(Model, m => m.Description)
+        @Html.Sitecore().Placeholder("description")
+    </div>
+</div>

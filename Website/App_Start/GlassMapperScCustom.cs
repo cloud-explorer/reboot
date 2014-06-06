@@ -17,7 +17,7 @@ namespace Projects.Website.App_Start
             var config = new Config {UseWindsorContructor = true};
 		    List<IWindsorInstaller> installers = new List<IWindsorInstaller>
                 {
-                    new SitecoreInstaller(config), new RebootInstaller()
+                    new SitecoreInstaller(config), new RebootInstaller(), new ControllerInstaller()
                 };
             #if DEBUG
             installers.Add(new DataMigrationInstaller());

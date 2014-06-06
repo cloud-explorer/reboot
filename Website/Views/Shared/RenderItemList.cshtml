@@ -1,0 +1,25 @@
+﻿@using Glass.Mapper.Sc.RenderField
+@using Projects.Common.Glass
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Projects.Models.ViewModels.ItemList>
+
+<div class="section row">
+    @*TODO: This needs to be replaced with a common text item *@
+    <h3><i class="fa @Model.IconClassName"></i> @Model.ListName</h3>
+    @foreach (IPageBase item in Model.Items)
+    {
+        <div class="col-lg-2 col-md-2 col-sm-2 col-xs-4  text-center">
+
+            @using (BeginRenderLink(item, m => m.GetInternalLink(string.Empty, "_self")))
+            {
+                <div class="row">@RenderImage(item, m => m.Image, new ImageParameters { Height = 135})</div>
+
+                <small>
+                    @Editable(item, m => m.Title)
+                </small>
+            }
+
+
+        </div>
+    }
+
+</div>

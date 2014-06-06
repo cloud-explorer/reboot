@@ -12,7 +12,7 @@ templatekey: IsNavigable
 ----version----
 language: en
 version: 1
-revision: 4fc84cfe-832a-48e1-b3c2-83aee836e96c
+revision: 8ccd53d5-4f9d-474c-ad7f-acb7e983031e
 
 ----field----
 field: {2F0521A1-2A3F-491D-BC54-7DABAC85E6D6}
@@ -28,6 +28,13 @@ key: menuhovertext
 content-length: 5
 
 $name
+----field----
+field: {64BE5630-D2A8-42F4-A127-DD901EE32F6B}
+name: ShowInMenu
+key: showinmenu
+content-length: 1
+
+1
 ----field----
 field: {52807595-0F8F-4B20-8D2A-CB71D28C6103}
 name: __Owner
@@ -55,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-4fc84cfe-832a-48e1-b3c2-83aee836e96c
+8ccd53d5-4f9d-474c-ad7f-acb7e983031e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 34
 
-20140520T211328:635362172088752989
+20140602T142457:635373158973773183
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

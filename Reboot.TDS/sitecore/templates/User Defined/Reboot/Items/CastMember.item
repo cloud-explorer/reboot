@@ -30,10 +30,17 @@ key: __icon
 content-length: 22
 
 People/32x32/dude3.png
+----field----
+field: {BA3F86A2-4A1C-4D78-B63D-91C2779C1B5E}
+name: __Sortorder
+key: __sortorder
+content-length: 3
+
+100
 ----version----
 language: en
 version: 1
-revision: 27106012-c2dd-4269-af0b-b733d4867961
+revision: 8e84ed40-9085-44bc-9884-43a78b097daa
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -55,14 +62,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-27106012-c2dd-4269-af0b-b733d4867961
+8e84ed40-9085-44bc-9884-43a78b097daa
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 34
 
-20140522T161337:635363720171806164
+20140602T132520:635373123204074734
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

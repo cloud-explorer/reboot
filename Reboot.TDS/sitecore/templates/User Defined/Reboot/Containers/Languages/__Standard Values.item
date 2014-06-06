@@ -13,9 +13,16 @@ templatekey: Languages
 field: {A0CB3965-8884-4C7A-8815-B6B2E5CED162}
 name: __Editors
 key: __editors
-content-length: 77
+content-length: 38
 
-{59F53BBB-D1F5-4E38-8EBA-0D73109BB59B}|{A0C460F4-DBAE-4A5A-8F3A-C4ADFCDACEEA}
+{A0C460F4-DBAE-4A5A-8F3A-C4ADFCDACEEA}
+----field----
+field: {39C4902E-9960-4469-AEEF-E878E9C8218F}
+name: __Hidden
+key: __hidden
+content-length: 1
+
+0
 ----field----
 field: {1172F251-DAD4-4EFB-A329-0C63500E4F1E}
 name: __Masters
@@ -29,11 +36,11 @@ name: __Is Bucket
 key: __is bucket
 content-length: 1
 
-1
+0
 ----version----
 language: en
 version: 1
-revision: 2f0ca7f8-37ac-4f0c-a652-1490e7672bbb
+revision: d1a9f2b7-c931-483e-a260-eb9e5f75fd49
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -48,18 +55,18 @@ name: __Revision
 key: __revision
 content-length: 36
 
-2f0ca7f8-37ac-4f0c-a652-1490e7672bbb
+d1a9f2b7-c931-483e-a260-eb9e5f75fd49
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 34
 
-20140520T224912:635362229529908435
+20140527T071141:635367715013776843
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by
 key: __updated by
-content-length: 14
+content-length: 18
 
-sitecore\admin
+sitecore\Anonymous

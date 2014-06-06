@@ -1,0 +1,76 @@
+﻿@using Projects.Models.Glass.Reboot.Items
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Projects.Models.Glass.Reboot.Items.Movie>
+<hr />
+<div class="row">
+    <div class="col-md-3">
+
+        <div class="list-group">
+            <a href="#" class="list-group-item active">
+                Movie Facts
+            </a>
+            @if (Model.Genres.Any())
+            {
+                <a href="#" class="list-group-item">
+                    <i class="fa fa-tags"></i>  Genre
+                    <div class="row pad-left">
+                        @foreach (var genre in Model.Genres.Select(sl => GlassHtml.SitecoreContext.GetItem<Genre>(sl)).ToList())
+                        {
+                            <span class="badge">
+                                @genre.Title
+                            </span>
+                        }
+                    </div>
+                </a>
+            }
+            @if (Model.SpokenLanguages.Any())
+            {
+                <a href="#" class="list-group-item">
+                    <i class="fa fa-film"></i>  Languages
+                    <div class="row pad-left">
+                        @foreach (var lang in Model.SpokenLanguages.Select(sl => GlassHtml.SitecoreContext.GetItem<Language>(sl)).ToList())
+                        {
+                            <span class="badge">
+                                @lang.Title
+
+                            </span>
+                        }
+                    </div>
+                </a>
+            }
+
+            @if (!string.IsNullOrEmpty(Model.Status))
+            {
+                <a href="#" class="list-group-item">
+                    <i class="fa fa-bookmark"></i>   Status <span class="badge">@Editable(Model, m => m.Status)</span>
+                </a>
+            }
+            @if (!Model.ReleaseDate.Equals(DateTime.MinValue))
+            {
+                <a href="#" class="list-group-item">
+                    <i class="fa fa-calendar-o"></i>  Release Date <span class="badge">
+                                                                       @Editable(Model, m => m.ReleaseDate, m => m.ReleaseDate.ToString("MMMM dd, yyyy"))
+                                                                   </span>
+                </a>
+            }
+        </div>
+        @if (Model.Trailers.Any())
+        {
+            <div class="row pad-left pad-right">
+                <h2>
+                    Trailers
+                </h2>
+                @foreach (var trailer in Model.Trailers.Select(t => GlassHtml.SitecoreContext.GetItem<Trailer>(t)))
+                {
+                    @Html.Partial("YouTube", trailer)
+                }
+
+            </div>
+        }
+        
+    </div>
+    <div class="col-md-9">
+        @Html.Partial("~/Views/Movie/Cast.cshtml", Model.Casts.Select(c => GlassHtml.SitecoreContext.GetItem<CastMember>(c)).OrderBy(c => c.SortOrder))
+        @Html.Partial("~/Views/Movie/Crew.cshtml", Model.Crews.Select(c => GlassHtml.SitecoreContext.GetItem<CrewMember>(c)).OrderBy(c => c.Job))
+        
+    </div>
+</div>

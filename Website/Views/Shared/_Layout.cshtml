@@ -7,8 +7,8 @@
     <head>
         
         <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta name="description" content="@Model.Description.Truncate(150)">
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+        <meta name="description" content="@Model.Description.Truncate(150).StripHTML()">
         <title>@Model.Title</title>
         @*Any other metadata that the editor wants to include can be placed here*@
         @Html.Sitecore().Placeholder("meta")

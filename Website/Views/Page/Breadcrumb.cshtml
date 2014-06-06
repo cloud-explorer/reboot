@@ -1,0 +1,17 @@
+﻿@using Glass.Mapper.Sc.RenderField
+@using Projects.Common.Glass
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<IEnumerable<PageBase>>
+@{
+    var currentPage = GlassHtml.SitecoreContext.GetCurrentItem<PageBase>();
+}
+    <ol class="breadcrumb">
+        @foreach (var page in Model)
+        {
+            <li>
+                @RenderLink(page, p => p.GetInternalLinkForBreadcrumb(string.Empty, "_self"))
+            </li>
+        }
+        <li class="active">
+            @Editable(currentPage, p => p.BreadcrumbTitle)
+        </li>
+    </ol>

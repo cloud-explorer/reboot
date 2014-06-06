@@ -24,7 +24,7 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
+using System.ComponentModel;
 using System;   
 using System.Collections.Generic;   
 using System.Linq;
@@ -35,6 +35,8 @@ using Glass.Mapper.Sc.Configuration.Attributes;
 using Glass.Mapper.Sc.Fields;
 using Sitecore.Data;
 using Sitecore.Globalization;
+using Sitecore.ContentSearch;
+using Sitecore.ContentSearch.Converters;
 
 <#
 // Calculate the top leve namespace as configured in the target project and
@@ -97,13 +99,19 @@ namespace <#=fullNamespace #>
 		
 		private readonly ISitecoreContext _context;
 
-	    protected GlassBase(ISitecoreContext context)
+		public GlassBase()
+        {
+            _context = new SitecoreContext();
+        }
+
+	    public GlassBase(ISitecoreContext context)
         {
             _context = context;
         }
 
 	    [SitecoreId]
-		public virtual Guid Id{ get; private set;}
+		[TypeConverter(typeof(IndexFieldGuidValueConverter)), IndexField(BuiltinFields.Group)]
+		public virtual Guid Id{ get; set;}
 
 		[SitecoreInfo(SitecoreInfoType.Language)]
         public virtual Language Language{ get; private set; }

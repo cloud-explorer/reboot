@@ -1,0 +1,37 @@
+﻿@using Glass.Mapper.Sc.RenderField
+@using Projects.Common.Glass
+@using Projects.Models.Glass.Reboot.Items
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<IEnumerable<Projects.Models.Glass.Reboot.Items.CrewMember>>
+@if (Model.Any())
+{
+    <div class="row">
+        <div class="col-lg-12">
+            <h2>
+                Crew
+            </h2>
+        </div>
+        @foreach (var crewMember in Model)
+        {
+            Person cm = crewMember.GetLinkedItem<Person, CrewMember>(crewMember.Person);
+            if (cm == null)
+            {
+                continue;
+            }
+            <div class="col-sm-2 col-xs-4">
+                @using (BeginRenderLink(cm, c => c.GetInternalLink()))
+                {
+                    @Editable(cm, c => c.Image, new ImageParameters {Class = "img-responsive", MaxHeight = 100})
+                    <h4>
+                        @Editable(cm, c => c.Title)
+                        <small class="row">
+                            @Editable(crewMember, c => c.Job)
+                        </small>
+                    </h4>
+                }
+
+            </div>
+        }
+
+
+    </div>
+}

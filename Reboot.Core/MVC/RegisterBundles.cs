@@ -27,7 +27,8 @@ namespace Projects.Reboot.Core.MVC
                "~/js/jquery-{version}.js",
                "~/js/bootstrap.js",
                "~/js/modern-business.js",
-                "~/js/reboot.js"
+                "~/js/reboot.js",
+                "~/js/jquery.rateit.min.js"
                ));
 
             bundles.Add(new StyleBundle("~/sc_ignore_bundles/rebootstyles").Include(
@@ -35,7 +36,8 @@ namespace Projects.Reboot.Core.MVC
                 "~/css/theme.css",
                 "~/font-awesome/css/font-awesome.min.css",
                 "~/css/modern-business.css",
-                "~/css/reboot.css"
+                "~/css/reboot.css",
+                "~/css/rateit.css"
                 ));
 
            

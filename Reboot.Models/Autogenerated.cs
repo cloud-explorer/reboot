@@ -67,6 +67,9 @@ namespace Projects.Models.Glass.Reboot.Containers
 	   public Trailers(ISitecoreContext context) : base(context)
 	    {
 	    }
+		public Trailers() : base()
+	    {
+	    }
 			
 	}
 }
@@ -75,32 +78,224 @@ namespace Projects.Models.Glass.Reboot.Containers
 
 
 
-
-
-
-
-
-namespace Projects.Models.Glass.Reboot.Containers
+namespace Projects.Models.Glass.Reboot
 {
 
 
  	/// <summary>
-	/// IMovies Interface
+	/// IFacetFields Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Reboot/Containers/Movies</para>	
-	/// <para>ID: 364af857-abdf-4259-8487-8e7f4fb1e99f</para>	
+	/// <para>Path: /sitecore/templates/User Defined/Reboot/FacetFields</para>	
+	/// <para>ID: 231ded3c-aef7-416f-bec7-03511cb428cd</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=IMoviesConstants.TemplateIdString)]
-	public partial interface IMovies : IGlassBase , global::Projects.Models.Glass.Common.ISiteSection
+	[SitecoreType(TemplateId=IFacetFieldsConstants.TemplateIdString)]
+	public partial interface IFacetFields : IGlassBase 
+	{
+								/// <summary>
+					/// The Genres field.
+					/// <para></para>
+					/// <para>Field Type: TreelistEx</para>		
+					/// <para>Field ID: d10d5b23-3bea-49ee-9328-903de7e63bf6</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFacetFieldsConstants.GenresFieldName)]
+					IEnumerable<Guid> Genres  {get; set;}
+			
+								/// <summary>
+					/// The ProductionCompanies field.
+					/// <para></para>
+					/// <para>Field Type: TreelistEx</para>		
+					/// <para>Field ID: 41ff07e7-d836-4d7f-ae05-bb7104bdb81a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFacetFieldsConstants.ProductionCompaniesFieldName)]
+					IEnumerable<Guid> ProductionCompanies  {get; set;}
+			
+								/// <summary>
+					/// The ReleaseDate field.
+					/// <para></para>
+					/// <para>Field Type: Date</para>		
+					/// <para>Field ID: 03d77cf3-f8b3-4a2a-aba7-9854dd21620d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFacetFieldsConstants.ReleaseDateFieldName)]
+					DateTime ReleaseDate  {get; set;}
+			
+								/// <summary>
+					/// The SpokenLanguage field.
+					/// <para></para>
+					/// <para>Field Type: TreelistEx</para>		
+					/// <para>Field ID: 36883f6e-4405-47b1-b7b9-846b7373110d</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFacetFieldsConstants.SpokenLanguagesFieldName)]
+					IEnumerable<Guid> SpokenLanguages  {get; set;}
+			
+								/// <summary>
+					/// The Status field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: f025c259-7a81-4334-a7d3-65cb3c22efce</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFacetFieldsConstants.StatusFieldName)]
+					string Status  {get; set;}
+			
+								/// <summary>
+					/// The Test field.
+					/// <para></para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: 17b2218f-84a5-4fa5-aa9e-68c8143e9c07</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFacetFieldsConstants.TestFieldName)]
+					string Test  {get; set;}
+			
+				}
+
+
+	public static partial class IFacetFieldsConstants{
+
+			public const string TemplateIdString = "231ded3c-aef7-416f-bec7-03511cb428cd";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "FacetFields";
+
+					
+			public static readonly ID GenresFieldId = new ID("d10d5b23-3bea-49ee-9328-903de7e63bf6");
+			public const string GenresFieldName = "Genres";
+			
+					
+			public static readonly ID ProductionCompaniesFieldId = new ID("41ff07e7-d836-4d7f-ae05-bb7104bdb81a");
+			public const string ProductionCompaniesFieldName = "ProductionCompanies";
+			
+					
+			public static readonly ID ReleaseDateFieldId = new ID("03d77cf3-f8b3-4a2a-aba7-9854dd21620d");
+			public const string ReleaseDateFieldName = "ReleaseDate";
+			
+					
+			public static readonly ID SpokenLanguagesFieldId = new ID("36883f6e-4405-47b1-b7b9-846b7373110d");
+			public const string SpokenLanguagesFieldName = "SpokenLanguage";
+			
+					
+			public static readonly ID StatusFieldId = new ID("f025c259-7a81-4334-a7d3-65cb3c22efce");
+			public const string StatusFieldName = "Status";
+			
+					
+			public static readonly ID TestFieldId = new ID("17b2218f-84a5-4fa5-aa9e-68c8143e9c07");
+			public const string TestFieldName = "Test";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// FacetFields
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Reboot/FacetFields</para>	
+	/// <para>ID: 231ded3c-aef7-416f-bec7-03511cb428cd</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IFacetFieldsConstants.TemplateIdString)]
+	public partial class FacetFields  : GlassBase, IFacetFields 
+	{
+	   public FacetFields(ISitecoreContext context) : base(context)
+	    {
+	    }
+		public FacetFields() : base()
+	    {
+	    }
+						/// <summary>
+				/// The Genres field.
+				/// <para></para>
+				/// <para>Field Type: TreelistEx</para>		
+				/// <para>Field ID: d10d5b23-3bea-49ee-9328-903de7e63bf6</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IFacetFieldsConstants.GenresFieldName)]
+				public virtual IEnumerable<Guid> Genres  {get; set;}
+					
+						/// <summary>
+				/// The ProductionCompanies field.
+				/// <para></para>
+				/// <para>Field Type: TreelistEx</para>		
+				/// <para>Field ID: 41ff07e7-d836-4d7f-ae05-bb7104bdb81a</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IFacetFieldsConstants.ProductionCompaniesFieldName)]
+				public virtual IEnumerable<Guid> ProductionCompanies  {get; set;}
+					
+						/// <summary>
+				/// The ReleaseDate field.
+				/// <para></para>
+				/// <para>Field Type: Date</para>		
+				/// <para>Field ID: 03d77cf3-f8b3-4a2a-aba7-9854dd21620d</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IFacetFieldsConstants.ReleaseDateFieldName)]
+				public virtual DateTime ReleaseDate  {get; set;}
+					
+						/// <summary>
+				/// The SpokenLanguage field.
+				/// <para></para>
+				/// <para>Field Type: TreelistEx</para>		
+				/// <para>Field ID: 36883f6e-4405-47b1-b7b9-846b7373110d</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IFacetFieldsConstants.SpokenLanguagesFieldName)]
+				public virtual IEnumerable<Guid> SpokenLanguages  {get; set;}
+					
+						/// <summary>
+				/// The Status field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: f025c259-7a81-4334-a7d3-65cb3c22efce</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IFacetFieldsConstants.StatusFieldName)]
+				public virtual string Status  {get; set;}
+					
+						/// <summary>
+				/// The Test field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 17b2218f-84a5-4fa5-aa9e-68c8143e9c07</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IFacetFieldsConstants.TestFieldName)]
+				public virtual string Test  {get; set;}
+					
+			
+	}
+}
+
+
+namespace Projects.Models.Glass.Reboot.Items
+{
+
+
+ 	/// <summary>
+	/// ISearch Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Reboot/Items/Search</para>	
+	/// <para>ID: 2bda2d59-1e47-4a11-912b-de9989c36ef4</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISearchConstants.TemplateIdString)]
+	public partial interface ISearch : IGlassBase , global::Projects.Models.Glass.Common.IPageBase
 	{
 				}
 
 
-	public static partial class IMoviesConstants{
+	public static partial class ISearchConstants{
 
-			public const string TemplateIdString = "364af857-abdf-4259-8487-8e7f4fb1e99f";
+			public const string TemplateIdString = "2bda2d59-1e47-4a11-912b-de9989c36ef4";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "Movies";
+			public const string TemplateName = "Search";
 
 					
 			public static readonly ID TitleFieldId = new ID("f3479f8e-7fea-494d-80ab-7ad75ee4d94a");
@@ -113,6 +308,10 @@ namespace Projects.Models.Glass.Reboot.Containers
 					
 			public static readonly ID BreadcrumbTitleFieldId = new ID("f5de556a-3c9c-4b42-94f3-3ac3a30fa788");
 			public const string BreadcrumbTitleFieldName = "BreadcrumbTitle";
+			
+					
+			public static readonly ID CssClassNameFieldId = new ID("b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3");
+			public const string CssClassNameFieldName = "CssClassName";
 			
 					
 			public static readonly ID KeywordsFieldId = new ID("799c85c3-1cb0-40cf-b594-86b438f4192d");
@@ -138,6 +337,225 @@ namespace Projects.Models.Glass.Reboot.Containers
 			public static readonly ID MenuTitleFieldId = new ID("2f0521a1-2a3f-491d-bc54-7dabac85e6d6");
 			public const string MenuTitleFieldName = "MenuTitle";
 			
+					
+			public static readonly ID ShowInMenuFieldId = new ID("64be5630-d2a8-42f4-a127-dd901ee32f6b");
+			public const string ShowInMenuFieldName = "ShowInMenu";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// Search
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Reboot/Items/Search</para>	
+	/// <para>ID: 2bda2d59-1e47-4a11-912b-de9989c36ef4</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISearchConstants.TemplateIdString)]
+	public partial class Search  : GlassBase, ISearch 
+	{
+	   public Search(ISitecoreContext context) : base(context)
+	    {
+	    }
+		public Search() : base()
+	    {
+	    }
+						/// <summary>
+				/// The Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: f3479f8e-7fea-494d-80ab-7ad75ee4d94a</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISearchConstants.TitleFieldName)]
+				public virtual string Title  {get; set;}
+					
+						/// <summary>
+				/// The Description field.
+				/// <para></para>
+				/// <para>Field Type: Rich Text</para>		
+				/// <para>Field ID: aca2a76a-21f1-4798-9b69-c87764e9ceee</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISearchConstants.DescriptionFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+				public virtual string Description  {get; set;}
+					
+						/// <summary>
+				/// The BreadcrumbTitle field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: f5de556a-3c9c-4b42-94f3-3ac3a30fa788</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISearchConstants.BreadcrumbTitleFieldName)]
+				public virtual string BreadcrumbTitle  {get; set;}
+					
+						/// <summary>
+				/// The CssClassName field.
+				/// <para>This will be the Font Awesome Icon classes that will represent the Icons in the breadcrumb</para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISearchConstants.CssClassNameFieldName)]
+				public virtual string CssClassName  {get; set;}
+					
+						/// <summary>
+				/// The Keywords field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 799c85c3-1cb0-40cf-b594-86b438f4192d</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISearchConstants.KeywordsFieldName)]
+				public virtual string Keywords  {get; set;}
+					
+						/// <summary>
+				/// The MetaDescription field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 1e432dbe-fa95-4b94-b538-bcf52c80c5ba</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISearchConstants.MetaDescriptionFieldName)]
+				public virtual string MetaDescription  {get; set;}
+					
+						/// <summary>
+				/// The ExternalId field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 062112fc-3865-4a6f-8950-d1e26711793b</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISearchConstants.ExternalIdFieldName)]
+				public virtual string ExternalId  {get; set;}
+					
+						/// <summary>
+				/// The Image field.
+				/// <para></para>
+				/// <para>Field Type: Image</para>		
+				/// <para>Field ID: c978e4f3-e816-4000-8845-04e6cc2e8609</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISearchConstants.ImageFieldName)]
+				public virtual Image Image  {get; set;}
+					
+						/// <summary>
+				/// The MenuHoverText field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 13c86a65-f308-438e-bb44-d3ab9c80b0e5</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISearchConstants.MenuHoverTextFieldName)]
+				public virtual string MenuHoverText  {get; set;}
+					
+						/// <summary>
+				/// The MenuTitle field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 2f0521a1-2a3f-491d-bc54-7dabac85e6d6</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISearchConstants.MenuTitleFieldName)]
+				public virtual string MenuTitle  {get; set;}
+					
+						/// <summary>
+				/// The ShowInMenu field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 64be5630-d2a8-42f4-a127-dd901ee32f6b</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISearchConstants.ShowInMenuFieldName)]
+				public virtual bool ShowInMenu  {get; set;}
+					
+			
+	}
+}
+
+
+
+
+
+namespace Projects.Models.Glass.Reboot.Containers
+{
+
+
+ 	/// <summary>
+	/// IMovies Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Reboot/Containers/Movies</para>	
+	/// <para>ID: 364af857-abdf-4259-8487-8e7f4fb1e99f</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IMoviesConstants.TemplateIdString)]
+	public partial interface IMovies : IGlassBase , global::Projects.Models.Glass.Reboot.IPresentationBase, global::Projects.Models.Glass.Common.ISiteSection
+	{
+				}
+
+
+	public static partial class IMoviesConstants{
+
+			public const string TemplateIdString = "364af857-abdf-4259-8487-8e7f4fb1e99f";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Movies";
+
+					
+			public static readonly ID TitleFieldId = new ID("f3479f8e-7fea-494d-80ab-7ad75ee4d94a");
+			public const string TitleFieldName = "Title";
+			
+					
+			public static readonly ID DescriptionFieldId = new ID("aca2a76a-21f1-4798-9b69-c87764e9ceee");
+			public const string DescriptionFieldName = "Description";
+			
+					
+			public static readonly ID BreadcrumbTitleFieldId = new ID("f5de556a-3c9c-4b42-94f3-3ac3a30fa788");
+			public const string BreadcrumbTitleFieldName = "BreadcrumbTitle";
+			
+					
+			public static readonly ID CssClassNameFieldId = new ID("b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3");
+			public const string CssClassNameFieldName = "CssClassName";
+			
+					
+			public static readonly ID KeywordsFieldId = new ID("799c85c3-1cb0-40cf-b594-86b438f4192d");
+			public const string KeywordsFieldName = "Keywords";
+			
+					
+			public static readonly ID MetaDescriptionFieldId = new ID("1e432dbe-fa95-4b94-b538-bcf52c80c5ba");
+			public const string MetaDescriptionFieldName = "MetaDescription";
+			
+					
+			public static readonly ID ExternalIdFieldId = new ID("062112fc-3865-4a6f-8950-d1e26711793b");
+			public const string ExternalIdFieldName = "ExternalId";
+			
+					
+			public static readonly ID ImageFieldId = new ID("c978e4f3-e816-4000-8845-04e6cc2e8609");
+			public const string ImageFieldName = "Image";
+			
+					
+			public static readonly ID MenuHoverTextFieldId = new ID("13c86a65-f308-438e-bb44-d3ab9c80b0e5");
+			public const string MenuHoverTextFieldName = "MenuHoverText";
+			
+					
+			public static readonly ID MenuTitleFieldId = new ID("2f0521a1-2a3f-491d-bc54-7dabac85e6d6");
+			public const string MenuTitleFieldName = "MenuTitle";
+			
+					
+			public static readonly ID ShowInMenuFieldId = new ID("64be5630-d2a8-42f4-a127-dd901ee32f6b");
+			public const string ShowInMenuFieldName = "ShowInMenu";
+			
 			
 
 	}
@@ -153,6 +571,9 @@ namespace Projects.Models.Glass.Reboot.Containers
 	public partial class Movies  : GlassBase, IMovies 
 	{
 	   public Movies(ISitecoreContext context) : base(context)
+	    {
+	    }
+		public Movies() : base()
 	    {
 	    }
 						/// <summary>
@@ -187,6 +608,17 @@ namespace Projects.Models.Glass.Reboot.Containers
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
 				[SitecoreField(IMoviesConstants.BreadcrumbTitleFieldName)]
 				public virtual string BreadcrumbTitle  {get; set;}
+					
+						/// <summary>
+				/// The CssClassName field.
+				/// <para>This will be the Font Awesome Icon classes that will represent the Icons in the breadcrumb</para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IMoviesConstants.CssClassNameFieldName)]
+				public virtual string CssClassName  {get; set;}
 					
 						/// <summary>
 				/// The Keywords field.
@@ -254,9 +686,21 @@ namespace Projects.Models.Glass.Reboot.Containers
 				[SitecoreField(IMoviesConstants.MenuTitleFieldName)]
 				public virtual string MenuTitle  {get; set;}
 					
+						/// <summary>
+				/// The ShowInMenu field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 64be5630-d2a8-42f4-a127-dd901ee32f6b</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IMoviesConstants.ShowInMenuFieldName)]
+				public virtual bool ShowInMenu  {get; set;}
+					
 			
 	}
 }
+
 
 
 
@@ -301,6 +745,9 @@ namespace Projects.Models.Glass.Reboot.Containers
 	public partial class CastAndCrew  : GlassBase, ICastAndCrew 
 	{
 	   public CastAndCrew(ISitecoreContext context) : base(context)
+	    {
+	    }
+		public CastAndCrew() : base()
 	    {
 	    }
 			
@@ -381,6 +828,9 @@ namespace Projects.Models.Glass.Reboot.Items
 	public partial class Trailer  : GlassBase, ITrailer 
 	{
 	   public Trailer(ISitecoreContext context) : base(context)
+	    {
+	    }
+		public Trailer() : base()
 	    {
 	    }
 						/// <summary>
@@ -469,6 +919,9 @@ namespace Projects.Models.Glass.Reboot.Containers
 	public partial class ProductionCompanies  : GlassBase, IProductionCompanies 
 	{
 	   public ProductionCompanies(ISitecoreContext context) : base(context)
+	    {
+	    }
+		public ProductionCompanies() : base()
 	    {
 	    }
 			
@@ -570,6 +1023,9 @@ namespace Projects.Models.Glass.Reboot.Items
 	   public CrewMember(ISitecoreContext context) : base(context)
 	    {
 	    }
+		public CrewMember() : base()
+	    {
+	    }
 						/// <summary>
 				/// The Department field.
 				/// <para></para>
@@ -629,7 +1085,7 @@ namespace Projects.Models.Glass.Reboot.Items
 	/// <para>ID: 962be8e9-7201-4d6a-b7b1-f07bdfc8b107</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IMovieConstants.TemplateIdString)]
-	public partial interface IMovie : IGlassBase , global::Projects.Models.Glass.Common.IPageBase
+	public partial interface IMovie : IGlassBase , global::Projects.Models.Glass.Reboot.IPresentationBase, global::Projects.Models.Glass.Common.IPageBase, global::Projects.Models.Glass.Reboot.IFacetFields, global::Projects.Models.Glass.Reboot.ISortFields
 	{
 								/// <summary>
 					/// The Backdrop field.
@@ -672,16 +1128,6 @@ namespace Projects.Models.Glass.Reboot.Items
 					IEnumerable<Guid> Crews  {get; set;}
 			
 								/// <summary>
-					/// The Genres field.
-					/// <para></para>
-					/// <para>Field Type: TreelistEx</para>		
-					/// <para>Field ID: d10d5b23-3bea-49ee-9328-903de7e63bf6</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IMovieConstants.GenresFieldName)]
-					IEnumerable<Guid> Genres  {get; set;}
-			
-								/// <summary>
 					/// The ImdbId field.
 					/// <para></para>
 					/// <para>Field Type: Single-Line Text</para>		
@@ -702,36 +1148,6 @@ namespace Projects.Models.Glass.Reboot.Items
 					string OriginalTitle  {get; set;}
 			
 								/// <summary>
-					/// The Popularity field.
-					/// <para></para>
-					/// <para>Field Type: Number</para>		
-					/// <para>Field ID: eb7bcaac-ea6a-41fe-b16f-86e637e16605</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IMovieConstants.PopularityFieldName)]
-					float Popularity  {get; set;}
-			
-								/// <summary>
-					/// The ProductionCompanies field.
-					/// <para></para>
-					/// <para>Field Type: TreelistEx</para>		
-					/// <para>Field ID: 41ff07e7-d836-4d7f-ae05-bb7104bdb81a</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IMovieConstants.ProductionCompaniesFieldName)]
-					IEnumerable<Guid> ProductionCompanies  {get; set;}
-			
-								/// <summary>
-					/// The ReleaseDate field.
-					/// <para></para>
-					/// <para>Field Type: Date</para>		
-					/// <para>Field ID: 03d77cf3-f8b3-4a2a-aba7-9854dd21620d</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IMovieConstants.ReleaseDateFieldName)]
-					DateTime ReleaseDate  {get; set;}
-			
-								/// <summary>
 					/// The Revenue field.
 					/// <para></para>
 					/// <para>Field Type: Number</para>		
@@ -740,26 +1156,6 @@ namespace Projects.Models.Glass.Reboot.Items
 					/// </summary>
 					[SitecoreField(IMovieConstants.RevenueFieldName)]
 					float Revenue  {get; set;}
-			
-								/// <summary>
-					/// The SpokenLanguage field.
-					/// <para></para>
-					/// <para>Field Type: TreelistEx</para>		
-					/// <para>Field ID: 36883f6e-4405-47b1-b7b9-846b7373110d</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IMovieConstants.SpokenLanguagesFieldName)]
-					IEnumerable<Guid> SpokenLanguages  {get; set;}
-			
-								/// <summary>
-					/// The Status field.
-					/// <para></para>
-					/// <para>Field Type: Single-Line Text</para>		
-					/// <para>Field ID: f025c259-7a81-4334-a7d3-65cb3c22efce</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IMovieConstants.StatusFieldName)]
-					string Status  {get; set;}
 			
 								/// <summary>
 					/// The Tagline field.
@@ -780,16 +1176,6 @@ namespace Projects.Models.Glass.Reboot.Items
 					/// </summary>
 					[SitecoreField(IMovieConstants.TrailersFieldName)]
 					IEnumerable<Guid> Trailers  {get; set;}
-			
-								/// <summary>
-					/// The VoteAverage field.
-					/// <para></para>
-					/// <para>Field Type: Number</para>		
-					/// <para>Field ID: 7bb5b884-220b-4a42-b081-6ef359463c23</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IMovieConstants.VoteAverageFieldName)]
-					float VoteAverage  {get; set;}
 			
 				}
 
@@ -817,10 +1203,6 @@ namespace Projects.Models.Glass.Reboot.Items
 			public const string CrewsFieldName = "Crew";
 			
 					
-			public static readonly ID GenresFieldId = new ID("d10d5b23-3bea-49ee-9328-903de7e63bf6");
-			public const string GenresFieldName = "Genres";
-			
-					
 			public static readonly ID ImdbIdFieldId = new ID("355f2d51-ae17-47ed-8ff5-63dd9288ae7b");
 			public const string ImdbIdFieldName = "ImdbId";
 			
@@ -829,28 +1211,8 @@ namespace Projects.Models.Glass.Reboot.Items
 			public const string OriginalTitleFieldName = "OriginalTitle";
 			
 					
-			public static readonly ID PopularityFieldId = new ID("eb7bcaac-ea6a-41fe-b16f-86e637e16605");
-			public const string PopularityFieldName = "Popularity";
-			
-					
-			public static readonly ID ProductionCompaniesFieldId = new ID("41ff07e7-d836-4d7f-ae05-bb7104bdb81a");
-			public const string ProductionCompaniesFieldName = "ProductionCompanies";
-			
-					
-			public static readonly ID ReleaseDateFieldId = new ID("03d77cf3-f8b3-4a2a-aba7-9854dd21620d");
-			public const string ReleaseDateFieldName = "ReleaseDate";
-			
-					
 			public static readonly ID RevenueFieldId = new ID("64a87437-e35e-4cf5-8a67-d678ce6a7560");
 			public const string RevenueFieldName = "Revenue";
-			
-					
-			public static readonly ID SpokenLanguagesFieldId = new ID("36883f6e-4405-47b1-b7b9-846b7373110d");
-			public const string SpokenLanguagesFieldName = "SpokenLanguage";
-			
-					
-			public static readonly ID StatusFieldId = new ID("f025c259-7a81-4334-a7d3-65cb3c22efce");
-			public const string StatusFieldName = "Status";
 			
 					
 			public static readonly ID TaglineFieldId = new ID("1e0b0acb-2015-4ae8-a706-2f03374a9c2c");
@@ -859,10 +1221,6 @@ namespace Projects.Models.Glass.Reboot.Items
 					
 			public static readonly ID TrailersFieldId = new ID("578316ba-586b-4e4a-b127-506bb506dc40");
 			public const string TrailersFieldName = "Trailers";
-			
-					
-			public static readonly ID VoteAverageFieldId = new ID("7bb5b884-220b-4a42-b081-6ef359463c23");
-			public const string VoteAverageFieldName = "VoteAverage";
 			
 					
 			public static readonly ID TitleFieldId = new ID("f3479f8e-7fea-494d-80ab-7ad75ee4d94a");
@@ -875,6 +1233,10 @@ namespace Projects.Models.Glass.Reboot.Items
 					
 			public static readonly ID BreadcrumbTitleFieldId = new ID("f5de556a-3c9c-4b42-94f3-3ac3a30fa788");
 			public const string BreadcrumbTitleFieldName = "BreadcrumbTitle";
+			
+					
+			public static readonly ID CssClassNameFieldId = new ID("b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3");
+			public const string CssClassNameFieldName = "CssClassName";
 			
 					
 			public static readonly ID KeywordsFieldId = new ID("799c85c3-1cb0-40cf-b594-86b438f4192d");
@@ -900,6 +1262,42 @@ namespace Projects.Models.Glass.Reboot.Items
 			public static readonly ID MenuTitleFieldId = new ID("2f0521a1-2a3f-491d-bc54-7dabac85e6d6");
 			public const string MenuTitleFieldName = "MenuTitle";
 			
+					
+			public static readonly ID ShowInMenuFieldId = new ID("64be5630-d2a8-42f4-a127-dd901ee32f6b");
+			public const string ShowInMenuFieldName = "ShowInMenu";
+			
+					
+			public static readonly ID GenresFieldId = new ID("d10d5b23-3bea-49ee-9328-903de7e63bf6");
+			public const string GenresFieldName = "Genres";
+			
+					
+			public static readonly ID ProductionCompaniesFieldId = new ID("41ff07e7-d836-4d7f-ae05-bb7104bdb81a");
+			public const string ProductionCompaniesFieldName = "ProductionCompanies";
+			
+					
+			public static readonly ID ReleaseDateFieldId = new ID("03d77cf3-f8b3-4a2a-aba7-9854dd21620d");
+			public const string ReleaseDateFieldName = "ReleaseDate";
+			
+					
+			public static readonly ID SpokenLanguagesFieldId = new ID("36883f6e-4405-47b1-b7b9-846b7373110d");
+			public const string SpokenLanguagesFieldName = "SpokenLanguage";
+			
+					
+			public static readonly ID StatusFieldId = new ID("f025c259-7a81-4334-a7d3-65cb3c22efce");
+			public const string StatusFieldName = "Status";
+			
+					
+			public static readonly ID TestFieldId = new ID("17b2218f-84a5-4fa5-aa9e-68c8143e9c07");
+			public const string TestFieldName = "Test";
+			
+					
+			public static readonly ID PopularityFieldId = new ID("eb7bcaac-ea6a-41fe-b16f-86e637e16605");
+			public const string PopularityFieldName = "Popularity";
+			
+					
+			public static readonly ID VoteAverageFieldId = new ID("7bb5b884-220b-4a42-b081-6ef359463c23");
+			public const string VoteAverageFieldName = "VoteAverage";
+			
 			
 
 	}
@@ -915,6 +1313,9 @@ namespace Projects.Models.Glass.Reboot.Items
 	public partial class Movie  : GlassBase, IMovie 
 	{
 	   public Movie(ISitecoreContext context) : base(context)
+	    {
+	    }
+		public Movie() : base()
 	    {
 	    }
 						/// <summary>
@@ -962,17 +1363,6 @@ namespace Projects.Models.Glass.Reboot.Items
 				public virtual IEnumerable<Guid> Crews  {get; set;}
 					
 						/// <summary>
-				/// The Genres field.
-				/// <para></para>
-				/// <para>Field Type: TreelistEx</para>		
-				/// <para>Field ID: d10d5b23-3bea-49ee-9328-903de7e63bf6</para>
-				/// <para>Custom Data: </para>
-				/// </summary>
-				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(IMovieConstants.GenresFieldName)]
-				public virtual IEnumerable<Guid> Genres  {get; set;}
-					
-						/// <summary>
 				/// The ImdbId field.
 				/// <para></para>
 				/// <para>Field Type: Single-Line Text</para>		
@@ -995,39 +1385,6 @@ namespace Projects.Models.Glass.Reboot.Items
 				public virtual string OriginalTitle  {get; set;}
 					
 						/// <summary>
-				/// The Popularity field.
-				/// <para></para>
-				/// <para>Field Type: Number</para>		
-				/// <para>Field ID: eb7bcaac-ea6a-41fe-b16f-86e637e16605</para>
-				/// <para>Custom Data: </para>
-				/// </summary>
-				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(IMovieConstants.PopularityFieldName)]
-				public virtual float Popularity  {get; set;}
-					
-						/// <summary>
-				/// The ProductionCompanies field.
-				/// <para></para>
-				/// <para>Field Type: TreelistEx</para>		
-				/// <para>Field ID: 41ff07e7-d836-4d7f-ae05-bb7104bdb81a</para>
-				/// <para>Custom Data: </para>
-				/// </summary>
-				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(IMovieConstants.ProductionCompaniesFieldName)]
-				public virtual IEnumerable<Guid> ProductionCompanies  {get; set;}
-					
-						/// <summary>
-				/// The ReleaseDate field.
-				/// <para></para>
-				/// <para>Field Type: Date</para>		
-				/// <para>Field ID: 03d77cf3-f8b3-4a2a-aba7-9854dd21620d</para>
-				/// <para>Custom Data: </para>
-				/// </summary>
-				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(IMovieConstants.ReleaseDateFieldName)]
-				public virtual DateTime ReleaseDate  {get; set;}
-					
-						/// <summary>
 				/// The Revenue field.
 				/// <para></para>
 				/// <para>Field Type: Number</para>		
@@ -1037,28 +1394,6 @@ namespace Projects.Models.Glass.Reboot.Items
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
 				[SitecoreField(IMovieConstants.RevenueFieldName)]
 				public virtual float Revenue  {get; set;}
-					
-						/// <summary>
-				/// The SpokenLanguage field.
-				/// <para></para>
-				/// <para>Field Type: TreelistEx</para>		
-				/// <para>Field ID: 36883f6e-4405-47b1-b7b9-846b7373110d</para>
-				/// <para>Custom Data: </para>
-				/// </summary>
-				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(IMovieConstants.SpokenLanguagesFieldName)]
-				public virtual IEnumerable<Guid> SpokenLanguages  {get; set;}
-					
-						/// <summary>
-				/// The Status field.
-				/// <para></para>
-				/// <para>Field Type: Single-Line Text</para>		
-				/// <para>Field ID: f025c259-7a81-4334-a7d3-65cb3c22efce</para>
-				/// <para>Custom Data: </para>
-				/// </summary>
-				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(IMovieConstants.StatusFieldName)]
-				public virtual string Status  {get; set;}
 					
 						/// <summary>
 				/// The Tagline field.
@@ -1081,17 +1416,6 @@ namespace Projects.Models.Glass.Reboot.Items
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
 				[SitecoreField(IMovieConstants.TrailersFieldName)]
 				public virtual IEnumerable<Guid> Trailers  {get; set;}
-					
-						/// <summary>
-				/// The VoteAverage field.
-				/// <para></para>
-				/// <para>Field Type: Number</para>		
-				/// <para>Field ID: 7bb5b884-220b-4a42-b081-6ef359463c23</para>
-				/// <para>Custom Data: </para>
-				/// </summary>
-				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(IMovieConstants.VoteAverageFieldName)]
-				public virtual float VoteAverage  {get; set;}
 					
 						/// <summary>
 				/// The Title field.
@@ -1125,6 +1449,17 @@ namespace Projects.Models.Glass.Reboot.Items
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
 				[SitecoreField(IMovieConstants.BreadcrumbTitleFieldName)]
 				public virtual string BreadcrumbTitle  {get; set;}
+					
+						/// <summary>
+				/// The CssClassName field.
+				/// <para>This will be the Font Awesome Icon classes that will represent the Icons in the breadcrumb</para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IMovieConstants.CssClassNameFieldName)]
+				public virtual string CssClassName  {get; set;}
 					
 						/// <summary>
 				/// The Keywords field.
@@ -1192,6 +1527,105 @@ namespace Projects.Models.Glass.Reboot.Items
 				[SitecoreField(IMovieConstants.MenuTitleFieldName)]
 				public virtual string MenuTitle  {get; set;}
 					
+						/// <summary>
+				/// The ShowInMenu field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 64be5630-d2a8-42f4-a127-dd901ee32f6b</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IMovieConstants.ShowInMenuFieldName)]
+				public virtual bool ShowInMenu  {get; set;}
+					
+						/// <summary>
+				/// The Genres field.
+				/// <para></para>
+				/// <para>Field Type: TreelistEx</para>		
+				/// <para>Field ID: d10d5b23-3bea-49ee-9328-903de7e63bf6</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IMovieConstants.GenresFieldName)]
+				public virtual IEnumerable<Guid> Genres  {get; set;}
+					
+						/// <summary>
+				/// The ProductionCompanies field.
+				/// <para></para>
+				/// <para>Field Type: TreelistEx</para>		
+				/// <para>Field ID: 41ff07e7-d836-4d7f-ae05-bb7104bdb81a</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IMovieConstants.ProductionCompaniesFieldName)]
+				public virtual IEnumerable<Guid> ProductionCompanies  {get; set;}
+					
+						/// <summary>
+				/// The ReleaseDate field.
+				/// <para></para>
+				/// <para>Field Type: Date</para>		
+				/// <para>Field ID: 03d77cf3-f8b3-4a2a-aba7-9854dd21620d</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IMovieConstants.ReleaseDateFieldName)]
+				public virtual DateTime ReleaseDate  {get; set;}
+					
+						/// <summary>
+				/// The SpokenLanguage field.
+				/// <para></para>
+				/// <para>Field Type: TreelistEx</para>		
+				/// <para>Field ID: 36883f6e-4405-47b1-b7b9-846b7373110d</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IMovieConstants.SpokenLanguagesFieldName)]
+				public virtual IEnumerable<Guid> SpokenLanguages  {get; set;}
+					
+						/// <summary>
+				/// The Status field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: f025c259-7a81-4334-a7d3-65cb3c22efce</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IMovieConstants.StatusFieldName)]
+				public virtual string Status  {get; set;}
+					
+						/// <summary>
+				/// The Test field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 17b2218f-84a5-4fa5-aa9e-68c8143e9c07</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IMovieConstants.TestFieldName)]
+				public virtual string Test  {get; set;}
+					
+						/// <summary>
+				/// The Popularity field.
+				/// <para></para>
+				/// <para>Field Type: Number</para>		
+				/// <para>Field ID: eb7bcaac-ea6a-41fe-b16f-86e637e16605</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IMovieConstants.PopularityFieldName)]
+				public virtual float Popularity  {get; set;}
+					
+						/// <summary>
+				/// The VoteAverage field.
+				/// <para></para>
+				/// <para>Field Type: Number</para>		
+				/// <para>Field ID: 7bb5b884-220b-4a42-b081-6ef359463c23</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IMovieConstants.VoteAverageFieldName)]
+				public virtual float VoteAverage  {get; set;}
+					
 			
 	}
 }
@@ -1206,7 +1640,7 @@ namespace Projects.Models.Glass.Reboot.Containers
 	/// <para>ID: 9f93de1e-df45-457a-9b00-18b2a64eb597</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IPeopleConstants.TemplateIdString)]
-	public partial interface IPeople : IGlassBase , global::Projects.Models.Glass.Common.ISiteSection
+	public partial interface IPeople : IGlassBase , global::Projects.Models.Glass.Reboot.IPresentationBase, global::Projects.Models.Glass.Common.ISiteSection
 	{
 				}
 
@@ -1228,6 +1662,10 @@ namespace Projects.Models.Glass.Reboot.Containers
 					
 			public static readonly ID BreadcrumbTitleFieldId = new ID("f5de556a-3c9c-4b42-94f3-3ac3a30fa788");
 			public const string BreadcrumbTitleFieldName = "BreadcrumbTitle";
+			
+					
+			public static readonly ID CssClassNameFieldId = new ID("b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3");
+			public const string CssClassNameFieldName = "CssClassName";
 			
 					
 			public static readonly ID KeywordsFieldId = new ID("799c85c3-1cb0-40cf-b594-86b438f4192d");
@@ -1253,6 +1691,10 @@ namespace Projects.Models.Glass.Reboot.Containers
 			public static readonly ID MenuTitleFieldId = new ID("2f0521a1-2a3f-491d-bc54-7dabac85e6d6");
 			public const string MenuTitleFieldName = "MenuTitle";
 			
+					
+			public static readonly ID ShowInMenuFieldId = new ID("64be5630-d2a8-42f4-a127-dd901ee32f6b");
+			public const string ShowInMenuFieldName = "ShowInMenu";
+			
 			
 
 	}
@@ -1268,6 +1710,9 @@ namespace Projects.Models.Glass.Reboot.Containers
 	public partial class People  : GlassBase, IPeople 
 	{
 	   public People(ISitecoreContext context) : base(context)
+	    {
+	    }
+		public People() : base()
 	    {
 	    }
 						/// <summary>
@@ -1302,6 +1747,17 @@ namespace Projects.Models.Glass.Reboot.Containers
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
 				[SitecoreField(IPeopleConstants.BreadcrumbTitleFieldName)]
 				public virtual string BreadcrumbTitle  {get; set;}
+					
+						/// <summary>
+				/// The CssClassName field.
+				/// <para>This will be the Font Awesome Icon classes that will represent the Icons in the breadcrumb</para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IPeopleConstants.CssClassNameFieldName)]
+				public virtual string CssClassName  {get; set;}
 					
 						/// <summary>
 				/// The Keywords field.
@@ -1369,10 +1825,66 @@ namespace Projects.Models.Glass.Reboot.Containers
 				[SitecoreField(IPeopleConstants.MenuTitleFieldName)]
 				public virtual string MenuTitle  {get; set;}
 					
+						/// <summary>
+				/// The ShowInMenu field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 64be5630-d2a8-42f4-a127-dd901ee32f6b</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IPeopleConstants.ShowInMenuFieldName)]
+				public virtual bool ShowInMenu  {get; set;}
+					
 			
 	}
 }
 
+namespace Projects.Models.Glass.Reboot
+{
+
+
+ 	/// <summary>
+	/// IPresentationBase Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Reboot/PresentationBase</para>	
+	/// <para>ID: ac6f0fdd-b118-4aaf-8748-905384b65631</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IPresentationBaseConstants.TemplateIdString)]
+	public partial interface IPresentationBase : IGlassBase 
+	{
+				}
+
+
+	public static partial class IPresentationBaseConstants{
+
+			public const string TemplateIdString = "ac6f0fdd-b118-4aaf-8748-905384b65631";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "PresentationBase";
+
+			
+
+	}
+
+	
+	/// <summary>
+	/// PresentationBase
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Reboot/PresentationBase</para>	
+	/// <para>ID: ac6f0fdd-b118-4aaf-8748-905384b65631</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IPresentationBaseConstants.TemplateIdString)]
+	public partial class PresentationBase  : GlassBase, IPresentationBase 
+	{
+	   public PresentationBase(ISitecoreContext context) : base(context)
+	    {
+	    }
+		public PresentationBase() : base()
+	    {
+	    }
+			
+	}
+}
 
 
 namespace Projects.Models.Glass.Reboot.Items
@@ -1422,6 +1934,9 @@ namespace Projects.Models.Glass.Reboot.Items
 	   public Genre(ISitecoreContext context) : base(context)
 	    {
 	    }
+		public Genre() : base()
+	    {
+	    }
 						/// <summary>
 				/// The ExternalId field.
 				/// <para></para>
@@ -1450,6 +1965,101 @@ namespace Projects.Models.Glass.Reboot.Items
 
 
 
+namespace Projects.Models.Glass.Reboot
+{
+
+
+ 	/// <summary>
+	/// ISortFields Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Reboot/SortFields</para>	
+	/// <para>ID: c46324f6-ecf7-4cd7-8d5b-d0a393fb0bff</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISortFieldsConstants.TemplateIdString)]
+	public partial interface ISortFields : IGlassBase 
+	{
+								/// <summary>
+					/// The Popularity field.
+					/// <para></para>
+					/// <para>Field Type: Number</para>		
+					/// <para>Field ID: eb7bcaac-ea6a-41fe-b16f-86e637e16605</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISortFieldsConstants.PopularityFieldName)]
+					float Popularity  {get; set;}
+			
+								/// <summary>
+					/// The VoteAverage field.
+					/// <para></para>
+					/// <para>Field Type: Number</para>		
+					/// <para>Field ID: 7bb5b884-220b-4a42-b081-6ef359463c23</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISortFieldsConstants.VoteAverageFieldName)]
+					float VoteAverage  {get; set;}
+			
+				}
+
+
+	public static partial class ISortFieldsConstants{
+
+			public const string TemplateIdString = "c46324f6-ecf7-4cd7-8d5b-d0a393fb0bff";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "SortFields";
+
+					
+			public static readonly ID PopularityFieldId = new ID("eb7bcaac-ea6a-41fe-b16f-86e637e16605");
+			public const string PopularityFieldName = "Popularity";
+			
+					
+			public static readonly ID VoteAverageFieldId = new ID("7bb5b884-220b-4a42-b081-6ef359463c23");
+			public const string VoteAverageFieldName = "VoteAverage";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// SortFields
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Reboot/SortFields</para>	
+	/// <para>ID: c46324f6-ecf7-4cd7-8d5b-d0a393fb0bff</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISortFieldsConstants.TemplateIdString)]
+	public partial class SortFields  : GlassBase, ISortFields 
+	{
+	   public SortFields(ISitecoreContext context) : base(context)
+	    {
+	    }
+		public SortFields() : base()
+	    {
+	    }
+						/// <summary>
+				/// The Popularity field.
+				/// <para></para>
+				/// <para>Field Type: Number</para>		
+				/// <para>Field ID: eb7bcaac-ea6a-41fe-b16f-86e637e16605</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISortFieldsConstants.PopularityFieldName)]
+				public virtual float Popularity  {get; set;}
+					
+						/// <summary>
+				/// The VoteAverage field.
+				/// <para></para>
+				/// <para>Field Type: Number</para>		
+				/// <para>Field ID: 7bb5b884-220b-4a42-b081-6ef359463c23</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISortFieldsConstants.VoteAverageFieldName)]
+				public virtual float VoteAverage  {get; set;}
+					
+			
+	}
+}
 namespace Projects.Models.Glass.Reboot.Items
 {
 
@@ -1511,6 +2121,9 @@ namespace Projects.Models.Glass.Reboot.Items
 	   public Language(ISitecoreContext context) : base(context)
 	    {
 	    }
+		public Language() : base()
+	    {
+	    }
 						/// <summary>
 				/// The Iso_639_1 field.
 				/// <para></para>
@@ -1547,6 +2160,8 @@ namespace Projects.Models.Glass.Reboot.Items
 			
 	}
 }
+
+
 
 
 
@@ -1598,6 +2213,9 @@ namespace Projects.Models.Glass.Reboot.Items
 	   public ProductionCompany(ISitecoreContext context) : base(context)
 	    {
 	    }
+		public ProductionCompany() : base()
+	    {
+	    }
 						/// <summary>
 				/// The ExternalId field.
 				/// <para></para>
@@ -1619,6 +2237,216 @@ namespace Projects.Models.Glass.Reboot.Items
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
 				[SitecoreField(IProductionCompanyConstants.TitleFieldName)]
 				public virtual string Title  {get; set;}
+					
+			
+	}
+}
+namespace Projects.Models.Glass.Reboot
+{
+
+
+ 	/// <summary>
+	/// IHome Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Reboot/Home</para>	
+	/// <para>ID: d92e2d7d-89a4-45ff-b992-d0ea24ff8f8b</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IHomeConstants.TemplateIdString)]
+	public partial interface IHome : IGlassBase , global::Projects.Models.Glass.Common.ISiteHome, global::Projects.Models.Glass.Reboot.IPresentationBase
+	{
+				}
+
+
+	public static partial class IHomeConstants{
+
+			public const string TemplateIdString = "d92e2d7d-89a4-45ff-b992-d0ea24ff8f8b";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "Home";
+
+					
+			public static readonly ID TitleFieldId = new ID("f3479f8e-7fea-494d-80ab-7ad75ee4d94a");
+			public const string TitleFieldName = "Title";
+			
+					
+			public static readonly ID DescriptionFieldId = new ID("aca2a76a-21f1-4798-9b69-c87764e9ceee");
+			public const string DescriptionFieldName = "Description";
+			
+					
+			public static readonly ID BreadcrumbTitleFieldId = new ID("f5de556a-3c9c-4b42-94f3-3ac3a30fa788");
+			public const string BreadcrumbTitleFieldName = "BreadcrumbTitle";
+			
+					
+			public static readonly ID CssClassNameFieldId = new ID("b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3");
+			public const string CssClassNameFieldName = "CssClassName";
+			
+					
+			public static readonly ID KeywordsFieldId = new ID("799c85c3-1cb0-40cf-b594-86b438f4192d");
+			public const string KeywordsFieldName = "Keywords";
+			
+					
+			public static readonly ID MetaDescriptionFieldId = new ID("1e432dbe-fa95-4b94-b538-bcf52c80c5ba");
+			public const string MetaDescriptionFieldName = "MetaDescription";
+			
+					
+			public static readonly ID ExternalIdFieldId = new ID("062112fc-3865-4a6f-8950-d1e26711793b");
+			public const string ExternalIdFieldName = "ExternalId";
+			
+					
+			public static readonly ID ImageFieldId = new ID("c978e4f3-e816-4000-8845-04e6cc2e8609");
+			public const string ImageFieldName = "Image";
+			
+					
+			public static readonly ID MenuHoverTextFieldId = new ID("13c86a65-f308-438e-bb44-d3ab9c80b0e5");
+			public const string MenuHoverTextFieldName = "MenuHoverText";
+			
+					
+			public static readonly ID MenuTitleFieldId = new ID("2f0521a1-2a3f-491d-bc54-7dabac85e6d6");
+			public const string MenuTitleFieldName = "MenuTitle";
+			
+					
+			public static readonly ID ShowInMenuFieldId = new ID("64be5630-d2a8-42f4-a127-dd901ee32f6b");
+			public const string ShowInMenuFieldName = "ShowInMenu";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// Home
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Reboot/Home</para>	
+	/// <para>ID: d92e2d7d-89a4-45ff-b992-d0ea24ff8f8b</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IHomeConstants.TemplateIdString)]
+	public partial class Home  : GlassBase, IHome 
+	{
+	   public Home(ISitecoreContext context) : base(context)
+	    {
+	    }
+		public Home() : base()
+	    {
+	    }
+						/// <summary>
+				/// The Title field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: f3479f8e-7fea-494d-80ab-7ad75ee4d94a</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHomeConstants.TitleFieldName)]
+				public virtual string Title  {get; set;}
+					
+						/// <summary>
+				/// The Description field.
+				/// <para></para>
+				/// <para>Field Type: Rich Text</para>		
+				/// <para>Field ID: aca2a76a-21f1-4798-9b69-c87764e9ceee</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHomeConstants.DescriptionFieldName, Setting = SitecoreFieldSettings.RichTextRaw)]
+				public virtual string Description  {get; set;}
+					
+						/// <summary>
+				/// The BreadcrumbTitle field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: f5de556a-3c9c-4b42-94f3-3ac3a30fa788</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHomeConstants.BreadcrumbTitleFieldName)]
+				public virtual string BreadcrumbTitle  {get; set;}
+					
+						/// <summary>
+				/// The CssClassName field.
+				/// <para>This will be the Font Awesome Icon classes that will represent the Icons in the breadcrumb</para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHomeConstants.CssClassNameFieldName)]
+				public virtual string CssClassName  {get; set;}
+					
+						/// <summary>
+				/// The Keywords field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 799c85c3-1cb0-40cf-b594-86b438f4192d</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHomeConstants.KeywordsFieldName)]
+				public virtual string Keywords  {get; set;}
+					
+						/// <summary>
+				/// The MetaDescription field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: 1e432dbe-fa95-4b94-b538-bcf52c80c5ba</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHomeConstants.MetaDescriptionFieldName)]
+				public virtual string MetaDescription  {get; set;}
+					
+						/// <summary>
+				/// The ExternalId field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 062112fc-3865-4a6f-8950-d1e26711793b</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHomeConstants.ExternalIdFieldName)]
+				public virtual string ExternalId  {get; set;}
+					
+						/// <summary>
+				/// The Image field.
+				/// <para></para>
+				/// <para>Field Type: Image</para>		
+				/// <para>Field ID: c978e4f3-e816-4000-8845-04e6cc2e8609</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHomeConstants.ImageFieldName)]
+				public virtual Image Image  {get; set;}
+					
+						/// <summary>
+				/// The MenuHoverText field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 13c86a65-f308-438e-bb44-d3ab9c80b0e5</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHomeConstants.MenuHoverTextFieldName)]
+				public virtual string MenuHoverText  {get; set;}
+					
+						/// <summary>
+				/// The MenuTitle field.
+				/// <para></para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: 2f0521a1-2a3f-491d-bc54-7dabac85e6d6</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHomeConstants.MenuTitleFieldName)]
+				public virtual string MenuTitle  {get; set;}
+					
+						/// <summary>
+				/// The ShowInMenu field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 64be5630-d2a8-42f4-a127-dd901ee32f6b</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHomeConstants.ShowInMenuFieldName)]
+				public virtual bool ShowInMenu  {get; set;}
 					
 			
 	}
@@ -1660,6 +2488,10 @@ namespace Projects.Models.Glass.Reboot.Containers
 			public const string BreadcrumbTitleFieldName = "BreadcrumbTitle";
 			
 					
+			public static readonly ID CssClassNameFieldId = new ID("b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3");
+			public const string CssClassNameFieldName = "CssClassName";
+			
+					
 			public static readonly ID KeywordsFieldId = new ID("799c85c3-1cb0-40cf-b594-86b438f4192d");
 			public const string KeywordsFieldName = "Keywords";
 			
@@ -1683,6 +2515,10 @@ namespace Projects.Models.Glass.Reboot.Containers
 			public static readonly ID MenuTitleFieldId = new ID("2f0521a1-2a3f-491d-bc54-7dabac85e6d6");
 			public const string MenuTitleFieldName = "MenuTitle";
 			
+					
+			public static readonly ID ShowInMenuFieldId = new ID("64be5630-d2a8-42f4-a127-dd901ee32f6b");
+			public const string ShowInMenuFieldName = "ShowInMenu";
+			
 			
 
 	}
@@ -1698,6 +2534,9 @@ namespace Projects.Models.Glass.Reboot.Containers
 	public partial class Languages  : GlassBase, ILanguages 
 	{
 	   public Languages(ISitecoreContext context) : base(context)
+	    {
+	    }
+		public Languages() : base()
 	    {
 	    }
 						/// <summary>
@@ -1732,6 +2571,17 @@ namespace Projects.Models.Glass.Reboot.Containers
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
 				[SitecoreField(ILanguagesConstants.BreadcrumbTitleFieldName)]
 				public virtual string BreadcrumbTitle  {get; set;}
+					
+						/// <summary>
+				/// The CssClassName field.
+				/// <para>This will be the Font Awesome Icon classes that will represent the Icons in the breadcrumb</para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ILanguagesConstants.CssClassNameFieldName)]
+				public virtual string CssClassName  {get; set;}
 					
 						/// <summary>
 				/// The Keywords field.
@@ -1799,6 +2649,17 @@ namespace Projects.Models.Glass.Reboot.Containers
 				[SitecoreField(ILanguagesConstants.MenuTitleFieldName)]
 				public virtual string MenuTitle  {get; set;}
 					
+						/// <summary>
+				/// The ShowInMenu field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 64be5630-d2a8-42f4-a127-dd901ee32f6b</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ILanguagesConstants.ShowInMenuFieldName)]
+				public virtual bool ShowInMenu  {get; set;}
+					
 			
 	}
 }
@@ -1813,7 +2674,7 @@ namespace Projects.Models.Glass.Reboot.Items
 	/// <para>ID: e24ed2b1-46de-4870-a408-4db07152ff83</para>	
 	/// </summary>
 	[SitecoreType(TemplateId=IPersonConstants.TemplateIdString)]
-	public partial interface IPerson : IGlassBase , global::Projects.Models.Glass.Common.IPageBase
+	public partial interface IPerson : IGlassBase , global::Projects.Models.Glass.Reboot.IPresentationBase, global::Projects.Models.Glass.Common.IPageBase
 	{
 								/// <summary>
 					/// The AlsoKnownAs field.
@@ -1907,6 +2768,10 @@ namespace Projects.Models.Glass.Reboot.Items
 			public const string BreadcrumbTitleFieldName = "BreadcrumbTitle";
 			
 					
+			public static readonly ID CssClassNameFieldId = new ID("b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3");
+			public const string CssClassNameFieldName = "CssClassName";
+			
+					
 			public static readonly ID KeywordsFieldId = new ID("799c85c3-1cb0-40cf-b594-86b438f4192d");
 			public const string KeywordsFieldName = "Keywords";
 			
@@ -1930,6 +2795,10 @@ namespace Projects.Models.Glass.Reboot.Items
 			public static readonly ID MenuTitleFieldId = new ID("2f0521a1-2a3f-491d-bc54-7dabac85e6d6");
 			public const string MenuTitleFieldName = "MenuTitle";
 			
+					
+			public static readonly ID ShowInMenuFieldId = new ID("64be5630-d2a8-42f4-a127-dd901ee32f6b");
+			public const string ShowInMenuFieldName = "ShowInMenu";
+			
 			
 
 	}
@@ -1945,6 +2814,9 @@ namespace Projects.Models.Glass.Reboot.Items
 	public partial class Person  : GlassBase, IPerson 
 	{
 	   public Person(ISitecoreContext context) : base(context)
+	    {
+	    }
+		public Person() : base()
 	    {
 	    }
 						/// <summary>
@@ -2036,6 +2908,17 @@ namespace Projects.Models.Glass.Reboot.Items
 				public virtual string BreadcrumbTitle  {get; set;}
 					
 						/// <summary>
+				/// The CssClassName field.
+				/// <para>This will be the Font Awesome Icon classes that will represent the Icons in the breadcrumb</para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IPersonConstants.CssClassNameFieldName)]
+				public virtual string CssClassName  {get; set;}
+					
+						/// <summary>
 				/// The Keywords field.
 				/// <para></para>
 				/// <para>Field Type: Multi-Line Text</para>		
@@ -2100,6 +2983,17 @@ namespace Projects.Models.Glass.Reboot.Items
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
 				[SitecoreField(IPersonConstants.MenuTitleFieldName)]
 				public virtual string MenuTitle  {get; set;}
+					
+						/// <summary>
+				/// The ShowInMenu field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 64be5630-d2a8-42f4-a127-dd901ee32f6b</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IPersonConstants.ShowInMenuFieldName)]
+				public virtual bool ShowInMenu  {get; set;}
 					
 			
 	}
@@ -2191,6 +3085,9 @@ namespace Projects.Models.Glass.Reboot.Items
 	   public CastMember(ISitecoreContext context) : base(context)
 	    {
 	    }
+		public CastMember() : base()
+	    {
+	    }
 						/// <summary>
 				/// The Character field.
 				/// <para></para>
@@ -2279,6 +3176,9 @@ namespace Projects.Models.Glass.Reboot.Containers
 	public partial class Genres  : GlassBase, IGenres 
 	{
 	   public Genres(ISitecoreContext context) : base(context)
+	    {
+	    }
+		public Genres() : base()
 	    {
 	    }
 			

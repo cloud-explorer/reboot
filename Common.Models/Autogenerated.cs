@@ -14,7 +14,7 @@
 //     the code is regenerated.
 // </auto-generated>
 //------------------------------------------------------------------------------
-
+using System.ComponentModel;
 using System;   
 using System.Collections.Generic;   
 using System.Linq;
@@ -25,6 +25,8 @@ using Glass.Mapper.Sc.Configuration.Attributes;
 using Glass.Mapper.Sc.Fields;
 using Sitecore.Data;
 using Sitecore.Globalization;
+using Sitecore.ContentSearch;
+using Sitecore.ContentSearch.Converters;
 
 
 namespace Projects.Models.Glass
@@ -82,13 +84,19 @@ namespace Projects.Models.Glass
 		
 		private readonly ISitecoreContext _context;
 
-	    protected GlassBase(ISitecoreContext context)
+		public GlassBase()
+        {
+            _context = new SitecoreContext();
+        }
+
+	    public GlassBase(ISitecoreContext context)
         {
             _context = context;
         }
 
 	    [SitecoreId]
-		public virtual Guid Id{ get; private set;}
+		[TypeConverter(typeof(IndexFieldGuidValueConverter)), IndexField(BuiltinFields.Group)]
+		public virtual Guid Id{ get; set;}
 
 		[SitecoreInfo(SitecoreInfoType.Language)]
         public virtual Language Language{ get; private set; }
@@ -187,6 +195,10 @@ namespace Projects.Models.Glass.Common
 			public const string BreadcrumbTitleFieldName = "BreadcrumbTitle";
 			
 					
+			public static readonly ID CssClassNameFieldId = new ID("b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3");
+			public const string CssClassNameFieldName = "CssClassName";
+			
+					
 			public static readonly ID KeywordsFieldId = new ID("799c85c3-1cb0-40cf-b594-86b438f4192d");
 			public const string KeywordsFieldName = "Keywords";
 			
@@ -210,6 +222,10 @@ namespace Projects.Models.Glass.Common
 			public static readonly ID MenuTitleFieldId = new ID("2f0521a1-2a3f-491d-bc54-7dabac85e6d6");
 			public const string MenuTitleFieldName = "MenuTitle";
 			
+					
+			public static readonly ID ShowInMenuFieldId = new ID("64be5630-d2a8-42f4-a127-dd901ee32f6b");
+			public const string ShowInMenuFieldName = "ShowInMenu";
+			
 			
 
 	}
@@ -225,6 +241,10 @@ namespace Projects.Models.Glass.Common
 	public partial class SiteContainer  : GlassBase, ISiteContainer 
 	{
 	 public SiteContainer(ISitecoreContext context) : base(context)
+	    {
+	    }
+
+		public SiteContainer() : base()
 	    {
 	    }
 						/// <summary>
@@ -259,6 +279,17 @@ namespace Projects.Models.Glass.Common
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
 				[SitecoreField(ISiteContainerConstants.BreadcrumbTitleFieldName)]
 				public virtual string BreadcrumbTitle  {get; set;}
+					
+						/// <summary>
+				/// The CssClassName field.
+				/// <para>This will be the Font Awesome Icon classes that will represent the Icons in the breadcrumb</para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISiteContainerConstants.CssClassNameFieldName)]
+				public virtual string CssClassName  {get; set;}
 					
 						/// <summary>
 				/// The Keywords field.
@@ -326,9 +357,21 @@ namespace Projects.Models.Glass.Common
 				[SitecoreField(ISiteContainerConstants.MenuTitleFieldName)]
 				public virtual string MenuTitle  {get; set;}
 					
+						/// <summary>
+				/// The ShowInMenu field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 64be5630-d2a8-42f4-a127-dd901ee32f6b</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISiteContainerConstants.ShowInMenuFieldName)]
+				public virtual bool ShowInMenu  {get; set;}
+					
 			
 	}
 }
+
 
 
 namespace Projects.Models.Glass.Common.FieldSections
@@ -364,6 +407,16 @@ namespace Projects.Models.Glass.Common.FieldSections
 					[SitecoreField(IIsNavigableConstants.MenuTitleFieldName)]
 					string MenuTitle  {get; set;}
 			
+								/// <summary>
+					/// The ShowInMenu field.
+					/// <para></para>
+					/// <para>Field Type: Checkbox</para>		
+					/// <para>Field ID: 64be5630-d2a8-42f4-a127-dd901ee32f6b</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IIsNavigableConstants.ShowInMenuFieldName)]
+					bool ShowInMenu  {get; set;}
+			
 				}
 
 
@@ -381,6 +434,10 @@ namespace Projects.Models.Glass.Common.FieldSections
 			public static readonly ID MenuTitleFieldId = new ID("2f0521a1-2a3f-491d-bc54-7dabac85e6d6");
 			public const string MenuTitleFieldName = "MenuTitle";
 			
+					
+			public static readonly ID ShowInMenuFieldId = new ID("64be5630-d2a8-42f4-a127-dd901ee32f6b");
+			public const string ShowInMenuFieldName = "ShowInMenu";
+			
 			
 
 	}
@@ -396,6 +453,10 @@ namespace Projects.Models.Glass.Common.FieldSections
 	public partial class IsNavigable  : GlassBase, IIsNavigable 
 	{
 	 public IsNavigable(ISitecoreContext context) : base(context)
+	    {
+	    }
+
+		public IsNavigable() : base()
 	    {
 	    }
 						/// <summary>
@@ -419,6 +480,17 @@ namespace Projects.Models.Glass.Common.FieldSections
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
 				[SitecoreField(IIsNavigableConstants.MenuTitleFieldName)]
 				public virtual string MenuTitle  {get; set;}
+					
+						/// <summary>
+				/// The ShowInMenu field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 64be5630-d2a8-42f4-a127-dd901ee32f6b</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IIsNavigableConstants.ShowInMenuFieldName)]
+				public virtual bool ShowInMenu  {get; set;}
 					
 			
 	}
@@ -477,6 +549,10 @@ namespace Projects.Models.Glass.Common.FieldSections
 	 public HasTitle(ISitecoreContext context) : base(context)
 	    {
 	    }
+
+		public HasTitle() : base()
+	    {
+	    }
 						/// <summary>
 				/// The Title field.
 				/// <para></para>
@@ -529,6 +605,10 @@ namespace Projects.Models.Glass.Common
 			public const string BreadcrumbTitleFieldName = "BreadcrumbTitle";
 			
 					
+			public static readonly ID CssClassNameFieldId = new ID("b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3");
+			public const string CssClassNameFieldName = "CssClassName";
+			
+					
 			public static readonly ID KeywordsFieldId = new ID("799c85c3-1cb0-40cf-b594-86b438f4192d");
 			public const string KeywordsFieldName = "Keywords";
 			
@@ -552,6 +632,10 @@ namespace Projects.Models.Glass.Common
 			public static readonly ID MenuTitleFieldId = new ID("2f0521a1-2a3f-491d-bc54-7dabac85e6d6");
 			public const string MenuTitleFieldName = "MenuTitle";
 			
+					
+			public static readonly ID ShowInMenuFieldId = new ID("64be5630-d2a8-42f4-a127-dd901ee32f6b");
+			public const string ShowInMenuFieldName = "ShowInMenu";
+			
 			
 
 	}
@@ -567,6 +651,10 @@ namespace Projects.Models.Glass.Common
 	public partial class SiteHome  : GlassBase, ISiteHome 
 	{
 	 public SiteHome(ISitecoreContext context) : base(context)
+	    {
+	    }
+
+		public SiteHome() : base()
 	    {
 	    }
 						/// <summary>
@@ -601,6 +689,17 @@ namespace Projects.Models.Glass.Common
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
 				[SitecoreField(ISiteHomeConstants.BreadcrumbTitleFieldName)]
 				public virtual string BreadcrumbTitle  {get; set;}
+					
+						/// <summary>
+				/// The CssClassName field.
+				/// <para>This will be the Font Awesome Icon classes that will represent the Icons in the breadcrumb</para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISiteHomeConstants.CssClassNameFieldName)]
+				public virtual string CssClassName  {get; set;}
 					
 						/// <summary>
 				/// The Keywords field.
@@ -668,6 +767,17 @@ namespace Projects.Models.Glass.Common
 				[SitecoreField(ISiteHomeConstants.MenuTitleFieldName)]
 				public virtual string MenuTitle  {get; set;}
 					
+						/// <summary>
+				/// The ShowInMenu field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 64be5630-d2a8-42f4-a127-dd901ee32f6b</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISiteHomeConstants.ShowInMenuFieldName)]
+				public virtual bool ShowInMenu  {get; set;}
+					
 			
 	}
 }
@@ -723,6 +833,10 @@ namespace Projects.Models.Glass.Common.FieldSections
 	public partial class HasLinkToItem  : GlassBase, IHasLinkToItem 
 	{
 	 public HasLinkToItem(ISitecoreContext context) : base(context)
+	    {
+	    }
+
+		public HasLinkToItem() : base()
 	    {
 	    }
 						/// <summary>
@@ -781,9 +895,14 @@ namespace Projects.Models.Glass.Common
 	 public Content_Section(ISitecoreContext context) : base(context)
 	    {
 	    }
+
+		public Content_Section() : base()
+	    {
+	    }
 			
 	}
 }
+
 
 
 
@@ -844,6 +963,10 @@ namespace Projects.Models.Glass.Common.FieldSections
 	 public HasDescription(ISitecoreContext context) : base(context)
 	    {
 	    }
+
+		public HasDescription() : base()
+	    {
+	    }
 						/// <summary>
 				/// The Description field.
 				/// <para></para>
@@ -858,6 +981,7 @@ namespace Projects.Models.Glass.Common.FieldSections
 			
 	}
 }
+
 namespace Projects.Models.Glass.Common.Components
 {
 
@@ -897,9 +1021,14 @@ namespace Projects.Models.Glass.Common.Components
 	 public Carousel(ISitecoreContext context) : base(context)
 	    {
 	    }
+
+		public Carousel() : base()
+	    {
+	    }
 			
 	}
 }
+
 namespace Projects.Models.Glass.Common
 {
 
@@ -935,6 +1064,10 @@ namespace Projects.Models.Glass.Common
 			public const string BreadcrumbTitleFieldName = "BreadcrumbTitle";
 			
 					
+			public static readonly ID CssClassNameFieldId = new ID("b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3");
+			public const string CssClassNameFieldName = "CssClassName";
+			
+					
 			public static readonly ID KeywordsFieldId = new ID("799c85c3-1cb0-40cf-b594-86b438f4192d");
 			public const string KeywordsFieldName = "Keywords";
 			
@@ -958,6 +1091,10 @@ namespace Projects.Models.Glass.Common
 			public static readonly ID MenuTitleFieldId = new ID("2f0521a1-2a3f-491d-bc54-7dabac85e6d6");
 			public const string MenuTitleFieldName = "MenuTitle";
 			
+					
+			public static readonly ID ShowInMenuFieldId = new ID("64be5630-d2a8-42f4-a127-dd901ee32f6b");
+			public const string ShowInMenuFieldName = "ShowInMenu";
+			
 			
 
 	}
@@ -973,6 +1110,10 @@ namespace Projects.Models.Glass.Common
 	public partial class PageBase  : GlassBase, IPageBase 
 	{
 	 public PageBase(ISitecoreContext context) : base(context)
+	    {
+	    }
+
+		public PageBase() : base()
 	    {
 	    }
 						/// <summary>
@@ -1007,6 +1148,17 @@ namespace Projects.Models.Glass.Common
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
 				[SitecoreField(IPageBaseConstants.BreadcrumbTitleFieldName)]
 				public virtual string BreadcrumbTitle  {get; set;}
+					
+						/// <summary>
+				/// The CssClassName field.
+				/// <para>This will be the Font Awesome Icon classes that will represent the Icons in the breadcrumb</para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IPageBaseConstants.CssClassNameFieldName)]
+				public virtual string CssClassName  {get; set;}
 					
 						/// <summary>
 				/// The Keywords field.
@@ -1074,6 +1226,17 @@ namespace Projects.Models.Glass.Common
 				[SitecoreField(IPageBaseConstants.MenuTitleFieldName)]
 				public virtual string MenuTitle  {get; set;}
 					
+						/// <summary>
+				/// The ShowInMenu field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 64be5630-d2a8-42f4-a127-dd901ee32f6b</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IPageBaseConstants.ShowInMenuFieldName)]
+				public virtual bool ShowInMenu  {get; set;}
+					
 			
 	}
 }
@@ -1130,6 +1293,10 @@ namespace Projects.Models.Glass.Common.FieldSections
 	 public HasImage(ISitecoreContext context) : base(context)
 	    {
 	    }
+
+		public HasImage() : base()
+	    {
+	    }
 						/// <summary>
 				/// The Image field.
 				/// <para></para>
@@ -1167,6 +1334,16 @@ namespace Projects.Models.Glass.Common.FieldSections
 					[SitecoreField(IHasBreadcrumbConstants.BreadcrumbTitleFieldName)]
 					string BreadcrumbTitle  {get; set;}
 			
+								/// <summary>
+					/// The CssClassName field.
+					/// <para>This will be the Font Awesome Icon classes that will represent the Icons in the breadcrumb</para>
+					/// <para>Field Type: Single-Line Text</para>		
+					/// <para>Field ID: b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IHasBreadcrumbConstants.CssClassNameFieldName)]
+					string CssClassName  {get; set;}
+			
 				}
 
 
@@ -1179,6 +1356,10 @@ namespace Projects.Models.Glass.Common.FieldSections
 					
 			public static readonly ID BreadcrumbTitleFieldId = new ID("f5de556a-3c9c-4b42-94f3-3ac3a30fa788");
 			public const string BreadcrumbTitleFieldName = "BreadcrumbTitle";
+			
+					
+			public static readonly ID CssClassNameFieldId = new ID("b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3");
+			public const string CssClassNameFieldName = "CssClassName";
 			
 			
 
@@ -1197,6 +1378,10 @@ namespace Projects.Models.Glass.Common.FieldSections
 	 public HasBreadcrumb(ISitecoreContext context) : base(context)
 	    {
 	    }
+
+		public HasBreadcrumb() : base()
+	    {
+	    }
 						/// <summary>
 				/// The BreadcrumbTitle field.
 				/// <para></para>
@@ -1207,6 +1392,17 @@ namespace Projects.Models.Glass.Common.FieldSections
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
 				[SitecoreField(IHasBreadcrumbConstants.BreadcrumbTitleFieldName)]
 				public virtual string BreadcrumbTitle  {get; set;}
+					
+						/// <summary>
+				/// The CssClassName field.
+				/// <para>This will be the Font Awesome Icon classes that will represent the Icons in the breadcrumb</para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IHasBreadcrumbConstants.CssClassNameFieldName)]
+				public virtual string CssClassName  {get; set;}
 					
 			
 	}
@@ -1268,6 +1464,10 @@ namespace Projects.Models.Glass.Common.Components
 	 public Slide(ISitecoreContext context) : base(context)
 	    {
 	    }
+
+		public Slide() : base()
+	    {
+	    }
 						/// <summary>
 				/// The Image field.
 				/// <para></para>
@@ -1315,6 +1515,102 @@ namespace Projects.Models.Glass.Common.Components
 			
 	}
 }
+namespace Projects.Models.Glass.Common
+{
+
+
+ 	/// <summary>
+	/// IStandardText Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Common/StandardText</para>	
+	/// <para>ID: a3f7e359-81de-480b-85a3-7e7d00ab7be0</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IStandardTextConstants.TemplateIdString)]
+	public partial interface IStandardText : IGlassBase 
+	{
+								/// <summary>
+					/// The Comment field.
+					/// <para></para>
+					/// <para>Field Type: Multi-Line Text</para>		
+					/// <para>Field ID: cdba96fd-71df-483e-8773-92e32d0b2d85</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IStandardTextConstants.CommentFieldName)]
+					string Comment  {get; set;}
+			
+								/// <summary>
+					/// The Text field.
+					/// <para></para>
+					/// <para>Field Type: Rich Text</para>		
+					/// <para>Field ID: 8c50c2bf-2b08-4be1-a95a-8fc151e849c5</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IStandardTextConstants.TextFieldName)]
+					string Text  {get; set;}
+			
+				}
+
+
+	public static partial class IStandardTextConstants{
+
+			public const string TemplateIdString = "a3f7e359-81de-480b-85a3-7e7d00ab7be0";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "StandardText";
+
+					
+			public static readonly ID CommentFieldId = new ID("cdba96fd-71df-483e-8773-92e32d0b2d85");
+			public const string CommentFieldName = "Comment";
+			
+					
+			public static readonly ID TextFieldId = new ID("8c50c2bf-2b08-4be1-a95a-8fc151e849c5");
+			public const string TextFieldName = "Text";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// StandardText
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Common/StandardText</para>	
+	/// <para>ID: a3f7e359-81de-480b-85a3-7e7d00ab7be0</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=IStandardTextConstants.TemplateIdString)]
+	public partial class StandardText  : GlassBase, IStandardText 
+	{
+	 public StandardText(ISitecoreContext context) : base(context)
+	    {
+	    }
+
+		public StandardText() : base()
+	    {
+	    }
+						/// <summary>
+				/// The Comment field.
+				/// <para></para>
+				/// <para>Field Type: Multi-Line Text</para>		
+				/// <para>Field ID: cdba96fd-71df-483e-8773-92e32d0b2d85</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IStandardTextConstants.CommentFieldName)]
+				public virtual string Comment  {get; set;}
+					
+						/// <summary>
+				/// The Text field.
+				/// <para></para>
+				/// <para>Field Type: Rich Text</para>		
+				/// <para>Field ID: 8c50c2bf-2b08-4be1-a95a-8fc151e849c5</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IStandardTextConstants.TextFieldName)]
+				public virtual string Text  {get; set;}
+					
+			
+	}
+}
 
 namespace Projects.Models.Glass.Common
 {
@@ -1351,6 +1647,10 @@ namespace Projects.Models.Glass.Common
 			public const string BreadcrumbTitleFieldName = "BreadcrumbTitle";
 			
 					
+			public static readonly ID CssClassNameFieldId = new ID("b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3");
+			public const string CssClassNameFieldName = "CssClassName";
+			
+					
 			public static readonly ID KeywordsFieldId = new ID("799c85c3-1cb0-40cf-b594-86b438f4192d");
 			public const string KeywordsFieldName = "Keywords";
 			
@@ -1374,6 +1674,10 @@ namespace Projects.Models.Glass.Common
 			public static readonly ID MenuTitleFieldId = new ID("2f0521a1-2a3f-491d-bc54-7dabac85e6d6");
 			public const string MenuTitleFieldName = "MenuTitle";
 			
+					
+			public static readonly ID ShowInMenuFieldId = new ID("64be5630-d2a8-42f4-a127-dd901ee32f6b");
+			public const string ShowInMenuFieldName = "ShowInMenu";
+			
 			
 
 	}
@@ -1389,6 +1693,10 @@ namespace Projects.Models.Glass.Common
 	public partial class SiteSection  : GlassBase, ISiteSection 
 	{
 	 public SiteSection(ISitecoreContext context) : base(context)
+	    {
+	    }
+
+		public SiteSection() : base()
 	    {
 	    }
 						/// <summary>
@@ -1423,6 +1731,17 @@ namespace Projects.Models.Glass.Common
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
 				[SitecoreField(ISiteSectionConstants.BreadcrumbTitleFieldName)]
 				public virtual string BreadcrumbTitle  {get; set;}
+					
+						/// <summary>
+				/// The CssClassName field.
+				/// <para>This will be the Font Awesome Icon classes that will represent the Icons in the breadcrumb</para>
+				/// <para>Field Type: Single-Line Text</para>		
+				/// <para>Field ID: b36f38d6-f0e4-413e-8ec9-dc6de5d34bf3</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISiteSectionConstants.CssClassNameFieldName)]
+				public virtual string CssClassName  {get; set;}
 					
 						/// <summary>
 				/// The Keywords field.
@@ -1490,9 +1809,21 @@ namespace Projects.Models.Glass.Common
 				[SitecoreField(ISiteSectionConstants.MenuTitleFieldName)]
 				public virtual string MenuTitle  {get; set;}
 					
+						/// <summary>
+				/// The ShowInMenu field.
+				/// <para></para>
+				/// <para>Field Type: Checkbox</para>		
+				/// <para>Field ID: 64be5630-d2a8-42f4-a127-dd901ee32f6b</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISiteSectionConstants.ShowInMenuFieldName)]
+				public virtual bool ShowInMenu  {get; set;}
+					
 			
 	}
 }
+
 
 
 namespace Projects.Models.Glass.Common
@@ -1542,6 +1873,10 @@ namespace Projects.Models.Glass.Common
 	 public TaxonomyBase(ISitecoreContext context) : base(context)
 	    {
 	    }
+
+		public TaxonomyBase() : base()
+	    {
+	    }
 						/// <summary>
 				/// The ExternalId field.
 				/// <para></para>
@@ -1567,6 +1902,7 @@ namespace Projects.Models.Glass.Common
 			
 	}
 }
+
 
 
 
@@ -1625,6 +1961,10 @@ namespace Projects.Models.Glass.Common.FieldSections
 	public partial class HasExternalId  : GlassBase, IHasExternalId 
 	{
 	 public HasExternalId(ISitecoreContext context) : base(context)
+	    {
+	    }
+
+		public HasExternalId() : base()
 	    {
 	    }
 						/// <summary>
@@ -1708,6 +2048,10 @@ namespace Projects.Models.Glass.Common.FieldSections
 	public partial class HasMetadata  : GlassBase, IHasMetadata 
 	{
 	 public HasMetadata(ISitecoreContext context) : base(context)
+	    {
+	    }
+
+		public HasMetadata() : base()
 	    {
 	    }
 						/// <summary>
