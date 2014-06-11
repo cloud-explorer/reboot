@@ -1,0 +1,60 @@
+﻿@using Glass.Mapper.Sc.RenderField
+@using Projects.Common.Glass
+@using Projects.Models.Glass.Reboot.Items
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<IEnumerable<Movie>>
+
+<div class="section">
+    @foreach (var movie in Model)
+    {
+        <div class="row">
+            @using (BeginRenderLink(movie, m => m.GetInternalLink(string.Empty, "_self")))
+            {
+                <h3>@Editable(movie, m => m.Title)</h3>
+            }
+
+        </div>
+        <div class="row">
+            <div class="col-md-1 col-xs-4">
+                @using (BeginRenderLink(movie, m => m.GetInternalLink(string.Empty, "_self")))
+                {
+                    @RenderImage(movie, m => m.Image, new ImageParameters { Class = "img-responsive", MaxWidth = 100 })
+                }
+            </div>
+            <div class="col-md-11">
+                <div>
+                    
+                    <div class="row">
+                        @Editable(movie, m=>m.Description)
+                    </div>
+                    <div class="row col-md-offset-0 col-xs-offset-4">
+                        Release Date:
+                        <span class="badge">
+                            @movie.ReleaseDate.ToString("MMMM dd, yyyy")
+                        </span>
+                    </div>
+                    <div class="row col-md-offset-0 col-xs-offset-4">
+                        <div class="rateit" data-rateit-value="@movie.VoteAverage" data-rateit-ispreset="true"
+                             data-rateit-readonly="true" data-rateit-max="10">
+
+                        </div>
+                        <span class="badge">@movie.VoteAverage<text>/10</text></span>
+                    </div>
+                    @if (movie.Genres.Any())
+                    {
+                        <div class="row col-md-offset-0 col-xs-offset-4">
+                            <i class="fa fa-tags"></i>  Genre
+                            @foreach (var genre in movie.Genres.Select(sl => GlassHtml.SitecoreContext.GetItem<Genre>(sl)).ToList())
+                            {
+                                <span class="badge">
+                                    @genre.Title
+                                </span>
+                            }
+                        </div>
+                    }
+                </div>
+            </div>
+
+        </div>
+        <hr />
+    }
+</div>

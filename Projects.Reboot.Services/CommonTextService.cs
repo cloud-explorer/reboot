@@ -12,7 +12,7 @@ using Sitecore.Rules.Conditions;
 
 namespace Projects.Reboot.Services
 {
-    public class CommonTextService : SearchService, ICommonTextService
+    public class CommonTextService : SearchServiceBase, ICommonTextService
     {
         public string GetTextFor(string itemName, Language language = null)
         {
@@ -20,7 +20,7 @@ namespace Projects.Reboot.Services
             IStandardText item;
             using (var context = Index.CreateSearchContext())
             {
-                item = context.GetQueryable<IStandardText>().FirstOrDefault(m => m.Name == itemName
+                item = context.GetQueryable<StandardText>().FirstOrDefault(m => m.Name == itemName
                                                                                  && m.Language == language);
             }
             if (item == null)

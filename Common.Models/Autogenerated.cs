@@ -31,7 +31,7 @@ using Sitecore.ContentSearch.Converters;
 
 namespace Projects.Models.Glass
 {
-		public static class Helper
+			public static class Helper
     {
         public static Guid GetTemplateIdFromType<T>()
         {
@@ -44,34 +44,43 @@ namespace Projects.Models.Glass
 		public interface IGlassBase{
 		
 		[SitecoreId]
-		Guid Id{ get; }
+		[TypeConverter(typeof(IndexFieldGuidValueConverter)), IndexField(BuiltinFields.Group)]
+		Guid Id{ get; set;}
 
 		[SitecoreInfo(SitecoreInfoType.Language)]
-        Language Language{ get; }
+        [IndexField(BuiltinFields.Language), TypeConverter(typeof(IndexFieldLanguageValueConverter))]
+        Language Language{ get; set; }
 
         [SitecoreInfo(SitecoreInfoType.Version)]
-        int Version { get; }
+        int Version { get; set; }
 
-        [SitecoreInfo(SitecoreInfoType.Name)]
-        string Name { get; set; }
+	    [SitecoreInfo(SitecoreInfoType.Name)]
+        [IndexField(BuiltinFields.Name)]
+	    string Name { get; set; }
 
         [SitecoreInfo(SitecoreInfoType.BaseTemplateIds)]
-        IEnumerable<Guid> BaseTemplates { get; }
+        [IndexField(SearchIndexField.AllTemplates), TypeConverter(typeof(IndexFieldEnumerableConverter))]
+	    IEnumerable<Guid> BaseTemplates { get; set; }
 
-		[SitecoreInfo(SitecoreInfoType.TemplateName)]
-        string TemplateName { get; }
+        [IndexField(SearchIndexField.Ancestors), TypeConverter(typeof(IndexFieldEnumerableConverter))]
+        IEnumerable<Guid> Ancestors { get; set; }
+
+	    [SitecoreInfo(SitecoreInfoType.TemplateName)]
+        [IndexField(BuiltinFields.TemplateName)]
+        string TemplateName { get; set; }
 
 		[SitecoreInfo(SitecoreInfoType.TemplateId)]
-        Guid TemplateId { get; }
+        [TypeConverter(typeof(IndexFieldGuidValueConverter)), IndexField(BuiltinFields.Template)]
+        Guid TemplateId { get; set; }
 
         [SitecoreInfo(SitecoreInfoType.Url)]
         string Url { get; }
-		
+
 		[SitecoreChildren(IsLazy = true)]
-        IEnumerable<IGlassBase> Children { get; set; }
+        IEnumerable<IGlassBase> Children { get; }
 
         [SitecoreParent]
-        IGlassBase Parent { get; set; }
+	    IGlassBase Parent { get; set; }
 
 		ISitecoreContext Context { get; }
 
@@ -84,7 +93,7 @@ namespace Projects.Models.Glass
 		
 		private readonly ISitecoreContext _context;
 
-		public GlassBase()
+	    public GlassBase()
         {
             _context = new SitecoreContext();
         }
@@ -99,30 +108,42 @@ namespace Projects.Models.Glass
 		public virtual Guid Id{ get; set;}
 
 		[SitecoreInfo(SitecoreInfoType.Language)]
-        public virtual Language Language{ get; private set; }
+        [IndexField(BuiltinFields.Language), TypeConverter(typeof(IndexFieldLanguageValueConverter))]
+        public virtual Language Language{ get; set; }
 
         [SitecoreInfo(SitecoreInfoType.Version)]
-        public virtual int Version { get; private set; }
+		[IgnoreIndexField]
+        public virtual int Version { get; set; }
 
 	    [SitecoreInfo(SitecoreInfoType.Name)]
+        [IndexField(BuiltinFields.Name)]
 	    public string Name { get; set; }
 
         [SitecoreInfo(SitecoreInfoType.BaseTemplateIds)]
-	    public IEnumerable<Guid> BaseTemplates { get; private set; }
+        [IndexField(BuiltinFields.AllTemplates), TypeConverter(typeof(IndexFieldEnumerableConverter))]
+	    public IEnumerable<Guid> BaseTemplates { get; set; }
+
+        [IndexField(SearchIndexField.Ancestors), TypeConverter(typeof(IndexFieldEnumerableConverter))]
+	    public IEnumerable<Guid> Ancestors { get; set; }
 
 	    [SitecoreInfo(SitecoreInfoType.TemplateName)]
-        public string TemplateName { get; private set; }
+        [IndexField(BuiltinFields.TemplateName)]
+        public string TemplateName { get; set; }
 
 		[SitecoreInfo(SitecoreInfoType.TemplateId)]
-        public Guid TemplateId { get; private set; }
+        [TypeConverter(typeof(IndexFieldGuidValueConverter)), IndexField(BuiltinFields.Template)]
+        public Guid TemplateId { get; set; }
 
         [SitecoreInfo(SitecoreInfoType.Url)]
+		[IgnoreIndexField]
         public string Url { get; private set; }
 
 		[SitecoreChildren(IsLazy = true)]
+		[IgnoreIndexField]
         public virtual IEnumerable<IGlassBase> Children { get; set; }
 
         [SitecoreParent]
+		[IgnoreIndexField]
 	    public IGlassBase Parent { get; set; }
 
 	    public ISitecoreContext Context

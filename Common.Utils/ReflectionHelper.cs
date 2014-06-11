@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Linq.Expressions;
 using System.Reflection;
+using Glass.Mapper.Sc.Configuration.Attributes;
 using Sitecore.Data.Items;
 
 namespace Projects.Common.Utils
@@ -69,6 +70,46 @@ namespace Projects.Common.Utils
 
         public static T GetAttributeValue<T, TK>(TK obj) where T : class
         {
+            return null;
+        }
+
+        public static Guid GetTemplateIdFromType(this Type t)
+        {
+            SitecoreTypeAttribute sitecoreTypeAttribute = (SitecoreTypeAttribute) t.GetCustomAttribute(typeof (SitecoreTypeAttribute), true);
+            Guid templateId;
+            if (Guid.TryParse(sitecoreTypeAttribute.TemplateId, out templateId))
+            {
+                return templateId;
+            }
+            return Guid.Empty;
+        }
+
+        //public static object GetPropertyWithFieldId(this Type t, Guid id)
+        //{
+        //    var props = t.GetProperties().Where(
+        //        prop => Attribute.IsDefined(prop, typeof(SitecoreInfoAttribute)));
+        //    foreach (PropertyInfo pi in props)
+        //    {
+        //        pi.
+        //    }
+        //}
+
+        public static PropertyInfo GetPropertyFromFieldId<T>(Guid fieldId)
+        {
+            //Dictionary<string, string> _dict = new Dictionary<string, string>();
+
+            PropertyInfo[] props = typeof(T).GetProperties();
+            foreach (PropertyInfo prop in props)
+            {
+                object[] attrs = prop.GetCustomAttributes(true);
+                if ((attrs.OfType<SitecoreFieldAttribute>()
+                    .Select(sitecoreInfoAttr => new {sitecoreInfoAttr, propName = prop.Name})
+                    .Select(@t => new Guid(@t.sitecoreInfoAttr.FieldId))).Any(val => val.Equals(fieldId)))
+                {
+                    return prop;
+                }
+            }
+
             return null;
         }
     }

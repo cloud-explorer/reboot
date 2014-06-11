@@ -2,7 +2,7 @@
 @inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Projects.Models.Glass.Reboot.Items.Movie>
 <hr />
 <div class="row">
-    <div class="col-md-3">
+    <div class="col-md-4">
 
         <div class="list-group">
             <a href="#" class="list-group-item active">
@@ -68,7 +68,7 @@
         }
         
     </div>
-    <div class="col-md-9">
+    <div class="col-md-8">
         @Html.Partial("~/Views/Movie/Cast.cshtml", Model.Casts.Select(c => GlassHtml.SitecoreContext.GetItem<CastMember>(c)).OrderBy(c => c.SortOrder))
         @Html.Partial("~/Views/Movie/Crew.cshtml", Model.Crews.Select(c => GlassHtml.SitecoreContext.GetItem<CrewMember>(c)).OrderBy(c => c.Job))
         

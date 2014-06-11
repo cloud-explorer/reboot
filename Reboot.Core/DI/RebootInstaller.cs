@@ -41,6 +41,9 @@ namespace Projects.Reboot.Core.DI
                     .LifestylePerWebRequest(),
                  Component.For<ICommonTextService>()
                     .ImplementedBy<CommonTextService>()
+                    .LifestylePerWebRequest(),
+                 Component.For<ISiteSearchService>()
+                    .ImplementedBy<SiteSearchService>()
                     .LifestylePerWebRequest()
                 );
         }

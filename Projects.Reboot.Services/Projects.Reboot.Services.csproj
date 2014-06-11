@@ -65,8 +65,9 @@
   <ItemGroup>
     <Compile Include="CommonTextService.cs" />
     <Compile Include="MovieSearchService.cs" />
-    <Compile Include="SearchService.cs" />
+    <Compile Include="SearchServiceBase.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SiteSearchService.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Common.Contracts\Projects.Common.Contracts.csproj">

@@ -51,6 +51,11 @@ namespace Projects.Reboot.DataMigration.MappingProfiles
                   .ForMember(m => m.Language, opt => opt.Ignore())
                   .ForMember(m => m.TemplateId, opt => opt.Ignore())
                   .ForMember(m => m.TemplateName, opt => opt.Ignore())
+                  .ForMember(m => m.BaseTemplates, opt => opt.Ignore())
+                  .ForMember(m => m.Children, opt => opt.Ignore())
+                  .ForMember(m => m.Parent, opt => opt.Ignore())
+                  .ForMember(m => m.Context, opt => opt.Ignore())
+                  .ForMember(m => m.Url, opt => opt.Ignore())
                   .ForAllMembers(p => p.Condition(c => !c.IsSourceValueNull));
 
             //Language Mappings
@@ -63,6 +68,11 @@ namespace Projects.Reboot.DataMigration.MappingProfiles
                   .ForMember(m => m.Language, opt => opt.Ignore())
                   .ForMember(m => m.TemplateId, opt => opt.Ignore())
                   .ForMember(m => m.TemplateName, opt => opt.Ignore())
+                  .ForMember(m => m.BaseTemplates, opt => opt.Ignore())
+                  .ForMember(m => m.Children, opt => opt.Ignore())
+                  .ForMember(m => m.Parent, opt => opt.Ignore())
+                  .ForMember(m => m.Context, opt => opt.Ignore())
+                  .ForMember(m => m.Url, opt => opt.Ignore())
                   .ForAllMembers(p => p.Condition(c => !c.IsSourceValueNull));
 
             //Crew Mappings
@@ -75,6 +85,11 @@ namespace Projects.Reboot.DataMigration.MappingProfiles
                   .ForMember(m => m.Language, opt => opt.Ignore())
                   .ForMember(m => m.TemplateId, opt => opt.Ignore())
                   .ForMember(m => m.TemplateName, opt => opt.Ignore())
+                  .ForMember(m => m.BaseTemplates, opt => opt.Ignore())
+                  .ForMember(m => m.Children, opt => opt.Ignore())
+                  .ForMember(m => m.Parent, opt => opt.Ignore())
+                  .ForMember(m => m.Context, opt => opt.Ignore())
+                  .ForMember(m => m.Url, opt => opt.Ignore())
                   .ForAllMembers(p => p.Condition(c => !c.IsSourceValueNull));
 
             //Cast Mappings
@@ -88,6 +103,11 @@ namespace Projects.Reboot.DataMigration.MappingProfiles
                   .ForMember(m => m.Language, opt => opt.Ignore())
                   .ForMember(m => m.TemplateId, opt => opt.Ignore())
                   .ForMember(m => m.TemplateName, opt => opt.Ignore())
+                  .ForMember(m => m.BaseTemplates, opt => opt.Ignore())
+                  .ForMember(m => m.Children, opt => opt.Ignore())
+                  .ForMember(m => m.Parent, opt => opt.Ignore())
+                  .ForMember(m => m.Context, opt => opt.Ignore())
+                  .ForMember(m => m.Url, opt => opt.Ignore())
                   .ForAllMembers(p => p.Condition(c => !c.IsSourceValueNull));
 
             //Trailer Mappings
@@ -101,6 +121,11 @@ namespace Projects.Reboot.DataMigration.MappingProfiles
                   .ForMember(m => m.Language, opt => opt.Ignore())
                   .ForMember(m => m.TemplateId, opt => opt.Ignore())
                   .ForMember(m => m.TemplateName, opt => opt.Ignore())
+                  .ForMember(m => m.BaseTemplates, opt => opt.Ignore())
+                  .ForMember(m => m.Children, opt => opt.Ignore())
+                  .ForMember(m => m.Parent, opt => opt.Ignore())
+                  .ForMember(m => m.Context, opt => opt.Ignore())
+                  .ForMember(m => m.Url, opt => opt.Ignore())
                   .ForAllMembers(p => p.Condition(c => !c.IsSourceValueNull));
 
             //Production Mappings
@@ -113,6 +138,11 @@ namespace Projects.Reboot.DataMigration.MappingProfiles
                   .ForMember(m => m.Language, opt => opt.Ignore())
                   .ForMember(m => m.TemplateId, opt => opt.Ignore())
                   .ForMember(m => m.TemplateName, opt => opt.Ignore())
+                  .ForMember(m => m.BaseTemplates, opt => opt.Ignore())
+                  .ForMember(m => m.Children, opt => opt.Ignore())
+                  .ForMember(m => m.Parent, opt => opt.Ignore())
+                  .ForMember(m => m.Context, opt => opt.Ignore())
+                  .ForMember(m => m.Url, opt => opt.Ignore())
                   .ForAllMembers(p => p.Condition(c => !c.IsSourceValueNull));
 
             //Person Mappings
@@ -133,6 +163,14 @@ namespace Projects.Reboot.DataMigration.MappingProfiles
                   .ForMember(m => m.Language, opt => opt.Ignore())
                   .ForMember(m => m.TemplateId, opt => opt.Ignore())
                   .ForMember(m => m.TemplateName, opt => opt.Ignore())
+                  .ForMember(m => m.BaseTemplates, opt => opt.Ignore())
+                  .ForMember(m => m.Children, opt => opt.Ignore())
+                  .ForMember(m => m.Parent, opt => opt.Ignore())
+                  .ForMember(m => m.Context, opt => opt.Ignore())
+                  .ForMember(m => m.Url, opt => opt.Ignore())
+                  .ForMember(m => m.CssClassName, opt => opt.Ignore())
+                  .ForMember(m => m.MenuHoverText, opt => opt.Ignore())
+                  .ForMember(m => m.ShowInMenu, opt => opt.Ignore())
                   .ForAllMembers(p => p.Condition(c => !c.IsSourceValueNull));
 
             //Movie Mappings
@@ -159,6 +197,14 @@ namespace Projects.Reboot.DataMigration.MappingProfiles
                   .ForMember(m => m.Language, opt => opt.Ignore())
                   .ForMember(m => m.TemplateId, opt => opt.Ignore())
                   .ForMember(m => m.TemplateName, opt => opt.Ignore())
+                   .ForMember(m => m.BaseTemplates, opt => opt.Ignore())
+                  .ForMember(m => m.Children, opt => opt.Ignore())
+                  .ForMember(m => m.Parent, opt => opt.Ignore())
+                  .ForMember(m => m.Context, opt => opt.Ignore())
+                  .ForMember(m => m.Url, opt => opt.Ignore())
+                  .ForMember(m => m.CssClassName, opt => opt.Ignore())
+                  .ForMember(m => m.MenuHoverText, opt => opt.Ignore())
+                  .ForMember(m => m.ShowInMenu, opt => opt.Ignore())
                   .ForAllMembers(p => p.Condition(c => !c.IsSourceValueNull));
         }
 

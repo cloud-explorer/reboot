@@ -43,6 +43,16 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\Glass.Mapper.Sc.3.1.10.31\lib\net45\Glass.Mapper.Sc.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ContentSearch">
+      <HintPath>..\Packages\Sitecore\Sitecore.ContentSearch.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>E:\One Drive\OneDrive\work\Reboot\Packages\Sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
+    </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq.Solr">
+      <HintPath>..\Packages\Sitecore\Sitecore.ContentSearch.Linq.Solr.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel, Version=7.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Packages\Sitecore\Sitecore.Kernel.dll</HintPath>
@@ -59,6 +69,7 @@
     <Compile Include="ICommonTextService.cs" />
     <Compile Include="IMovieSearchService.cs" />
     <Compile Include="ISearchService.cs" />
+    <Compile Include="ISiteSearchService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

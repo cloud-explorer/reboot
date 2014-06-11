@@ -58,6 +58,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Packages\Sitecore\Sitecore.Buckets.dll</HintPath>
     </Reference>
+    <Reference Include="Sitecore.ContentSearch.Linq, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Packages\Sitecore\Sitecore.ContentSearch.Linq.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\Packages\Sitecore\Sitecore.Kernel.dll</HintPath>
     </Reference>
@@ -76,6 +80,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Commands\FixImages.cs" />
     <Compile Include="Commands\ImportMovies.cs" />
     <Compile Include="DI\DataMigrationInstaller.cs" />
     <Compile Include="EventHandlers\ImportHandler.cs" />
@@ -120,6 +125,14 @@
     <ProjectReference Include="..\Projects.Common.Glass\Projects.Common.Glass.csproj">
       <Project>{6f9d0a8d-1a19-486b-973c-e60b73b9664f}</Project>
       <Name>Projects.Common.Glass</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Projects.Reboot.Contracts\Projects.Reboot.Contracts.csproj">
+      <Project>{145E43A6-541D-45FA-AA4A-762586FFB28A}</Project>
+      <Name>Projects.Reboot.Contracts</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Projects.Reboot.Services\Projects.Reboot.Services.csproj">
+      <Project>{08CF64D6-4798-46AA-BF88-19AA65C34672}</Project>
+      <Name>Projects.Reboot.Services</Name>
     </ProjectReference>
     <ProjectReference Include="..\Reboot.Core\Projects.Reboot.Core.csproj">
       <Project>{794116f3-d034-4856-b896-8c95cf9b0cda}</Project>

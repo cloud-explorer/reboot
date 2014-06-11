@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using Antlr.Runtime.Misc;
+using Projects.Models;
 using Projects.Models.Glass.Reboot.Items;
 using Projects.Models.ViewModels;
 using Projects.Reboot.Common;
@@ -59,6 +60,14 @@ namespace Projects.Website.Controllers
                 Items = comingSoonMovies.Select(x => SitecoreContext.GetItem<Movie>(x.Id))
             };
             return View("RenderItemList", list);
+        }
+
+        public ActionResult Movies(SearchQuery query)
+        {
+            if(query.PageSize == 0) query.PageSize = 20;
+            IEnumerable<Movie> movies = _movieSearchService.GetMoviesByPopularity(query);
+
+            return View(movies);
         }
 
         #endregion

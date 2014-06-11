@@ -20,9 +20,9 @@ Applications/16x16/magic-wand.png
 field: {DBBF9EE3-C30E-4456-A81F-ED8C2E8DF91B}
 name: Click
 key: click
-content-length: 31
+content-length: 22
 
-Projects.Website:DiscoverModels
+Website:DiscoverModels
 ----field----
 field: {CCD6BDE9-0A7A-4DA3-B0ED-D3C0F65379FE}
 name: KeyCode
@@ -169,7 +169,7 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: e05681a4-ff2d-4eac-ab33-be2e5b8876f2
+revision: a4f25789-1fbb-4893-a67d-eb1f31c30b22
 
 ----field----
 field: {4DF6DA21-E745-444C-956E-1D4A96AB8821}
@@ -219,14 +219,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-e05681a4-ff2d-4eac-ab33-be2e5b8876f2
+a4f25789-1fbb-4893-a67d-eb1f31c30b22
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 34
 
-20140528T145444:635368856843729928
+20140528T151912:635368871525267935
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

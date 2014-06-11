@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Projects.Common.Utils
 {
-    public class IndexFieldGuidValueConverter : TypeConverter
+    public class IndexFieldStringToGuidListValueConverter : TypeConverter
     {
         public override bool CanConvertFrom(ITypeDescriptorContext context, Type sourceType)
         {

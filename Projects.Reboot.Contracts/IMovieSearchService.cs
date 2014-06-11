@@ -1,8 +1,10 @@
 ﻿#region
 
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using Projects.Common.Contracts;
+using Projects.Models;
 using Projects.Models.Glass.Reboot.Items;
 
 #endregion
@@ -24,6 +26,8 @@ namespace Projects.Reboot.Contracts
         IQueryable<Movie> GetMoviesByReleaseDate(DateTime releaseDateStart, DateTime releaseDateEnd);
 
         IQueryable<Movie> GetNowRunningMovies(int take = 5);
+
+        IEnumerable<Movie> GetMoviesByPopularity(SearchQuery query);
 
         #endregion
     }

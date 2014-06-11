@@ -8,7 +8,7 @@ using Sitecore.ContentSearch;
 
 namespace Projects.Reboot.Services
 {
-    public class SearchService
+    public class SearchServiceBase
     {
         #region Readonly & Static Fields
 
@@ -18,12 +18,12 @@ namespace Projects.Reboot.Services
 
         #region C'tors
 
-        public SearchService(ISitecoreContext context)
+        public SearchServiceBase(ISitecoreContext context)
         {
             _context = context;
         }
 
-        public SearchService()
+        public SearchServiceBase()
         {
             _context = new SitecoreContext();
         }
@@ -37,6 +37,7 @@ namespace Projects.Reboot.Services
             get
             {
                 string currentDatabase = _context.Database.Name;
+                if (currentDatabase.ToLower() == "core") currentDatabase = "master";
                 string indexName = string.Format("sitecore_{0}_index", currentDatabase);
                 ISearchIndex index = ContentSearchManager.GetIndex(indexName);
                 return index;
