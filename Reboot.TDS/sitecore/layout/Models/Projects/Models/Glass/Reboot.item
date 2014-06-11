@@ -1,0 +1,44 @@
+----item----
+version: 1
+id: {6AFB1288-F0EF-4977-ACF7-3267D342B21C}
+database: master
+path: /sitecore/layout/Models/Projects/Models/Glass/Reboot
+parent: {DEC82B63-C4C6-4AF4-B500-859863AF92F3}
+name: Reboot
+master: {00000000-0000-0000-0000-000000000000}
+template: {ADB6CA4F-03EF-4F47-B9AC-9CE2BA53FF97}
+templatekey: Bucket
+
+----version----
+language: en
+version: 1
+revision: 79152911-3dba-492f-b813-641403e6ab95
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140529T113511
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+79152911-3dba-492f-b813-641403e6ab95
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140529T113511:635369601111511224
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin
