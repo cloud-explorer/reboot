@@ -1,0 +1,65 @@
+﻿@using Glass.Mapper.Sc.RenderField
+@using Projects.Common.Glass
+@using Projects.Models.Glass.Reboot.Items
+@using Projects.Models.Glass.Reboot.RenderingParameters
+@using Projects.Reboot.Core.Search
+@using Sitecore.Buckets.Util
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Projects.Reboot.Core.Search.FacetResults>
+@{
+    var parameters = GetRenderingParameters<FacetingParameters>();
+
+}
+
+<div class="col-md-3 col-sm-4 sidebar">
+    @foreach (FacetCategory cat in @Model.Categories)
+    {
+        if (!cat.Values.Any())
+        {
+            continue;
+        }
+        var shown = cat.Values.Take((int)parameters.FacetCount).ToList();
+        var hidden = cat.Values.Skip((int)parameters.FacetCount).ToList();
+        <ul class="nav nav-stacked nav-pills">
+            <li class="disabled">
+                <a href="#">@cat.Name</a>
+            </li>
+            @for (int i = 0; i < shown.Count; i++)
+            {
+                FacetValue val = shown[i];
+                <li>
+                    <a href="@QueryStringUtil.AddAndGetNewQueryString(cat.FieldName, IdHelper.NormalizeGuid(val.Item.ID))">
+                        @val.ItemName
+                        <span class="badge pull-right">
+                            @val.Aggregate
+                        </span>
+                    </a>
+                    @if (i == (shown.Count - 1) && hidden.Any())
+                    {
+                        <div class="dropdown">
+                            <a data-toggle="dropdown" href="#" class="pull-right">Show More <b class="caret"></b></a>
+                            <ul class="dropdown-menu nav nav-stacked nav-pills facet-dropdown" role="menu">
+                                @foreach (FacetValue hid in hidden)
+                                {
+                                    <li>
+                                        <a href="@QueryStringUtil.AddAndGetNewQueryString(cat.FieldName, IdHelper.NormalizeGuid(hid.Item.ID))">
+                                            @hid.ItemName
+                                            <span class="badge pull-right">
+                                                @hid.Aggregate
+                                            </span>
+                                        </a>
+                                    </li>
+
+                                }
+                            </ul>
+                        </div>
+                    }
+                </li>
+            }
+        </ul>
+
+    }
+
+</div>
+@{
+
+}

@@ -82,6 +82,10 @@ namespace Projects.Models.Glass
         [SitecoreParent]
 	    IGlassBase Parent { get; set; }
 
+		[SitecoreInfo(SitecoreInfoType.FullPath)]
+        [IndexField(BuiltinFields.FullPath)]
+        string Path { get; set; }
+
 		ISitecoreContext Context { get; }
 
 		    T GetParent<T>() where T : class, IGlassBase;
@@ -145,6 +149,10 @@ namespace Projects.Models.Glass
         [SitecoreParent]
 		[IgnoreIndexField]
 	    public IGlassBase Parent { get; set; }
+
+		[SitecoreInfo(SitecoreInfoType.FullPath)]
+        [IndexField(BuiltinFields.FullPath)]
+        public string Path { get; set; }
 
 	    public ISitecoreContext Context
 	    {

@@ -3,7 +3,7 @@
 @using Projects.Models.Glass.Reboot.Items
 @inherits Glass.Mapper.Sc.Web.Mvc.GlassView<IEnumerable<Movie>>
 
-<div class="section">
+<div class="col-md-9 col-sm-8">
     @foreach (var movie in Model)
     {
         <div class="row">
@@ -14,17 +14,17 @@
 
         </div>
         <div class="row">
-            <div class="col-md-1 col-xs-4">
+            <div class="col-md-2 col-xs-4">
                 @using (BeginRenderLink(movie, m => m.GetInternalLink(string.Empty, "_self")))
                 {
                     @RenderImage(movie, m => m.Image, new ImageParameters { Class = "img-responsive", MaxWidth = 100 })
                 }
             </div>
-            <div class="col-md-11">
+            <div>
                 <div>
-                    
+
                     <div class="row">
-                        @Editable(movie, m=>m.Description)
+                        @Editable(movie, m => m.Description)
                     </div>
                     <div class="row col-md-offset-0 col-xs-offset-4">
                         Release Date:

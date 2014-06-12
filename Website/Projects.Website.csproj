@@ -425,6 +425,7 @@
     <Content Include="Views\Movie\Crew.cshtml" />
     <Content Include="Views\Shared\YouTube.cshtml" />
     <Content Include="Views\Movie\Movies.cshtml" />
+    <Content Include="Views\Search\Facet.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Areas\Movie\Controllers\" />
@@ -434,7 +435,6 @@
     <Folder Include="sitecore modules\debug\" />
     <Folder Include="sitecore modules\Web\" />
     <Folder Include="Views\Base\" />
-    <Folder Include="Views\Search\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="App_Config\Include\Sitecore.AntiCsrf.config" />

@@ -98,6 +98,16 @@ namespace Projects.Models.Glass.Reboot.RenderingParameters
 					string FacetBy  {get; set;}
 			
 								/// <summary>
+					/// The FacetCount field.
+					/// <para></para>
+					/// <para>Field Type: Number</para>		
+					/// <para>Field ID: a2d0f1e6-1734-446d-99c7-b1761b5891b5</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(IFacetingParametersConstants.FacetCountFieldName)]
+					float FacetCount  {get; set;}
+			
+								/// <summary>
 					/// The TemplatesToFacet field.
 					/// <para></para>
 					/// <para>Field Type: TreelistEx</para>		
@@ -119,6 +129,10 @@ namespace Projects.Models.Glass.Reboot.RenderingParameters
 					
 			public static readonly ID FacetByFieldId = new ID("c605234b-fbab-4b56-8d11-cd7c93f9e09a");
 			public const string FacetByFieldName = "FacetBy";
+			
+					
+			public static readonly ID FacetCountFieldId = new ID("a2d0f1e6-1734-446d-99c7-b1761b5891b5");
+			public const string FacetCountFieldName = "FacetCount";
 			
 					
 			public static readonly ID TemplatesToFacetsFieldId = new ID("1c435942-ecb8-4220-957c-480aa9a62a2e");
@@ -154,6 +168,17 @@ namespace Projects.Models.Glass.Reboot.RenderingParameters
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
 				[SitecoreField(IFacetingParametersConstants.FacetByFieldName)]
 				public virtual string FacetBy  {get; set;}
+					
+						/// <summary>
+				/// The FacetCount field.
+				/// <para></para>
+				/// <para>Field Type: Number</para>		
+				/// <para>Field ID: a2d0f1e6-1734-446d-99c7-b1761b5891b5</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IFacetingParametersConstants.FacetCountFieldName)]
+				public virtual float FacetCount  {get; set;}
 					
 						/// <summary>
 				/// The TemplatesToFacet field.
@@ -2354,6 +2379,7 @@ namespace Projects.Models.Glass.Reboot.Containers
 			
 	}
 }
+
 
 namespace Projects.Models.Glass.Reboot
 {

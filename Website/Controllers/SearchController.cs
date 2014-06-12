@@ -9,6 +9,7 @@ using Castle.Core.Internal;
 using Castle.MicroKernel.ModelBuilder.Descriptors;
 using Glass.Mapper.Sc.Configuration.Attributes;
 using Projects.Common.Utils;
+using Projects.Models;
 using Projects.Models.Glass;
 using Projects.Models.Glass.Common;
 using Projects.Models.Glass.Reboot.Items;
@@ -40,14 +41,18 @@ namespace Projects.Website.Controllers
         public ActionResult Facet()
         {
             var parameters = GetRenderingParameters<FacetingParameters>();
-            var predicate = PredicateBuilder.True<FacetableContent>();
-            foreach (Guid facet in parameters.TemplatesToFacets)
-            {
-                var temp = facet;
-                predicate = predicate.Or(w => w.TemplateId == temp);
-            }
+            
+            FacetResults results = GetFacetsForParameters(parameters);
+            Reboot.Core.Search.FacetResults facets = results;
+            return View(facets);
+        }
 
-            var results = _siteSearchService.GetFacetResultsAs<FacetableContent>(
+        private FacetResults GetFacetsForParameters(FacetingParameters parameters)
+        {
+            var predicate = PredicateBuilder.True<FacetableContent>();
+            predicate = parameters.TemplatesToFacets.Aggregate(predicate, (current, temp) => current.Or(w => w.TemplateId == temp));
+
+            FacetResults results = _siteSearchService.GetFacetResultsAs<FacetableContent>(
                 //Where Conditions
                 w =>
                 {
@@ -57,60 +62,24 @@ namespace Projects.Website.Controllers
                 //Facet Set up
                 , f =>
                 {
-                    //Expression<Func<FacetableContent, IGlassBase>> expression = o => o.Parent;
-                    //f.FacetOn(expression);
-                    //Expression<Func<FacetableContent, object>> keySelector = o => GenerateLambda<FacetableContent, Guid>(o, parameters.FacetBy, typeof(IEnumerable<>), "o");
-                    //f = f.FacetOn(keySelector);
-                    //f = f.FacetOn(o => o.Genres, 1)
-                    //    .FacetOn(o => o.Popularity, 1)
-                    //    .FacetOn(o => o.ReleaseDate, 1)
-                    //    .FacetOn(o => o.Status, 1)
-                    //    .FacetOn(o => o.VoteAverage, 1)
-                    //    ;
-                    Expression<Func<FacetableContent, object>> expression = o => (o.GetType().InvokeMember(parameters.FacetBy, BindingFlags.GetProperty, null, o, null));
-                    f =f.FacetOn(expression);
+                    switch (parameters.FacetBy)
+                    {
+                        case "Genres":
+                            f = f.FacetOn(o => o.Genres, 1);
+                            break;
+                        case "Status":
+                            f = f.FacetOn(o => o.Status, 1);
+                            break;
+                    }
+                    //Expression<Func<FacetableContent, object>> expression = o => (o.GetType().InvokeMember(parameters.FacetBy, BindingFlags.GetProperty, null, o, null));
+                    //f =f.FacetOn(expression, 1);
                     return f;
                 }
                 //Sort order setup
                 , s => s
+                
                 );
-            return null;
+            return results; 
         }
-
-        //private static Func<IFacetableContent, IEnumerable<Guid>> GetSomething(IFacetableContent content, string propertyName, string parameterName)
-        //{
-        //    ParameterExpression parameter = Expression.Parameter(content.GetType(), parameterName);
-        //    MemberExpression property = Expression.Property(parameter, propertyName);
-        //    var queryableType = typeof(IEnumerable<>).MakeGenericType(typeof(Guid));
-        //    var delegateType = typeof(Func<,>).MakeGenericType(typeof(IFacetableContent), queryableType);
-        //    var expression = Expression.Lambda<Func<IFacetableContent, IEnumerable<Guid>>>(property, parameter);
-        //   // Log.Info(string.Format("this expression is /r/n {0}", expression), expression);
-        //    return expression;
-        //}
-
-        //private static LambdaExpression GenerateLambda<T, TK>(T entity, string propertyName, Type t, string parameterName = "o") where T : class, IPageBase
-        //{
-        //    ParameterExpression instance = Expression.Parameter(entity.GetType(), parameterName);
-        //    MemberExpression property = Expression.Property(instance, propertyName);
-
-        //    var queryableType = t.MakeGenericType(typeof(TK));
-        //    var delegateType = typeof(Func<,>).MakeGenericType(typeof(T), queryableType);
-
-        //    //var expression = Expression.Lambda(property, instance);
-        //    var expression = Expression.Lambda(delegateType, property, instance);
-        //    Log.Info(string.Format("this expression is /r/n {0}", expression), expression);
-        //    return expression;
-        //}
-
-        //private static LambdaExpression GenerateLambda(FacetableContent entity, string propertyName, string parameterName = "o")
-        //{
-        //    ParameterExpression instance = Expression.Parameter(entity.GetType(), parameterName);
-        //    MemberExpression property = Expression.Property(instance, propertyName);
-        //    var queryableType = typeof(IEnumerable<>).MakeGenericType(typeof(Guid));
-        //    var delegateType = typeof (Func<,>).MakeGenericType(typeof (FacetableContent), queryableType);
-        //    var expression = Expression.Lambda(delegateType, property, instance);
-        //    Log.Info(string.Format("this expression is /r/n {0}", expression), expression);
-        //    return expression;
-        //}
     }
 }
