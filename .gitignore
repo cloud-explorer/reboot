@@ -178,3 +178,4 @@ FakesAssemblies/
 
 !packages/[Ss]itecore
 !packages/TMDb
+/Website/Properties/PublishProfiles/*.pubxml
