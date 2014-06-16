@@ -1,9 +1,40 @@
 ﻿@using Glass.Mapper.Sc.RenderField
+@using PagedList.Mvc
+@using Projects.Common.Core
 @using Projects.Common.Glass
 @using Projects.Models.Glass.Reboot.Items
-@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<IEnumerable<Movie>>
+@using Projects.Reboot.Core
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<PagedList.StaticPagedList<Movie>>
+@{
+    string searchText = QueryStringUtil.Get("keyword");
+    searchText = (searchText ?? string.Empty);
+}
+<div class="col-md-9 col-sm-8">
+    <form class="form-horizontal">
+        <fieldset>
+            <div class="form-group">
+                <div class="input-group">
+                    <input id="searchText" type="text" class="form-control" value="@searchText" placeholder="Search...">
+                    <span class="input-group-btn">
+                        <span id="searchButton" class="btn btn-default">@CommonTextUtil.GetTextFor("Search")</span>
+                    </span>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    @if (Model.Any())
+    {
+        <div class="alert alert-dismissable alert-warning">
+            <button type="button" class="close" data-dismiss="alert">×</button>
+            <p>@CommonTextUtil.GetTextFor("Found") <strong>@Model.Count()</strong> @CommonTextUtil.GetTextFor("Results For") @searchText  </p>
+        </div>
+    }
+</div>
 
 <div class="col-md-9 col-sm-8">
+    <center>
+        @Html.PagedListPager(Model, page => QueryStringUtil.AddAndGetNewQueryString("pageNumber", page.ToString()), PagedListRenderOptions.OnlyShowFivePagesAtATime)
+    </center>
     @foreach (var movie in Model)
     {
         <div class="row">
@@ -57,4 +88,9 @@
         </div>
         <hr />
     }
+    
+    <center>
+        @Html.PagedListPager(Model, page => QueryStringUtil.AddAndGetNewQueryString("pageNumber", page.ToString()), PagedListRenderOptions.OnlyShowFivePagesAtATime)
+    </center>
 </div>
+

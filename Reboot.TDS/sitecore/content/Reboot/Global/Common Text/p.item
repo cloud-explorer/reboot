@@ -1,18 +1,18 @@
 ----item----
 version: 1
-id: {581D8823-60A9-4E88-B880-E3A59990CB4D}
+id: {DBC74050-83A7-4537-9256-5AAC49A349AE}
 database: master
-path: /sitecore/templates/User Defined/Reboot/RenderingParameters/FacetingParameters/__Standard Values
-parent: {157B27F4-D3D0-4893-B350-A2EFEB110881}
-name: __Standard Values
+path: /sitecore/content/Reboot/Global/Common Text/p
+parent: {3903A02E-42A5-4443-8974-5E2058552E28}
+name: p
 master: {00000000-0000-0000-0000-000000000000}
-template: {157B27F4-D3D0-4893-B350-A2EFEB110881}
-templatekey: FacetingParameters
+template: {ADB6CA4F-03EF-4F47-B9AC-9CE2BA53FF97}
+templatekey: Bucket
 
 ----version----
 language: en
 version: 1
-revision: 647fb98a-fb72-475b-bc52-637a8411e401
+revision: 81507293-ff90-4e65-93c3-908d1084e00f
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -20,21 +20,21 @@ name: __Created
 key: __created
 content-length: 15
 
-20140609T144105
+20140612T135901
 ----field----
 field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
 name: __Revision
 key: __revision
 content-length: 36
 
-647fb98a-fb72-475b-bc52-637a8411e401
+81507293-ff90-4e65-93c3-908d1084e00f
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 34
 
-20140609T144105:635379216656937832
+20140612T135901:635381783411374902
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

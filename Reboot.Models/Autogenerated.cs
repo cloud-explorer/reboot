@@ -28,6 +28,7 @@ using Sitecore.Data;
 
 
 
+
 namespace Projects.Models.Glass.Reboot.Containers
 {
 
@@ -79,24 +80,14 @@ namespace Projects.Models.Glass.Reboot.RenderingParameters
 
 
  	/// <summary>
-	/// IFacetingParameters Interface
+	/// IFacetParameters Interface
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Reboot/RenderingParameters/FacetingParameters</para>	
+	/// <para>Path: /sitecore/templates/User Defined/Reboot/RenderingParameters/FacetParameters</para>	
 	/// <para>ID: 157b27f4-d3d0-4893-b350-a2efeb110881</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=IFacetingParametersConstants.TemplateIdString)]
-	public partial interface IFacetingParameters : IGlassBase 
+	[SitecoreType(TemplateId=IFacetParametersConstants.TemplateIdString)]
+	public partial interface IFacetParameters : IGlassBase , global::Projects.Models.Glass.Reboot.RenderingParameters.ISearchParameter
 	{
-								/// <summary>
-					/// The FacetBy field.
-					/// <para></para>
-					/// <para>Field Type: Droplist</para>		
-					/// <para>Field ID: c605234b-fbab-4b56-8d11-cd7c93f9e09a</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IFacetingParametersConstants.FacetByFieldName)]
-					string FacetBy  {get; set;}
-			
 								/// <summary>
 					/// The FacetCount field.
 					/// <para></para>
@@ -104,39 +95,29 @@ namespace Projects.Models.Glass.Reboot.RenderingParameters
 					/// <para>Field ID: a2d0f1e6-1734-446d-99c7-b1761b5891b5</para>
 					/// <para>Custom Data: </para>
 					/// </summary>
-					[SitecoreField(IFacetingParametersConstants.FacetCountFieldName)]
+					[SitecoreField(IFacetParametersConstants.FacetCountFieldName)]
 					float FacetCount  {get; set;}
-			
-								/// <summary>
-					/// The TemplatesToFacet field.
-					/// <para></para>
-					/// <para>Field Type: TreelistEx</para>		
-					/// <para>Field ID: 1c435942-ecb8-4220-957c-480aa9a62a2e</para>
-					/// <para>Custom Data: </para>
-					/// </summary>
-					[SitecoreField(IFacetingParametersConstants.TemplatesToFacetsFieldName)]
-					IEnumerable<Guid> TemplatesToFacets  {get; set;}
 			
 				}
 
 
-	public static partial class IFacetingParametersConstants{
+	public static partial class IFacetParametersConstants{
 
 			public const string TemplateIdString = "157b27f4-d3d0-4893-b350-a2efeb110881";
 			public static readonly ID TemplateId = new ID(TemplateIdString);
-			public const string TemplateName = "FacetingParameters";
+			public const string TemplateName = "FacetParameters";
 
-					
-			public static readonly ID FacetByFieldId = new ID("c605234b-fbab-4b56-8d11-cd7c93f9e09a");
-			public const string FacetByFieldName = "FacetBy";
-			
 					
 			public static readonly ID FacetCountFieldId = new ID("a2d0f1e6-1734-446d-99c7-b1761b5891b5");
 			public const string FacetCountFieldName = "FacetCount";
 			
 					
-			public static readonly ID TemplatesToFacetsFieldId = new ID("1c435942-ecb8-4220-957c-480aa9a62a2e");
-			public const string TemplatesToFacetsFieldName = "TemplatesToFacet";
+			public static readonly ID FilterOnFieldsFieldId = new ID("c605234b-fbab-4b56-8d11-cd7c93f9e09a");
+			public const string FilterOnFieldsFieldName = "FilterOnFields";
+			
+					
+			public static readonly ID FilterOnTemplatesFieldId = new ID("1c435942-ecb8-4220-957c-480aa9a62a2e");
+			public const string FilterOnTemplatesFieldName = "FilterOnTemplates";
 			
 			
 
@@ -144,31 +125,20 @@ namespace Projects.Models.Glass.Reboot.RenderingParameters
 
 	
 	/// <summary>
-	/// FacetingParameters
+	/// FacetParameters
 	/// <para></para>
-	/// <para>Path: /sitecore/templates/User Defined/Reboot/RenderingParameters/FacetingParameters</para>	
+	/// <para>Path: /sitecore/templates/User Defined/Reboot/RenderingParameters/FacetParameters</para>	
 	/// <para>ID: 157b27f4-d3d0-4893-b350-a2efeb110881</para>	
 	/// </summary>
-	[SitecoreType(TemplateId=IFacetingParametersConstants.TemplateIdString)]
-	public partial class FacetingParameters  : GlassBase, IFacetingParameters 
+	[SitecoreType(TemplateId=IFacetParametersConstants.TemplateIdString)]
+	public partial class FacetParameters  : GlassBase, IFacetParameters 
 	{
-	   public FacetingParameters(ISitecoreContext context) : base(context)
+	   public FacetParameters(ISitecoreContext context) : base(context)
 	    {
 	    }
-		public FacetingParameters() : base()
+		public FacetParameters() : base()
 	    {
 	    }
-						/// <summary>
-				/// The FacetBy field.
-				/// <para></para>
-				/// <para>Field Type: Droplist</para>		
-				/// <para>Field ID: c605234b-fbab-4b56-8d11-cd7c93f9e09a</para>
-				/// <para>Custom Data: </para>
-				/// </summary>
-				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(IFacetingParametersConstants.FacetByFieldName)]
-				public virtual string FacetBy  {get; set;}
-					
 						/// <summary>
 				/// The FacetCount field.
 				/// <para></para>
@@ -177,19 +147,30 @@ namespace Projects.Models.Glass.Reboot.RenderingParameters
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(IFacetingParametersConstants.FacetCountFieldName)]
+				[SitecoreField(IFacetParametersConstants.FacetCountFieldName)]
 				public virtual float FacetCount  {get; set;}
 					
 						/// <summary>
-				/// The TemplatesToFacet field.
+				/// The FilterOnFields field.
+				/// <para></para>
+				/// <para>Field Type: TreelistEx</para>		
+				/// <para>Field ID: c605234b-fbab-4b56-8d11-cd7c93f9e09a</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(IFacetParametersConstants.FilterOnFieldsFieldName)]
+				public virtual IEnumerable<Guid> FilterOnFields  {get; set;}
+					
+						/// <summary>
+				/// The FilterOnTemplates field.
 				/// <para></para>
 				/// <para>Field Type: TreelistEx</para>		
 				/// <para>Field ID: 1c435942-ecb8-4220-957c-480aa9a62a2e</para>
 				/// <para>Custom Data: </para>
 				/// </summary>
 				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
-				[SitecoreField(IFacetingParametersConstants.TemplatesToFacetsFieldName)]
-				public virtual IEnumerable<Guid> TemplatesToFacets  {get; set;}
+				[SitecoreField(IFacetParametersConstants.FilterOnTemplatesFieldName)]
+				public virtual IEnumerable<Guid> FilterOnTemplates  {get; set;}
 					
 			
 	}
@@ -244,7 +225,7 @@ namespace Projects.Models.Glass.Reboot
 					DateTime ReleaseDate  {get; set;}
 			
 								/// <summary>
-					/// The SpokenLanguage field.
+					/// The SpokenLanguages field.
 					/// <para></para>
 					/// <para>Field Type: TreelistEx</para>		
 					/// <para>Field ID: 36883f6e-4405-47b1-b7b9-846b7373110d</para>
@@ -286,7 +267,7 @@ namespace Projects.Models.Glass.Reboot
 			
 					
 			public static readonly ID SpokenLanguagesFieldId = new ID("36883f6e-4405-47b1-b7b9-846b7373110d");
-			public const string SpokenLanguagesFieldName = "SpokenLanguage";
+			public const string SpokenLanguagesFieldName = "SpokenLanguages";
 			
 					
 			public static readonly ID StatusFieldId = new ID("f025c259-7a81-4334-a7d3-65cb3c22efce");
@@ -346,7 +327,7 @@ namespace Projects.Models.Glass.Reboot
 				public virtual DateTime ReleaseDate  {get; set;}
 					
 						/// <summary>
-				/// The SpokenLanguage field.
+				/// The SpokenLanguages field.
 				/// <para></para>
 				/// <para>Field Type: TreelistEx</para>		
 				/// <para>Field ID: 36883f6e-4405-47b1-b7b9-846b7373110d</para>
@@ -880,7 +861,7 @@ namespace Projects.Models.Glass.Reboot.Items
 			
 					
 			public static readonly ID SpokenLanguagesFieldId = new ID("36883f6e-4405-47b1-b7b9-846b7373110d");
-			public const string SpokenLanguagesFieldName = "SpokenLanguage";
+			public const string SpokenLanguagesFieldName = "SpokenLanguages";
 			
 					
 			public static readonly ID StatusFieldId = new ID("f025c259-7a81-4334-a7d3-65cb3c22efce");
@@ -1069,7 +1050,7 @@ namespace Projects.Models.Glass.Reboot.Items
 				public virtual DateTime ReleaseDate  {get; set;}
 					
 						/// <summary>
-				/// The SpokenLanguage field.
+				/// The SpokenLanguages field.
 				/// <para></para>
 				/// <para>Field Type: TreelistEx</para>		
 				/// <para>Field ID: 36883f6e-4405-47b1-b7b9-846b7373110d</para>
@@ -1116,6 +1097,101 @@ namespace Projects.Models.Glass.Reboot.Items
 	}
 }
 
+namespace Projects.Models.Glass.Reboot.RenderingParameters
+{
+
+
+ 	/// <summary>
+	/// ISearchParameter Interface
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Reboot/RenderingParameters/SearchParameter</para>	
+	/// <para>ID: 3eb25336-2d1a-4a14-bcfd-66013f4b4d26</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISearchParameterConstants.TemplateIdString)]
+	public partial interface ISearchParameter : IGlassBase 
+	{
+								/// <summary>
+					/// The FilterOnFields field.
+					/// <para></para>
+					/// <para>Field Type: TreelistEx</para>		
+					/// <para>Field ID: c605234b-fbab-4b56-8d11-cd7c93f9e09a</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISearchParameterConstants.FilterOnFieldsFieldName)]
+					IEnumerable<Guid> FilterOnFields  {get; set;}
+			
+								/// <summary>
+					/// The FilterOnTemplates field.
+					/// <para></para>
+					/// <para>Field Type: TreelistEx</para>		
+					/// <para>Field ID: 1c435942-ecb8-4220-957c-480aa9a62a2e</para>
+					/// <para>Custom Data: </para>
+					/// </summary>
+					[SitecoreField(ISearchParameterConstants.FilterOnTemplatesFieldName)]
+					IEnumerable<Guid> FilterOnTemplates  {get; set;}
+			
+				}
+
+
+	public static partial class ISearchParameterConstants{
+
+			public const string TemplateIdString = "3eb25336-2d1a-4a14-bcfd-66013f4b4d26";
+			public static readonly ID TemplateId = new ID(TemplateIdString);
+			public const string TemplateName = "SearchParameter";
+
+					
+			public static readonly ID FilterOnFieldsFieldId = new ID("c605234b-fbab-4b56-8d11-cd7c93f9e09a");
+			public const string FilterOnFieldsFieldName = "FilterOnFields";
+			
+					
+			public static readonly ID FilterOnTemplatesFieldId = new ID("1c435942-ecb8-4220-957c-480aa9a62a2e");
+			public const string FilterOnTemplatesFieldName = "FilterOnTemplates";
+			
+			
+
+	}
+
+	
+	/// <summary>
+	/// SearchParameter
+	/// <para></para>
+	/// <para>Path: /sitecore/templates/User Defined/Reboot/RenderingParameters/SearchParameter</para>	
+	/// <para>ID: 3eb25336-2d1a-4a14-bcfd-66013f4b4d26</para>	
+	/// </summary>
+	[SitecoreType(TemplateId=ISearchParameterConstants.TemplateIdString)]
+	public partial class SearchParameter  : GlassBase, ISearchParameter 
+	{
+	   public SearchParameter(ISitecoreContext context) : base(context)
+	    {
+	    }
+		public SearchParameter() : base()
+	    {
+	    }
+						/// <summary>
+				/// The FilterOnFields field.
+				/// <para></para>
+				/// <para>Field Type: TreelistEx</para>		
+				/// <para>Field ID: c605234b-fbab-4b56-8d11-cd7c93f9e09a</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISearchParameterConstants.FilterOnFieldsFieldName)]
+				public virtual IEnumerable<Guid> FilterOnFields  {get; set;}
+					
+						/// <summary>
+				/// The FilterOnTemplates field.
+				/// <para></para>
+				/// <para>Field Type: TreelistEx</para>		
+				/// <para>Field ID: 1c435942-ecb8-4220-957c-480aa9a62a2e</para>
+				/// <para>Custom Data: </para>
+				/// </summary>
+				[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Team Development for Sitecore - GlassItem.tt", "1.0")]
+				[SitecoreField(ISearchParameterConstants.FilterOnTemplatesFieldName)]
+				public virtual IEnumerable<Guid> FilterOnTemplates  {get; set;}
+					
+			
+	}
+}
 
 
 
@@ -1493,6 +1569,7 @@ namespace Projects.Models.Glass.Reboot
 
 
 
+
 namespace Projects.Models.Glass.Reboot.Items
 {
 
@@ -1835,7 +1912,7 @@ namespace Projects.Models.Glass.Reboot.Items
 			
 					
 			public static readonly ID SpokenLanguagesFieldId = new ID("36883f6e-4405-47b1-b7b9-846b7373110d");
-			public const string SpokenLanguagesFieldName = "SpokenLanguage";
+			public const string SpokenLanguagesFieldName = "SpokenLanguages";
 			
 					
 			public static readonly ID StatusFieldId = new ID("f025c259-7a81-4334-a7d3-65cb3c22efce");
@@ -2123,7 +2200,7 @@ namespace Projects.Models.Glass.Reboot.Items
 				public virtual DateTime ReleaseDate  {get; set;}
 					
 						/// <summary>
-				/// The SpokenLanguage field.
+				/// The SpokenLanguages field.
 				/// <para></para>
 				/// <para>Field Type: TreelistEx</para>		
 				/// <para>Field ID: 36883f6e-4405-47b1-b7b9-846b7373110d</para>

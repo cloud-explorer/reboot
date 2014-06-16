@@ -4,7 +4,6 @@ using System.Reflection;
 using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Configuration.Attributes;
 using Glass.Mapper.Sc.Fields;
-using Projects.Common.Utils;
 using Projects.Models;
 using Projects.Models.Glass.Common;
 using Projects.Models.Glass.Common.FieldSections;

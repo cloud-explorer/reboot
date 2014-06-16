@@ -6,7 +6,7 @@ using System.Reflection;
 using Glass.Mapper.Sc.Configuration.Attributes;
 using Sitecore.Data.Items;
 
-namespace Projects.Common.Utils
+namespace Projects.Common.Core
 {
     public static class ReflectionHelper
     {

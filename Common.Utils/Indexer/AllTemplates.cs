@@ -1,16 +1,12 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Collections.Generic;
 using Sitecore;
-using Sitecore.Buckets.Util;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.ComputedFields;
+using Sitecore.ContentSearch.Utilities;
 using Sitecore.Data.Items;
 using Sitecore.Diagnostics;
 
-namespace Projects.Reboot.Core.Indexer
+namespace Projects.Common.Core.Indexer
 {
     /// <summary>
     /// based on http://mikael.com/2013/05/sitecore-7-query-items-that-inherits-a-template/

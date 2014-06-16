@@ -1,65 +1,31 @@
-﻿@using Glass.Mapper.Sc.RenderField
-@using Projects.Common.Glass
-@using Projects.Models.Glass.Reboot.Items
-@using Projects.Models.Glass.Reboot.RenderingParameters
-@using Projects.Reboot.Core.Search
-@using Sitecore.Buckets.Util
-@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Projects.Reboot.Core.Search.FacetResults>
+﻿@using System.Globalization
+@using Projects.Common.Core
+@using Sitecore.ContentSearch.Utilities
+@using Sitecore.Data
+@model dynamic
 @{
-    var parameters = GetRenderingParameters<FacetingParameters>();
-
+    // Creates a TextInfo based on the "en-US" culture.
+    TextInfo ti = new CultureInfo("en-US", false).TextInfo;
+    string facetId = (ID.IsID(@Model.Value.Name)) ? IdHelper.NormalizeGuid(@Model.Value.Item.ID) : @Model.Value.Name;
+    string facetName = (@Model.Value.Item == null) ? ti.ToTitleCase(@Model.Value.Name) : @Model.Value.ItemName;
 }
+@if (QueryStringUtil.IsinQueryString(@Model.Category.FieldName, facetId))
+{
+    <a class="active" href="@QueryStringUtil.RemoveAndGetNewQueryString(@Model.Category.FieldName)">
+        <span class="truncate">@facetName</span>  <i class="fa fa-times"></i>
+        <span class="badge pull-right">
+            @Model.Value.Aggregate
+        </span>
 
-<div class="col-md-3 col-sm-4 sidebar">
-    @foreach (FacetCategory cat in @Model.Categories)
-    {
-        if (!cat.Values.Any())
-        {
-            continue;
-        }
-        var shown = cat.Values.Take((int)parameters.FacetCount).ToList();
-        var hidden = cat.Values.Skip((int)parameters.FacetCount).ToList();
-        <ul class="nav nav-stacked nav-pills">
-            <li class="disabled">
-                <a href="#">@cat.Name</a>
-            </li>
-            @for (int i = 0; i < shown.Count; i++)
-            {
-                FacetValue val = shown[i];
-                <li>
-                    <a href="@QueryStringUtil.AddAndGetNewQueryString(cat.FieldName, IdHelper.NormalizeGuid(val.Item.ID))">
-                        @val.ItemName
-                        <span class="badge pull-right">
-                            @val.Aggregate
-                        </span>
-                    </a>
-                    @if (i == (shown.Count - 1) && hidden.Any())
-                    {
-                        <div class="dropdown">
-                            <a data-toggle="dropdown" href="#" class="pull-right">Show More <b class="caret"></b></a>
-                            <ul class="dropdown-menu nav nav-stacked nav-pills facet-dropdown" role="menu">
-                                @foreach (FacetValue hid in hidden)
-                                {
-                                    <li>
-                                        <a href="@QueryStringUtil.AddAndGetNewQueryString(cat.FieldName, IdHelper.NormalizeGuid(hid.Item.ID))">
-                                            @hid.ItemName
-                                            <span class="badge pull-right">
-                                                @hid.Aggregate
-                                            </span>
-                                        </a>
-                                    </li>
+    </a>
+}
+else
+{
+    <a href="@QueryStringUtil.AddAndGetNewQueryString(@Model.Category.FieldName, facetId)">
+        <span class="truncate">@facetName</span>
 
-                                }
-                            </ul>
-                        </div>
-                    }
-                </li>
-            }
-        </ul>
-
-    }
-
-</div>
-@{
-
+        <span class="badge pull-right">
+            @Model.Value.Aggregate
+        </span>
+    </a>
 }

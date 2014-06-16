@@ -6,7 +6,9 @@ using System.Linq;
 using Glass.Mapper.Sc;
 using Projects.Models;
 using Projects.Models.Glass.Reboot.Items;
+using Projects.Models.Glass.Reboot.RenderingParameters;
 using Projects.Reboot.Contracts;
+using Projects.Reboot.Core.Search;
 using Sitecore.ContentSearch.Linq;
 
 #endregion
@@ -69,13 +71,18 @@ namespace Projects.Reboot.Services
             return queryable;
         }
 
-        public IEnumerable<Movie> GetMoviesByPopularity(SearchQuery query)
+        public IEnumerable<Movie> GetMoviesByPopularity(SearchQuery query, SearchParameter parameter, out int totalResultCount)
         {
             var results = _siteSearchService.GetSearchResultsAs<Movie>(
                 //Where Conditions
                 w =>
                 {
+                    w = w.Where(SearchHelper.GetPredicate<Movie>(parameter, _context));
                     w = w.Where(m => m.ReleaseDate < DateTime.Now);
+                    if (!string.IsNullOrEmpty(query.Keyword))
+                    {
+                        //w = w.Where(m => m.Crews)
+                    }
                     return w;
                 }
                 //Facet Set up
@@ -90,6 +97,7 @@ namespace Projects.Reboot.Services
                 },
                 query
                 );
+            totalResultCount = results.TotalSearchResults;
             IEnumerable<Movie> movies = results.Hits.Select(h => _context.GetItem<Movie>(h.Document.Id));
             return movies;
         }

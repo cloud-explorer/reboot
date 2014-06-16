@@ -1,4 +1,5 @@
 ﻿@using Projects.Models.Glass.Reboot.Items
+@using Projects.Reboot.Core
 @inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Projects.Models.Glass.Reboot.Items.Movie>
 <hr />
 <div class="row">
@@ -6,7 +7,7 @@
 
         <div class="list-group">
             <a href="#" class="list-group-item active">
-                Movie Facts
+                @CommonTextUtil.GetTextFor("Movie Facts")
             </a>
             @if (Model.Genres.Any())
             {

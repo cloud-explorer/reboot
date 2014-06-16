@@ -3,7 +3,7 @@
 using System.Globalization;
 using System.Linq;
 using AutoMapper;
-using Projects.Common.Utils;
+using Projects.Common.Core;
 using Projects.Models.Glass.Reboot.Items;
 using Projects.Reboot.DataMigration.Utils;
 using Sitecore.Data.Items;

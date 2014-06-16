@@ -1,13 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Collections.Specialized;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Web;
+using System.Web.Routing;
 using HttpUtility = RestSharp.Contrib.HttpUtility;
 
-namespace Projects.Common.Utils
+namespace Projects.Common.Core
 {
     public static class QueryStringUtil
     {
@@ -20,28 +18,28 @@ namespace Projects.Common.Utils
             return "?" + string.Join("&", array);
         }
 
-        public static NameValueCollection AddToQueryString(string key, string value)
+        private static NameValueCollection Copy(this NameValueCollection keyValueCollection)
         {
             NameValueCollection nvc = new NameValueCollection();
-            NameValueCollection queryString = HttpContext.Current.Request.QueryString;      
-            foreach (string str in queryString.AllKeys)
+            foreach (string str in keyValueCollection.AllKeys)
             {
-                string s = queryString[str];
+                string s = keyValueCollection[str];
                 nvc.Add(str, s);
             }
+            return nvc;
+        }
 
-            if (nvc.AllKeys.Any(q => String.Equals(q, key, StringComparison.CurrentCultureIgnoreCase)))
-            {
-                string val = nvc[key];
-                val = !string.IsNullOrEmpty(val) ? val + "|" : string.Empty;
-                val = val + value;
-                nvc[key] = val;
-            }
-            else
-            {
-                nvc.Add(key, value);
-            }
+        public static NameValueCollection AddToQueryString(string key, string value)
+        {
+            NameValueCollection nvc =  HttpContext.Current.Request.QueryString.Copy(); 
+            nvc.Set(key, value);
+            return nvc;
+        }
 
+        public static NameValueCollection RemoveFromQueryString(string key)
+        {
+            NameValueCollection nvc = HttpContext.Current.Request.QueryString.Copy();
+            nvc.Remove(key);
             return nvc;
         }
 
@@ -50,6 +48,40 @@ namespace Projects.Common.Utils
             NameValueCollection nvc = AddToQueryString(key, value);
             string qs = ToQueryString(nvc);
             return qs;
+        }
+
+        public static string Get(string key)
+        {
+            NameValueCollection nvc = HttpContext.Current.Request.QueryString;
+            string qs = nvc.Get(key);
+            return qs;
+        }
+
+        public static string RemoveAndGetNewQueryString(string key)
+        {
+            NameValueCollection nvc = RemoveFromQueryString(key);
+            string qs = ToQueryString(nvc);
+            return qs;
+        }
+
+        public static bool IsinQueryString(string key, string value)
+        {
+            NameValueCollection nvc = HttpContext.Current.Request.QueryString.Copy();
+            string s = nvc.Get(key);
+            if (s == null) return false;
+            return s.Equals(value, StringComparison.CurrentCultureIgnoreCase);
+        }
+
+        public static RouteValueDictionary AddToRouteValues(string key, string value)
+        {
+            NameValueCollection nvc = HttpContext.Current.Request.QueryString.Copy();
+            if (nvc == null || !nvc.HasKeys()) return new RouteValueDictionary();
+            nvc.Set(key, value);
+            var routeValues = new RouteValueDictionary();
+            foreach (string k in nvc.AllKeys)
+                routeValues.Add(k, nvc[k]);
+
+            return routeValues;
         }
     }
 }

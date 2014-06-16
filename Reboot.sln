@@ -28,7 +28,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projects.Reboot.DataMigrati
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projects.Reboot.Core", "Reboot.Core\Projects.Reboot.Core.csproj", "{794116F3-D034-4856-B896-8C95CF9B0CDA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projects.Common.Utils", "Common.Utils\Projects.Common.Utils.csproj", "{5A8B0C0D-1533-404F-BDA6-73627A3B008F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projects.Common.Core", "Common.Utils\Projects.Common.Core.csproj", "{5A8B0C0D-1533-404F-BDA6-73627A3B008F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projects.Common.Contracts", "Common.Contracts\Projects.Common.Contracts.csproj", "{D2A136DA-97A9-4C46-8100-2727B3970AF9}"
 EndProject

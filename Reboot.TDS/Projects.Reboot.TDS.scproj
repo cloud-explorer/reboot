@@ -7,7 +7,7 @@
     <ProjectGuid>d79f471c-d93d-4048-baee-7e7779af9732</ProjectGuid>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <SourceWebPhysicalPath>..\Website</SourceWebPhysicalPath>
-    <SourceWebProject>{70542611-f8f3-4d55-a491-0e23ae0a10af}|Projects.Website.csproj</SourceWebProject>
+    <SourceWebProject>{70542611-f8f3-4d55-a491-0e23ae0a10af}|Website\Projects.Website.csproj</SourceWebProject>
     <SourceWebVirtualPath>/Projects.Website.csproj</SourceWebVirtualPath>
     <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
     <EnableUpdateable>true</EnableUpdateable>
@@ -41,7 +41,7 @@
     <SitecoreWebUrl>http://local.reboot.com</SitecoreWebUrl>
     <InstallSitecoreConnector>True</InstallSitecoreConnector>
     <DisableFileDeployment>True</DisableFileDeployment>
-    <SitecoreDeployFolder>E:\Sitecore Websites\Reboot\Website</SitecoreDeployFolder>
+    <SitecoreDeployFolder>E:\One Drive\OneDrive\work\reboot2\Website1</SitecoreDeployFolder>
     <SitecoreAccessGuid>dacd140a-8401-49a7-9552-03a1562eb00f</SitecoreAccessGuid>
     <EnableValidations>False</EnableValidations>
     <ValidationSettingsFilePath>.\Reboot.TDS_Debug.xml</ValidationSettingsFilePath>
@@ -64,7 +64,7 @@
     </AssemblyAttributes>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Projects.Website.csproj">
+    <ProjectReference Include="..\Website\Projects.Website.csproj">
       <Project>{70542611-f8f3-4d55-a491-0e23ae0a10af}</Project>
       <Name>Projects.Website</Name>
     </ProjectReference>
@@ -102,6 +102,22 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Reboot\Global\Common Text\g.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Reboot\Global\Common Text\g\e.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Reboot\Global\Common Text\g\e\n.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Reboot\Global\Common Text\g\e\n\genres.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Reboot\Global\Common Text\n.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
@@ -115,6 +131,50 @@
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
     <SitecoreItem Include="sitecore\content\Reboot\Global\Common Text\n\o\w\Now Running.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Reboot\Global\Common Text\p.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Reboot\Global\Common Text\p\r.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Reboot\Global\Common Text\p\r\o.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Reboot\Global\Common Text\p\r\o\productioncompanies.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Reboot\Global\Common Text\s.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Reboot\Global\Common Text\s\p.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Reboot\Global\Common Text\s\p\o.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Reboot\Global\Common Text\s\p\o\SpokenLanguage.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Reboot\Global\Common Text\s\t.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Reboot\Global\Common Text\s\t\a.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\content\Reboot\Global\Common Text\s\t\a\Status.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
@@ -571,7 +631,7 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\User Defined\Reboot\FacetFields\Facets\SpokenLanguage.item">
+    <SitecoreItem Include="sitecore\templates\User Defined\Reboot\FacetFields\Facets\SpokenLanguages.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
@@ -795,27 +855,39 @@
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\User Defined\Reboot\RenderingParameters\FacetingParameters.item">
+    <SitecoreItem Include="sitecore\templates\User Defined\Reboot\RenderingParameters\FacetParameters.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\User Defined\Reboot\RenderingParameters\FacetingParameters\__Standard Values.item">
+    <SitecoreItem Include="sitecore\templates\User Defined\Reboot\RenderingParameters\FacetParameters\__Standard Values.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\User Defined\Reboot\RenderingParameters\FacetingParameters\Faceting Parameters.item">
+    <SitecoreItem Include="sitecore\templates\User Defined\Reboot\RenderingParameters\FacetParameters\Facet Parameters.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\User Defined\Reboot\RenderingParameters\FacetingParameters\Faceting Parameters\FacetBy.item">
+    <SitecoreItem Include="sitecore\templates\User Defined\Reboot\RenderingParameters\FacetParameters\Facet Parameters\FacetCount.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\User Defined\Reboot\RenderingParameters\FacetingParameters\Faceting Parameters\FacetCount.item">
+    <SitecoreItem Include="sitecore\templates\User Defined\Reboot\RenderingParameters\SearchParameter.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
-    <SitecoreItem Include="sitecore\templates\User Defined\Reboot\RenderingParameters\FacetingParameters\Faceting Parameters\TemplatesToFacet.item">
+    <SitecoreItem Include="sitecore\templates\User Defined\Reboot\RenderingParameters\SearchParameter\__Standard Values.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\User Defined\Reboot\RenderingParameters\SearchParameter\Search Parameters.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\User Defined\Reboot\RenderingParameters\SearchParameter\Search Parameters\FilterOnFields.item">
+      <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
+      <ItemDeployment>AlwaysUpdate</ItemDeployment>
+    </SitecoreItem>
+    <SitecoreItem Include="sitecore\templates\User Defined\Reboot\RenderingParameters\SearchParameter\Search Parameters\FilterOnTemplates.item">
       <ChildItemSynchronization>KeepAllChildrenSynchronized</ChildItemSynchronization>
       <ItemDeployment>AlwaysUpdate</ItemDeployment>
     </SitecoreItem>
@@ -846,9 +918,6 @@
     <CodeGenTemplate Include="Code Generation Templates\helpers.tt" />
   </ItemGroup>
   <ItemGroup>
-    <ExcludedAssemblies Include="Sitecore.%2a.dll" />
-  </ItemGroup>
-  <ItemGroup>
     <BundledProject Include="..\Common.TDS\Projects.Common.TDS.scproj">
       <ProjectId>{1e17705a-a3ba-4bb1-b8bb-8ca7f9fb34c9}</ProjectId>
     </BundledProject>
@@ -858,6 +927,9 @@
   </ItemGroup>
   <ItemGroup>
     <CodeGenReferencedProject Include="{1e17705a-a3ba-4bb1-b8bb-8ca7f9fb34c9}" />
+  </ItemGroup>
+  <ItemGroup>
+    <ExcludedAssemblies Include="Sitecore.%2a.dll" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\HedgehogDevelopment\SitecoreProject\v9.0\HedgehogDevelopment.SitecoreProject.targets" />
 </Project>

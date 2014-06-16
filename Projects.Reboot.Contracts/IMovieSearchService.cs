@@ -6,6 +6,7 @@ using System.Linq;
 using Projects.Common.Contracts;
 using Projects.Models;
 using Projects.Models.Glass.Reboot.Items;
+using Projects.Models.Glass.Reboot.RenderingParameters;
 
 #endregion
 
@@ -27,7 +28,7 @@ namespace Projects.Reboot.Contracts
 
         IQueryable<Movie> GetNowRunningMovies(int take = 5);
 
-        IEnumerable<Movie> GetMoviesByPopularity(SearchQuery query);
+        IEnumerable<Movie> GetMoviesByPopularity(SearchQuery query, SearchParameter parameter, out int totalResultCount);
 
         #endregion
     }

@@ -2,7 +2,7 @@
 
 using System;
 using System.Linq;
-using Projects.Common.Utils;
+using Projects.Common.Core;
 using Projects.Models;
 using Projects.Models.Glass.Common;
 using Projects.Models.Glass.Reboot;
@@ -73,8 +73,8 @@ namespace Projects.Reboot.Services
             }
             if (!string.IsNullOrEmpty(query.Keyword))
             {
-                queryable = queryable.Where(s => s.Title.Like(query.Keyword.Boost(10f), 10)
-                                                 || s.Description.Like(query.Keyword, 10));
+                queryable = queryable.Where(s => s.Title.Like(query.Keyword, 0f).Boost(5)
+                                                 || s.Description.Like(query.Keyword, 0f));
             }
             //Apply the where conditions that we passed in
             queryable = whereSnippet.Invoke(queryable);

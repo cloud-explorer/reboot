@@ -1,12 +1,13 @@
 ﻿@using Glass.Mapper.Sc.RenderField
 @using Projects.Common.Glass
 @using Projects.Models.Glass.Reboot.Items
+@using Projects.Reboot.Core
 @inherits Glass.Mapper.Sc.Web.Mvc.GlassView<IEnumerable<Projects.Models.Glass.Reboot.Items.CrewMember>>
 @if (Model.Any())
 {
     <div class="row">
         <h2>
-            Crew
+            @CommonTextUtil.GetTextFor("crew");
         </h2>
         @foreach (var crewMember in Model)
         {

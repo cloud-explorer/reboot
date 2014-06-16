@@ -109,6 +109,12 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\Newtonsoft.Json.5.0.4\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
+    <Reference Include="PagedList">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="Projects.Reboot.Contracts, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\Projects.Reboot.Contracts\bin\Debug\Projects.Reboot.Contracts.dll</HintPath>
@@ -362,6 +368,7 @@
   <ItemGroup>
     <Content Include="App_Config\Include\SiteDefinition.config" />
     <Content Include="content\delete.gif" />
+    <Content Include="content\PagedList.css" />
     <Content Include="css\rateit.css" />
     <Content Include="content\star.gif" />
     <Content Include="css\bootstrap.css" />
@@ -388,6 +395,9 @@
     <Content Include="App_Config\Include\Z.Reboot.DataImport.config" />
     <Content Include="css\reboot.css.map">
       <DependentUpon>reboot.css</DependentUpon>
+    </Content>
+    <Content Include="App_Config\Include\Z.Reboot.Solr.config">
+      <SubType>Designer</SubType>
     </Content>
     <None Include="Properties\PublishProfiles\Reboot.pubxml" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
@@ -425,6 +435,7 @@
     <Content Include="Views\Movie\Crew.cshtml" />
     <Content Include="Views\Shared\YouTube.cshtml" />
     <Content Include="Views\Movie\Movies.cshtml" />
+    <Content Include="Views\Search\FacetList.cshtml" />
     <Content Include="Views\Search\Facet.cshtml" />
   </ItemGroup>
   <ItemGroup>
@@ -482,9 +493,9 @@
       <Project>{a22add22-d533-4cde-a405-50621aa4a253}</Project>
       <Name>Projects.Common.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Common.Utils\Projects.Common.Utils.csproj">
+    <ProjectReference Include="..\Common.Utils\Projects.Common.Core.csproj">
       <Project>{5a8b0c0d-1533-404f-bda6-73627a3b008f}</Project>
-      <Name>Projects.Common.Utils</Name>
+      <Name>Projects.Common.Core</Name>
     </ProjectReference>
     <ProjectReference Include="..\Projects.Common.Glass\Projects.Common.Glass.csproj">
       <Project>{6f9d0a8d-1a19-486b-973c-e60b73b9664f}</Project>

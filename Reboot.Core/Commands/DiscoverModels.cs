@@ -1,7 +1,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Projects.Common.Utils;
+using Projects.Common.Core;
 using Projects.Models.Glass;
 using Projects.Reboot.Common;
 using Sitecore;

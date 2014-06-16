@@ -1,0 +1,70 @@
+﻿@using System.Activities.Statements
+@using System.Globalization
+@using Glass.Mapper.Sc.RenderField
+@using Projects.Common.Glass
+@using Projects.Models.Glass.Reboot.Items
+@using Projects.Models.Glass.Reboot.RenderingParameters
+@using Projects.Models.ViewModels
+@using Projects.Reboot.Core.Search
+@using Sitecore.Buckets.Util
+@using Sitecore.Data
+@inherits Glass.Mapper.Sc.Web.Mvc.GlassView<Projects.Reboot.Core.Search.FacetResults>
+@{
+    var parameters = GetRenderingParameters<FacetParameters>();
+}
+
+<div class="col-md-3 col-sm-4 sidebar">
+    @foreach (FacetCategory cat in @Model.Categories)
+    {
+        if (!cat.Values.Any())
+        {
+            continue;
+        }
+        var shown = cat.Values.Take((int)parameters.FacetCount).ToList();
+        var hidden = cat.Values.Skip((int)parameters.FacetCount).ToList();
+        <ul class="nav nav-stacked nav-pills bottom-spacer">
+            <li class="disabled">
+                <a href="#">@cat.Name</a>
+            </li>
+            @for (int i = 0; i < shown.Count; i++)
+            {
+                FacetValue val = shown[i];
+                <!--this will take care of all the visible Facets-->
+                <li>
+                    
+                    @Html.Partial("Facet", model: new 
+                    {
+                        Value = val,
+                        Category = cat
+                    })
+
+                    @if (i == (shown.Count - 1) && hidden.Any())
+                    {
+                        <div class="dropdown">
+                            <a data-toggle="dropdown" href="#" class="pull-right">Show More <b class="caret"></b></a>
+                            <!--this will take care of all the hidden Facets-->
+                            <ul class="dropdown-menu nav nav-stacked nav-pills facet-dropdown" role="menu">
+                                @foreach (FacetValue hid in hidden)
+                                {
+                                    <li>
+                                        @Html.Partial("Facet", model: new
+                                        {
+                                            Value = hid,
+                                            Category = cat
+                                        })
+                                    </li>
+
+                                }
+                            </ul>
+                        </div>
+                    }
+                </li>
+            }
+        </ul>
+
+    }
+
+</div>
+@{
+
+}

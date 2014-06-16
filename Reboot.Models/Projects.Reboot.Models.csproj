@@ -38,6 +38,9 @@
     <Reference Include="Glass.Mapper.Sc">
       <HintPath>..\packages\Glass.Mapper.Sc.3.1.10.31\lib\net45\Glass.Mapper.Sc.dll</HintPath>
     </Reference>
+    <Reference Include="Projects.Reboot.Core">
+      <HintPath>..\Website\bin\Projects.Reboot.Core.dll</HintPath>
+    </Reference>
     <Reference Include="Sitecore.Kernel">
       <HintPath>..\bin\Sitecore.Kernel.dll</HintPath>
     </Reference>

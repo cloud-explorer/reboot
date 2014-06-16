@@ -17,6 +17,9 @@
 .pad-right {
   padding-right: 10px;
 }
+ul.bottom-spacer {
+  margin-bottom: 25px;
+}
 .videoWrapper {
   position: relative;
   padding-bottom: 56.25%;
@@ -31,8 +34,34 @@
   width: 100%;
   height: 100%;
 }
-ul.dropdown.facet-dropdown {
+ul.dropdown-menu.nav.nav-stacked.nav-pills.facet-dropdown {
   width: 100%;
-  padding-top: 15px;
+  margin-top: 20px;
+}
+ul.dropdown-menu.nav.nav-stacked.nav-pills.facet-dropdown a {
+  color: #dd4814;
+  text-decoration: none;
+}
+.nav-pills > li > a.active,
+.nav-pills > li > a.active:hover,
+.nav-pills > li > a.active:focus {
+  color: #ffffff;
+  background-color: #dd4814;
+}
+.nav-pills > li > a.active > .badge {
+  color: #dd4814;
+  background-color: #ffffff;
+}
+.truncate {
+  width: 80%;
+  white-space: nowrap;
+  overflow: hidden;
+  -ms-text-overflow: ellipsis;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+}
+.col-centered {
+  float: none;
+  margin: 0 auto;
 }
 /*# sourceMappingURL=reboot.css.map */

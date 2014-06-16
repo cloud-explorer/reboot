@@ -2,14 +2,14 @@
 
 using System.Collections.Generic;
 using System.Linq;
-using Sitecore.Buckets.Util;
 using Sitecore.ContentSearch;
 using Sitecore.ContentSearch.ComputedFields;
+using Sitecore.ContentSearch.Utilities;
 using Sitecore.Data.Items;
 
 #endregion
 
-namespace Projects.Reboot.Core.Indexer
+namespace Projects.Common.Core.Indexer
 {
     public class Ancestors : IComputedIndexField
     {

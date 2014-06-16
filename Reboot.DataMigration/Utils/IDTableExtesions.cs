@@ -4,7 +4,7 @@ using System;
 using System.Reflection;
 using Glass.Mapper.Sc;
 using Glass.Mapper.Sc.Configuration.Attributes;
-using Projects.Common.Utils;
+using Projects.Common.Core;
 using Projects.Models.Glass.Common.FieldSections;
 using Projects.Models.Glass.Reboot.Items;
 using Sitecore.Data;

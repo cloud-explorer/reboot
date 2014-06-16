@@ -4,8 +4,10 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 using Antlr.Runtime.Misc;
+using PagedList;
 using Projects.Models;
 using Projects.Models.Glass.Reboot.Items;
+using Projects.Models.Glass.Reboot.RenderingParameters;
 using Projects.Models.ViewModels;
 using Projects.Reboot.Common;
 using Projects.Reboot.Contracts;
@@ -65,9 +67,14 @@ namespace Projects.Website.Controllers
         public ActionResult Movies(SearchQuery query)
         {
             if(query.PageSize == 0) query.PageSize = 20;
-            IEnumerable<Movie> movies = _movieSearchService.GetMoviesByPopularity(query);
+            var parameters = GetRenderingParameters<SearchParameter>();
+            int totalResultCount;
+            IEnumerable<Movie> movies = _movieSearchService.GetMoviesByPopularity(query, parameters, out totalResultCount);
 
-            return View(movies);
+
+            var moviesAsIPagedList = new StaticPagedList<Movie>(movies, query.PageNumber == 0 ? query.PageNumber + 1 : query.PageNumber, query.PageSize, totalResultCount);
+
+            return View(moviesAsIPagedList);
         }
 
         #endregion

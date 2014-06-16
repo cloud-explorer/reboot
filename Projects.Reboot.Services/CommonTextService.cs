@@ -18,23 +18,27 @@ namespace Projects.Reboot.Services
     {
         public string GetTextFor(string itemName, Language language = null)
         {
+            StandardText standardText = GetItemFor(itemName, language);
+            return standardText == null ? string.Empty : standardText.Text;
+        }
+
+        public StandardText GetItemFor(string itemName, Language language = null)
+        {
             if (language == null) language = LanguageManager.DefaultLanguage;
             IStandardText item;
             using (var context = Index.CreateSearchContext())
             {
                 item = context.GetQueryable<StandardText>().FirstOrDefault(m => m.TemplateId == IStandardTextConstants.TemplateId.Guid
-                                                                                  &&  m.Name == itemName
+                                                                                  && m.Name == itemName
                                                                                  && m.Language == language);
             }
             if (item == null)
             {
                 //If there is nothing found, the item name will be returned back
-                return itemName; 
+                return null;
             }
             StandardText standardText = _context.GetItem<StandardText>(item.Id);
-            return standardText.Text;
+            return standardText;
         }
-
-  
     }
 }

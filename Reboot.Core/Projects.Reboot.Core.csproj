@@ -42,11 +42,13 @@
     <Reference Include="Castle.Windsor">
       <HintPath>..\Website\packages\Castle.Windsor.3.3.0\lib\net45\Castle.Windsor.dll</HintPath>
     </Reference>
-    <Reference Include="Glass.Mapper">
-      <HintPath>..\Website\packages\Glass.Mapper.3.0.10.23\lib\net45\Glass.Mapper.dll</HintPath>
+    <Reference Include="Glass.Mapper, Version=3.0.10.23, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Glass.Mapper.3.0.10.23\lib\net45\Glass.Mapper.dll</HintPath>
     </Reference>
-    <Reference Include="Glass.Mapper.Sc">
-      <HintPath>..\Website\packages\Glass.Mapper.Sc.3.1.10.31\lib\net45\Glass.Mapper.Sc.dll</HintPath>
+    <Reference Include="Glass.Mapper.Sc, Version=3.1.10.31, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\packages\Glass.Mapper.Sc.3.1.10.31\lib\net45\Glass.Mapper.Sc.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -104,12 +106,12 @@
   <ItemGroup>
     <Compile Include="Buckets\CustomFolderPath.cs" />
     <Compile Include="Commands\DiscoverModels.cs" />
+    <Compile Include="CommonTextUtil.cs" />
     <Compile Include="DI\ControllerInstaller.cs" />
     <Compile Include="DI\RebootInstaller.cs" />
     <Compile Include="DI\WindsorControllerFactory.cs" />
     <Compile Include="EventHandlers\ModelImportHandler.cs" />
-    <Compile Include="Indexer\AllTemplates.cs" />
-    <Compile Include="Indexer\Ancestors.cs" />
+    <Compile Include="Indexer\CastAndCrew.cs" />
     <Compile Include="MVC\RegisterBundles.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RebootConstants.cs" />
@@ -117,6 +119,7 @@
     <Compile Include="Search\FacetResults.cs" />
     <Compile Include="Search\FacetSearchResults.cs" />
     <Compile Include="Search\FacetValue.cs" />
+    <Compile Include="Search\SearchHelper.cs" />
     <Compile Include="VirtualFields\DateRangeFieldProcessor.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -132,9 +135,13 @@
       <Project>{A22ADD22-D533-4CDE-A405-50621AA4A253}</Project>
       <Name>Projects.Common.Models</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Common.Utils\Projects.Common.Utils.csproj">
+    <ProjectReference Include="..\Common.Utils\Projects.Common.Core.csproj">
       <Project>{5A8B0C0D-1533-404F-BDA6-73627A3B008F}</Project>
-      <Name>Projects.Common.Utils</Name>
+      <Name>Projects.Common.Core</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Projects.Common.Glass\Projects.Common.Glass.csproj">
+      <Project>{6f9d0a8d-1a19-486b-973c-e60b73b9664f}</Project>
+      <Name>Projects.Common.Glass</Name>
     </ProjectReference>
     <ProjectReference Include="..\Projects.Reboot.Contracts\Projects.Reboot.Contracts.csproj">
       <Project>{145E43A6-541D-45FA-AA4A-762586FFB28A}</Project>

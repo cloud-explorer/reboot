@@ -65,9 +65,9 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Common.Utils\Projects.Common.Utils.csproj">
+    <ProjectReference Include="..\Common.Utils\Projects.Common.Core.csproj">
       <Project>{5a8b0c0d-1533-404f-bda6-73627a3b008f}</Project>
-      <Name>Projects.Common.Utils</Name>
+      <Name>Projects.Common.Core</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

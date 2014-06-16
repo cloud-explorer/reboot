@@ -23,10 +23,17 @@ key: controller action
 content-length: 6
 
 Movies
+----field----
+field: {13F89250-AD6B-4548-882E-118A12C18094}
+name: Parameters Template
+key: parameters template
+content-length: 38
+
+{3EB25336-2D1A-4A14-BCFD-66013F4B4D26}
 ----version----
 language: en
 version: 1
-revision: 7ff432e1-93da-4eba-8b73-3004cbaa62bf
+revision: 02e4ce75-cbd7-4a18-b9c5-fa29a2276e7e
 
 ----field----
 field: {25BED78C-4957-4165-998A-CA1B52F67497}
@@ -41,14 +48,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-7ff432e1-93da-4eba-8b73-3004cbaa62bf
+02e4ce75-cbd7-4a18-b9c5-fa29a2276e7e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 34
 
-20140606T130402:635376566428377085
+20140613T133234:635382631540486968
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

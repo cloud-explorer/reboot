@@ -82,7 +82,7 @@
       <Name>Projects.Common.Models</Name>
     </ProjectReference>
     <ProjectReference Include="..\Reboot.Models\Projects.Reboot.Models.csproj">
-      <Project>{7CC97693-C9C8-4BDD-8911-50D69069C545}</Project>
+      <Project>{7cc97693-c9c8-4bdd-8911-50d69069c545}</Project>
       <Name>Projects.Reboot.Models</Name>
     </ProjectReference>
   </ItemGroup>
