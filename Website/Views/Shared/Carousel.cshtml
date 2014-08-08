@@ -6,6 +6,14 @@
         <li data-target="#rebootCarousel" data-slide-to="0" class="active"></li>
         <li data-target="#rebootCarousel" data-slide-to="1"></li>
         <li data-target="#rebootCarousel" data-slide-to="2"></li>
+
+        @for (int i = 0; i < Model.Count(); i++)
+        {
+            var slide = Model[i];
+            <li data-target="#rebootCarousel" data-slide-to="@i" @if (i == 0) { <text> class="active" </text>   }></li>
+
+
+        }
     </ol>
 
     <!-- Wrapper for slides -->
@@ -17,11 +25,11 @@
                              {
                                  <text> active </text>
                              }">
-                @using (BeginRenderLink(slide, s => s.LinkToItem, new {@class = "slide-link"}))
+                @using (BeginRenderLink(slide, s => s.LinkToItem, new { @class = "slide-link" }))
                 {
                     if (Sitecore.Context.PageMode.IsPageEditor)
                     {
-                        @Editable(slide , s => s.Image)
+                        @Editable(slide, s => s.Image)
                     }
                     else
                     {
