@@ -1,0 +1,44 @@
+----item----
+version: 1
+id: {D61B039F-8DFA-4F8C-84F9-9ADFE90BCE1D}
+database: master
+path: /sitecore/content/Reboot/Global/Common Text/f/o
+parent: {4BB6743C-41B3-4944-A771-E121A9B9BC26}
+name: o
+master: {00000000-0000-0000-0000-000000000000}
+template: {ADB6CA4F-03EF-4F47-B9AC-9CE2BA53FF97}
+templatekey: Bucket
+
+----version----
+language: en
+version: 1
+revision: 2c1ad0d3-f5a6-4911-8cc0-0b00beed84a9
+
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140615T091719
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+2c1ad0d3-f5a6-4911-8cc0-0b00beed84a9
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140615T091719:635384206399819062
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

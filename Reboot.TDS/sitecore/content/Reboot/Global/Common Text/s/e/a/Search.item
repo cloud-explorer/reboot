@@ -1,0 +1,51 @@
+----item----
+version: 1
+id: {42483EE1-4C8A-42F8-9903-01252DA8116C}
+database: master
+path: /sitecore/content/Reboot/Global/Common Text/s/e/a/Search
+parent: {54F46E74-DC7C-4DE5-9677-05ED7AC286AF}
+name: Search
+master: {00000000-0000-0000-0000-000000000000}
+template: {A3F7E359-81DE-480B-85A3-7E7D00AB7BE0}
+templatekey: StandardText
+
+----version----
+language: en
+version: 1
+revision: de57e80e-f713-4358-b558-89c14c9d9daf
+
+----field----
+field: {8C50C2BF-2B08-4BE1-A95A-8FC151E849C5}
+name: Text
+key: text
+content-length: 6
+
+Search
+----field----
+field: {25BED78C-4957-4165-998A-CA1B52F67497}
+name: __Created
+key: __created
+content-length: 15
+
+20140615T083709
+----field----
+field: {8CDC337E-A112-42FB-BBB4-4143751E123F}
+name: __Revision
+key: __revision
+content-length: 36
+
+de57e80e-f713-4358-b558-89c14c9d9daf
+----field----
+field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
+name: __Updated
+key: __updated
+content-length: 34
+
+20140615T083709:635384182290710100
+----field----
+field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
+name: __Updated by
+key: __updated by
+content-length: 14
+
+sitecore\admin

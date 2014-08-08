@@ -1,10 +1,10 @@
 ----item----
 version: 1
-id: {0BC61E02-14BA-4EA2-824B-1A250C2356A8}
+id: {DED8863F-79D3-4B1C-8532-2AF349850241}
 database: core
-path: /sitecore/content/Applications/Content Editor/Ribbons/Chunks/DataImport/Import Models
+path: /sitecore/content/Applications/Content Editor/Ribbons/Chunks/DataImport/Reset Images
 parent: {A0EA6210-F561-4F28-A4A0-FE58CB41663C}
-name: Import Models
+name: Reset Images
 master: {00000000-0000-0000-0000-000000000000}
 template: {1DB34C92-03B0-4475-9A39-DA14E4D9D8FC}
 templatekey: Large Button
@@ -13,16 +13,16 @@ templatekey: Large Button
 field: {D47ED548-84D5-4622-9886-5CC164727507}
 name: Icon
 key: icon
-content-length: 33
+content-length: 22
 
-Applications/16x16/magic-wand.png
+Other/32x32/woman4.png
 ----field----
 field: {DBBF9EE3-C30E-4456-A81F-ED8C2E8DF91B}
 name: Click
 key: click
-content-length: 22
+content-length: 23
 
-Website:DiscoverModels
+DataMigration:FixImages
 ----field----
 field: {CCD6BDE9-0A7A-4DA3-B0ED-D3C0F65379FE}
 name: KeyCode
@@ -169,22 +169,22 @@ sitecore\admin
 ----version----
 language: en
 version: 1
-revision: 41131b32-2b13-4f86-adf3-0ed7f31e8ba5
+revision: f59a6af2-d114-4202-98b3-e08e44ac612e
 
 ----field----
 field: {4DF6DA21-E745-444C-956E-1D4A96AB8821}
 name: Header
 key: header
-content-length: 13
+content-length: 12
 
-Import Models
+Reset Images
 ----field----
 field: {A1A31A93-C4A0-4396-B629-67C33001A3CF}
 name: Tooltip
 key: tooltip
-content-length: 20
+content-length: 37
 
-Import/Update Models
+Fix missing poster and profile images
 ----field----
 field: {C8F93AFE-BFD4-4E8F-9C61-152559854661}
 name: __Valid from
@@ -219,14 +219,14 @@ name: __Revision
 key: __revision
 content-length: 36
 
-41131b32-2b13-4f86-adf3-0ed7f31e8ba5
+f59a6af2-d114-4202-98b3-e08e44ac612e
 ----field----
 field: {D9CF14B1-FA16-4BA6-9288-E8A174D4D522}
 name: __Updated
 key: __updated
 content-length: 34
 
-20140606T165045:635376702451707174
+20140606T165242:635376703628774499
 ----field----
 field: {BADD9CF9-53E0-4D0C-BCC0-2D784C282F6A}
 name: __Updated by

@@ -56,6 +56,7 @@ namespace Projects.Reboot.DataMigration.MappingProfiles
                   .ForMember(m => m.Parent, opt => opt.Ignore())
                   .ForMember(m => m.Context, opt => opt.Ignore())
                   .ForMember(m => m.Url, opt => opt.Ignore())
+                  .ForMember(m => m.Ancestors, opt => opt.Ignore())
                   .ForAllMembers(p => p.Condition(c => !c.IsSourceValueNull));
 
             //Language Mappings
@@ -73,6 +74,7 @@ namespace Projects.Reboot.DataMigration.MappingProfiles
                   .ForMember(m => m.Parent, opt => opt.Ignore())
                   .ForMember(m => m.Context, opt => opt.Ignore())
                   .ForMember(m => m.Url, opt => opt.Ignore())
+                  .ForMember(m => m.Ancestors, opt => opt.Ignore())
                   .ForAllMembers(p => p.Condition(c => !c.IsSourceValueNull));
 
             //Crew Mappings
@@ -90,6 +92,7 @@ namespace Projects.Reboot.DataMigration.MappingProfiles
                   .ForMember(m => m.Parent, opt => opt.Ignore())
                   .ForMember(m => m.Context, opt => opt.Ignore())
                   .ForMember(m => m.Url, opt => opt.Ignore())
+                  .ForMember(m => m.Ancestors, opt => opt.Ignore())
                   .ForAllMembers(p => p.Condition(c => !c.IsSourceValueNull));
 
             //Cast Mappings
@@ -108,6 +111,7 @@ namespace Projects.Reboot.DataMigration.MappingProfiles
                   .ForMember(m => m.Parent, opt => opt.Ignore())
                   .ForMember(m => m.Context, opt => opt.Ignore())
                   .ForMember(m => m.Url, opt => opt.Ignore())
+                  .ForMember(m => m.Ancestors, opt => opt.Ignore())
                   .ForAllMembers(p => p.Condition(c => !c.IsSourceValueNull));
 
             //Trailer Mappings
@@ -126,6 +130,7 @@ namespace Projects.Reboot.DataMigration.MappingProfiles
                   .ForMember(m => m.Parent, opt => opt.Ignore())
                   .ForMember(m => m.Context, opt => opt.Ignore())
                   .ForMember(m => m.Url, opt => opt.Ignore())
+                  .ForMember(m => m.Ancestors, opt => opt.Ignore())
                   .ForAllMembers(p => p.Condition(c => !c.IsSourceValueNull));
 
             //Production Mappings
@@ -143,6 +148,7 @@ namespace Projects.Reboot.DataMigration.MappingProfiles
                   .ForMember(m => m.Parent, opt => opt.Ignore())
                   .ForMember(m => m.Context, opt => opt.Ignore())
                   .ForMember(m => m.Url, opt => opt.Ignore())
+                  .ForMember(m => m.Ancestors, opt => opt.Ignore())
                   .ForAllMembers(p => p.Condition(c => !c.IsSourceValueNull));
 
             //Person Mappings
@@ -171,6 +177,7 @@ namespace Projects.Reboot.DataMigration.MappingProfiles
                   .ForMember(m => m.CssClassName, opt => opt.Ignore())
                   .ForMember(m => m.MenuHoverText, opt => opt.Ignore())
                   .ForMember(m => m.ShowInMenu, opt => opt.Ignore())
+                  .ForMember(m => m.Ancestors, opt => opt.Ignore())
                   .ForAllMembers(p => p.Condition(c => !c.IsSourceValueNull));
 
             //Movie Mappings
@@ -205,6 +212,7 @@ namespace Projects.Reboot.DataMigration.MappingProfiles
                   .ForMember(m => m.CssClassName, opt => opt.Ignore())
                   .ForMember(m => m.MenuHoverText, opt => opt.Ignore())
                   .ForMember(m => m.ShowInMenu, opt => opt.Ignore())
+                  .ForMember(m => m.Ancestors, opt => opt.Ignore())
                   .ForAllMembers(p => p.Condition(c => !c.IsSourceValueNull));
         }
 
