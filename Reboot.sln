@@ -42,6 +42,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projects.Reboot.Services", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Projects.Reboot.Contracts", "Projects.Reboot.Contracts\Projects.Reboot.Contracts.csproj", "{145E43A6-541D-45FA-AA4A-762586FFB28A}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solr", "Solr", "{8E771355-930E-4BF5-A268-673019A5DDED}"
+	ProjectSection(SolutionItems) = preProject
+		Solr\schema.xml = Solr\schema.xml
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
